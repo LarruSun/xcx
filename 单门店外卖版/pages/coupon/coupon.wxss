@@ -1,0 +1,370 @@
+/* pages/coupon/coupon.wxss */
+
+.container_coupon {
+  background: #eee;
+  min-height: 1110rpx;
+  font-family: Microsoft YaHei;
+}
+
+.nav-scroll {
+  background: #fff;
+}
+
+.nav-name {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 16px;
+  color: #2b2e33;
+  border-bottom: 2px solid transparent;
+  padding: 10px;
+}
+
+.nav-hover {
+  color: #f06000;
+  border-bottom: 2px solid #f06000;
+}
+
+.scroll-view_H {
+  display: flex;
+  justify-content: space-around;
+  white-space: nowrap;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.noused{
+  position:absolute;
+  right:45rpx;
+  top:20rpx;
+  width:100rpx;
+  height:100rpx;
+}
+/*优惠券  */
+
+/*优惠券 start */
+
+.discount_Coupon {
+  margin-top: 14px;
+}
+
+.discount_Coupon_list {
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+.Coupon_list_left {
+  text-align: center;
+  height: 108px;
+  float: left;
+  width: 115px;
+  position: relative;
+}
+
+.Coupon_list_Limg {
+  height: 108px;
+  float: left;
+  width: 115px;
+}
+
+.money {
+  position: absolute;
+  margin-top: 24px;
+  vertical-align: middle;
+  width: 230rpx;
+}
+
+.money_fuH {
+  color: #fff;
+  margin-top: 28rpx;
+  display: inline-block;
+}
+
+.money_fuM {
+  font-size: 67rpx;
+  color: #fff;
+}
+
+.money_main {
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.Coupon_list_right {
+  width: 235px;
+  float: left;
+  background: #fff;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 109px;
+}
+
+.coupon_logo {
+  clear: both;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: -4px;
+}
+
+.logo_stort {
+  width: 35px;
+  height: 35px;
+  float: left;
+}
+
+.logo_stort_title {
+  width: 179px;
+  float: left;
+  margin-left: 6px;
+  margin-top: 5px;
+  color: #999;
+  font-size: 16px;
+}
+
+.coupon_introduce {
+  margin-left: 46px;
+  font-size: 18px;
+  margin-right: 19px;
+  overflow: hidden;
+  width: 166px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.coupon_date_one {
+  margin-top: 13px;
+}
+
+.coupon_date {
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 48px;
+}
+
+.coupon_date_start, .coupon_time, .coupon_date_start {
+  float: left;
+}
+
+.coupon_date_two {
+  margin-top: -4px;
+  float: left;
+  margin-left: 15px;
+}
+
+.coupon_week {
+  float: left;
+  margin-right: 7px;
+  border: 1px solid #3c99de;
+  padding: 3px 6px;
+  border-radius: 16px;
+  color: #3c99de;
+}
+
+.coupon_CardData {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.money_a {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 320px) {
+  /* iPhone5 css */
+
+  .category {
+    margin-top: 14px !important;
+  }
+
+  .address {
+    width: 72% !important;
+    font-size: 13px !important;
+  }
+
+  .address_juli {
+    margin-left: -2% !important;
+  }/*优惠券 css */
+
+  .coupon_date_two {
+    margin-left: 3px;
+    margin-top: 10px;
+  }
+
+  .Coupon_list_left {
+    height: 93px !important;
+    width: 104px !important;
+  }
+
+  .Coupon_list_Limg {
+    height: 93px !important;
+    width: 104px !important;
+  }
+
+  .money {
+    display: inline-block;
+    margin-top: 28px;
+  }
+
+  .money_fuH {
+    margin-left: 23px;
+    color: #fff;
+    margin-top: 9px;
+  }
+
+  .money_fuM {
+    font-size: 40px;
+    margin-top: -17px;
+    color: #fff;
+  }
+
+  .money_main {
+    margin-left: 25px;
+    color: #fff;
+    /* float: left; */
+    font-size: 14px;
+    margin-top: 0px;
+  }
+
+  .coupon_logo {
+    clear: both;
+    width: 189px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: -4px;
+  }
+
+  .logo_stort {
+    width: 31px;
+    height: 30px;
+    float: left;
+  }
+
+  .logo_stort_title {
+    float: left;
+    margin-left: 6px;
+    margin-top: 5px;
+    color: #999;
+    font-size: 14px;
+    width: 150px !important;
+  }
+
+  .coupon_introduce {
+    margin-left: 42px;
+    font-size: 15px !important;
+    margin-right: 0;
+  }
+
+  .coupon_date {
+    margin-top: -1px;
+    font-size: 11px;
+    margin-bottom: 40px !important;
+  }
+
+  .coupon_date_one {
+    float: left;
+  }
+
+  .coupon_week {
+    float: left;
+    margin-right: 7px;
+    border: 1px solid #3c99de;
+    padding: 1px 3px;
+    border-radius: 16px;
+    color: #3c99de;
+  }/*youhuiquan   优惠券  */
+
+  .Coupon_list_right {
+    width: 195px !important;
+  }
+
+  .bend_img {
+    width: 61px !important;
+    height: 61px !important;
+    top: -70px !important;
+    position: absolute !important;
+    right: -80px !important;
+  }
+}
+
+
+
+/*新优惠券样式  */
+.yhq-item{
+   width:711rpx;
+   height:181rpx;
+   margin:0 auto;
+   position: relative;
+   background: url(https://yun.eaqul.com/wxImg/quan_bg.png);
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   margin-bottom:20rpx;
+}
+.yhq-itemL{
+   display: flex;
+   align-items: center;
+   position: absolute;
+   left: 130rpx;
+}
+.yhq-itemL .red{
+   font-size: 80rpx;
+   margin-left: 20rpx;
+   vertical-align: top;
+   color:red;
+   display: inline-block;
+   margin-bottom: 25rpx;
+   margin-right: 10rpx;
+}
+.fon30r{
+   font-size:50rpx;
+   vertical-align: middle;
+}
+.fon20{
+   font-size: 20rpx;
+   color:#666;
+}
+.color33{
+   color:#333;
+}
+.yhq-itemR{
+   font-size:26rpx;
+   color:#333;
+   background: #FFC824;
+   border-radius: 45rpx;
+   width:158rpx;
+   height:83rpx;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   position: absolute;
+   right:20rpx;
+   top:48rpx;
+}
+.yhqUsed{
+   background: rgba(0, 0, 0, 0);
+   border:1px solid #e5e5e5;
+}
+
+.usedImg{
+   position: absolute;
+   right:20rpx;
+   top:20rpx;
+   width:100rpx;
+   height:100rpx;
+}
+.gray { 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    
+    filter: grayscale(100%);
+	
+}

@@ -1,0 +1,87 @@
+/* equalpay.wxss */
+page{
+  background: #eee;
+}
+.lotop{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   background: #fff;
+   box-sizing: border-box;
+   padding:30rpx 0rpx;
+}
+.lotop view{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+}
+.tlogo{
+   font-size:30rpx;
+}
+.blogo{
+   font-size:50rpx;
+}
+.lotop image{
+   width:80rpx;
+   height:80rpx;
+   margin-right:20rpx;
+}
+.detail{
+   margin-top:20rpx;
+   background: #fff;
+   box-sizing: border-box;
+   padding:0 20rpx;
+   font-size:30rpx;
+}
+.detail view{
+   display: flex;
+   justify-content: space-between;
+   box-sizing: border-box;
+   padding:20rpx 0;
+}
+.borb{
+   border-bottom: 1rpx solid #e5e5e5;
+}
+.vippaymm{
+   display: flex;
+   justify-content: center;
+   margin-top:30rpx;
+}
+.vippaymm input{
+   width:100rpx;
+   height:90rpx;
+   border:1rpx solid #9d9d9d;
+   border-left:none;
+   text-align: center;
+}
+.vippaymm .flef{
+   border-left:1rpx solid #9d9d9d;
+}
+.forgetpwd{
+   display: flex;
+   justify-content: flex-end;
+   font-size:30rpx;
+   color: #38c;
+   box-sizing: border-box;
+   padding-right:65rpx;
+   margin-top:10rpx;
+}
+.VRkeyboard{
+   position: fixed;
+   bottom: 0;
+   left:0;
+   right:0;
+}
+.VRkeyboard view{
+   display: flex;  
+   width:100%;
+}
+.VRkeyboard view button{
+   width:33.333%;
+}
+.VRkeyboard view button image{
+   width:60rpx;
+   height:40rpx;
+}
+

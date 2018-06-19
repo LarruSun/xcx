@@ -1,0 +1,64 @@
+/* payok.wxss */
+page{
+  background: #eee;
+}
+.lotop{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   background: #fff;
+   box-sizing: border-box;
+   padding:30rpx 0rpx;
+}
+.lotop view{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+}
+.tlogo{
+   font-size:30rpx;
+}
+.blogo{
+   font-size:50rpx;
+}
+.lotop image{
+   width:80rpx;
+   height:80rpx;
+   margin-right:20rpx;
+}
+.red{
+   font-size:30rpx;
+   margin-top:30rpx;
+}
+.detail{
+   margin-top:20rpx;
+   background: #fff;
+   box-sizing: border-box;
+   padding:0 20rpx;
+   font-size:30rpx;
+}
+.detail view{
+   display: flex;
+   justify-content: space-between;
+   box-sizing: border-box;
+   padding:20rpx 0;
+}
+.borb{
+   border-bottom: 1rpx solid #e5e5e5;
+}
+.over{
+   display: flex;
+   justify-content: center;
+   color:#fff;
+   font-size:30rpx;
+   margin-top:100rpx;
+}
+.over view{
+   padding:20rpx;
+   width:80%;
+   box-sizing: border-box;
+   text-align: center;
+   background: #69adf4;
+      border-radius: 30rpx;
+}

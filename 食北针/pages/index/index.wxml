@@ -1,0 +1,107 @@
+<!-- <import src="../temple/temple.wxml"/>
+
+<import src="../temple/temple.wxml"/>
+<!--index.wxml-->
+<view class="container_index" hidden='{{!pageData.shopList}}'>
+  <view class="address_message" bindtap="Lnvoking_map" style='background:{{address_message_css}}'>
+    <image src="/images/dress.png" class="address_img" />
+    <view class="address" hidden='{{location_d}}'>{{location_e}}</view>
+    <view class="address" hidden='{{!location_d}}'>{{location_d}}</view>
+    <view class="address_juli">{{hot_pot.distance}}</view>
+    <image hidden='{{!location_e.length > 0}}' src="/images/zuo.png" class="zuo_img" />
+  </view>
+  <view class="slideshow">
+    <!--轮播图 s  -->
+    <swiper class='swiper_index' circular='true' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{pageData.homeImg}}" wx:key="this">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image slideshow_img" width="" height="120" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--轮播图 e  -->
+  </view>
+  <view class="logo_main">
+    <view class="logo_picture">
+      <image src="{{pageData.logo}}" class="logo_img" />
+    </view>
+    <view class="logo_name">
+      <view class="logo_name_top">{{pageData.nickName}}</view>
+      <view class="category">餐饮美食</view>
+      <view class="cuisine">
+        <view class="cuisine_son">{{pageData.classType[0]}}</view>
+        <view class="cuisine_son">{{pageData.classType[1]}}</view>
+        <view class="cuisine_son">{{pageData.classType[2]}}</view>
+      </view>
+    </view>
+    <!-- <image src="/images/phone.png" class="phone" bindtap="telephone"/> -->
+  </view>
+
+  <view class="store_Photos" style="">
+    <view class="store_Photos_main">
+      <view class="classname1">
+        <!-- <block>———————
+          <text class="classname2"> 门店列表 </text>———————
+        </block> -->
+        <block>
+          <image src='/images/Jx.png' class="Jx"></image>
+          <text class="classname2"> 门店列表 </text>
+          <image src='/images/Jx.png' class="Jx"></image>
+        </block>
+      </view>
+      <view class="phones_list">
+        <block wx:for="{{shopList}}" wx:key="this">
+          <view class="phones_box" data-id='{{item.shopId}}' data-ky='{{item.isKy}}' bindtap='goToTakeOut'>
+            <view class='box_left'>
+              <image src="{{item.shopImg}}" class="show_Photos" />
+            </view>
+            <view class="box_right">
+              <view class="box_right_body">
+                <view class="right_top">
+                  <view class="right_name">{{item.branchName}}</view>
+                  <view class="delivery">
+                    <text>起送价￥<text>{{item.startingPrice}}</text></text>
+                    <text class="cost" style=''>配送费￥<text>{{item.takeOutAmount}}</text></text>
+                  </view>
+                </view>
+                <view class="up_send">
+                  <block wx:if='{{item.isKy == true}}'>
+                    <view wx:if='{{item.isPs == true}}' class="up_sendName up_sendName0">可配送</view>
+                    <view wx:if='{{item.isPs == false}}' class="up_sendName up_sendName1">不在配送范围</view>
+                  </block>
+                  <block wx:if='{{item.isKy == false}}'>
+                    <view class="up_sendName up_sendName1">休息中</view>
+                  </block>
+                  <view class="up_sendJL">距离您
+                    <text>{{item.distinces}}km</text>
+                  </view>
+                </view>
+              </view>
+              <view class="activity">
+                <view class="ZHE">
+                  <image src='/images/zzz.png' class="price"></image>
+                  <view>会员折扣</view>
+                </view>
+                <view wx:if='{{item.coupons == true}}' class="ZHE">
+                  <image src='/images/qqq.png' class="price"></image>
+                  <view>优惠券</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- <view class="">
+      asd
+    </view>  -->
+    <!-- <template is="store_Photo" data="{{store_Photos}}"></template>  -->
+  </view>
+
+  <view style="clear:both"></view>
+</view>
+<view class="container_linkError" hidden='{{pageTF_other}}'>
+  <image src="/images/linkerror.png" class="linkerror" />
+  <view class="system_text">网络出错啦,请点击按钮重新加载</view>
+  <button class='system_bottom' bindtap='reload'>重新加载</button>
+</view>

@@ -1,0 +1,45 @@
+<view class='search'>
+  <input type='text' placeholder='搜索门店' value='' />
+</view>
+<block wx:for="{{shopList}}">
+  <view class='listBox' bindtap='goToTakeOut' data-id='{{item.shopId}}'>
+    <view class='mine_list'>
+
+      <view class='mine_list_message'>
+        <view class='mine_list_message_left'>
+          <image src='{{item.shopImg}}' class='mine_list_img'></image>
+          <view class='mine_list_name store'>{{item.branchName}}</view>
+        </view>
+        <view class='distance'>{{item.distinces}}km</view>
+      </view>
+
+      <view class='mine_list_message'>
+        <view class='mine_list_message_left'>
+          <image src='/images/mine/mine1.png' class='mine_list_img'></image>
+          <view class='mine_list_name'>{{item.address}}</view>
+        </view>
+      </view>
+
+      <view class='mine_list_message'>
+        <view class='mine_list_message_left'>
+          <image src='/images/mine/mine1.png' class='mine_list_img'></image>
+          <view class='mine_list_name'>{{item.phone}}</view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class='right_arrow'>
+      <block wx:if='{{item.isKy == true}}'>
+        <view wx:if='{{item.isPs == true}}' class=""> <image src='/images/mine/right.png'></image></view>
+        <view wx:if='{{item.isPs == false}}' class="">不在配送范围</view>
+      </block>
+      <block wx:if='{{item.isKy == false}}'>
+        <view class="">休息中</view>
+      </block>
+      <block wx:else>
+       
+      </block>
+    </view>
+  </view>
+</block>

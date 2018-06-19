@@ -1,0 +1,30 @@
+/* pages/mine/number/number.wxss */
+.on{
+  color: #555!important;
+}
+.container_balance{
+  min-height:667px;
+  background:#eee;
+}
+.balance_body{
+  background:#fff;
+}
+.Online{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
+.Online_balance{
+  font-size:0.8rem;
+}
+.Online_time{
+  font-size:0.76667rem;
+  color:#909090;
+}
+.Online_down{
+  font-style:normal;
+  float:right;
+  font-size:0.86667rem;
+  color:red;
+}

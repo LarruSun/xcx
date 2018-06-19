@@ -1,0 +1,11 @@
+{
+  "extEnable": true,
+  "extAppid": "wxc8bc468c2aafe723",
+  "ext": {
+    "appid": "wxc8bc468c2aafe723"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

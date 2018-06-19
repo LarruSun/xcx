@@ -1,0 +1,56 @@
+<!-- <import src="../temple/temple.wxml"/>
+
+<import src="../temple/temple.wxml"/>
+<!--index.wxml-->
+<view class="container_index" hidden='{{!pageData.shopList}}'>
+  <view class="address_message" bindtap="Lnvoking_map">
+    <image src="/images/dress.png" class="address_img" />
+    <view class="address" hidden='{{location_d}}'>{{location_e}}</view>
+    <view class="address" hidden='{{!location_d}}'>{{location_d}}</view>
+    <view class="address_juli">{{hot_pot.distance}}</view>
+    <image hidden='{{!location_e.length > 0}}' src="/images/zuo.png" class="zuo_img" />
+  </view>
+  <view class="slideshow">
+    <!--轮播图 s  -->
+    <swiper class='swiper_index' circular='true' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{pageData.imgUrl}}" wx:key="this">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image slideshow_img" width="" height="120" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--轮播图 e  -->
+  </view>
+  <view class='starting'>
+    <button style='background:{{pageData.btnColor}}; color:{{pageData.btnFontColor}}; display: inline-block; width: 48%' data-id='{{shopList[0].shopId}}' data-ky='{{shopList[0].ky}}' class='starting_click' bindtap='goToTakeOut'>外卖点餐</button>
+    <button style='background:{{pageData.btnColor}}; color:{{pageData.btnFontColor}}; display: inline-block; width: 48%;float: right' bindtap="goEatIn">堂食点餐</button>
+  </view>
+  <view class="exhibition">
+    <view class="exhibition_son"  style='background:{{pageData.areaColor}}' >
+      <view class="showon">
+        <image wx:if='{{pageData.areaIcon1 == null || pageData.areaIcon1 == ""}}' src='/images/S1.png' class="showon_img"></image>
+        <image wx:else src='{{pageData.areaIcon1}}' class="showon_img"></image>
+        <view wx:if='{{pageData.areaName1 == null || pageData.areaName1 == ""}}' class='showon_title'>快速送达</view>
+        <view wx:else class='showon_title'>{{pageData.areaName1}}</view>
+      </view>
+      <view class="showon">
+        <image wx:if='{{pageData.areaIcon2 == null || pageData.areaIcon2 == ""}}'   src='/images/H2.png' class="showon_img"></image>
+        <image wx:else  src='{{pageData.areaIcon2}}' class="showon_img"></image>
+        <view wx:if='{{pageData.areaName2 == null || pageData.areaName2 == ""}}' class='showon_title'>会员折扣</view>
+        <view wx:else class='showon_title'>{{pageData.areaName2}}</view>
+      </view>
+      <view class="showon">
+        <image wx:if='{{pageData.areaIcon3 == null || pageData.areaIcon3 == ""}}'  src='/images/D3.png' class="showon_img"></image>
+        <image wx:else src='{{pageData.areaIcon3}}' class="showon_img"></image>
+        <view wx:if='{{pageData.areaName3 == null || pageData.areaName3 == ""}}' class='showon_title'>优惠多多</view>
+        <view wx:else class='showon_title'>{{pageData.areaName3}}</view>
+      </view>
+    </view>
+  </view>
+  <view style="clear:both"></view>
+</view>
+<view class="container_linkError" hidden='{{pageTF_other}}'>
+  <image src="/images/linkerror.png" class="linkerror" />
+  <view class="system_text">网络出错啦,请点击按钮重新加载</view>
+  <button class='system_bottom' bindtap='reload'>重新加载</button>
+</view>

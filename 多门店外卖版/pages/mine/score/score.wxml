@@ -1,0 +1,31 @@
+<view class='container-score'>
+  <view class='score'>
+    <view class='record'>近期积分记录</view>
+    <view class='rule' bindtap='score_rule'>积分规则>></view>
+  </view>
+
+  <block wx:for="{{scoreList}}">
+    <view class='score_data'>
+      <view class='time'>{{ item.createTime }}</view>
+      <view class='totle'>{{ item.ruleName }}</view>
+      <view class='add_score'>{{ item.integralChange }}积分</view>
+    </view>
+  </block>
+  <!--
+  <view class='score_data'>
+      <view class='time'>2018-04-05 12:12:00</view>
+      <view class='totle'>积分累计</view>
+      <view class='add_score'>+15积分</view>
+    </view>
+    <view class='score_data'>
+      <view class='time'>2018-04-05 12:12:00</view>
+      <view class='totle'>积分累计</view>
+      <view class='add_score'>+15积分</view>
+    </view>
+    <view class='score_data'>
+      <view class='time'>2018-04-05 12:12:00</view>
+      <view class='totle'>积分累计</view>
+      <view class='add_score'>+15积分</view>
+    </view>
+  -->
+</view>

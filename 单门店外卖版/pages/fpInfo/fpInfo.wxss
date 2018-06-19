@@ -1,0 +1,94 @@
+/* fpInfo.wxss */
+page{
+   background: #eee;
+}
+.isNeedfp,.addfpbtn,.list-item{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-sizing: border-box;
+   padding:20rpx;
+   font-size:26rpx;
+   background: #fff;
+}
+.isNeedfp image,.list-item image{
+   width:30rpx;
+   height:30rpx;
+}
+.isNeedfpimg{
+   display: flex;
+   align-items: center;
+   box-sizing: border-box;
+   border-radius: 50%;
+   border:1rpx solid #e5e5e5;
+   width:40rpx;
+   height:40rpx;
+}
+.addfpbtn{
+   margin-top:20rpx;
+}
+.addfpbtn image{
+   width:20rpx;
+   height:30rpx;
+}
+.none-show{
+   position: fixed;
+   width:100%;
+   display: flex;
+   justify-content: center;
+   font-size:30rpx;
+   color:rgb(153, 153, 153);
+   top:40%;
+   text-align: center;
+}
+.none-show image{
+   width:90rpx;
+   height:120rpx;
+}
+.fpList{
+  margin-top:10rpx;
+}
+.list-item{
+  margin-top:0rpx;
+}
+
+
+/*滑动删除样式  */
+.touch-item {
+ font-size: 14px;
+ display: flex;
+ justify-content: space-between;
+ border-bottom:1px solid #ccc;
+ width: 100%;
+ overflow: hidden
+}
+.content {
+ width: 100%;
+ padding:26rpx 10px;
+ line-height: 0px;
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -90px;
+ background: #fff;
+}
+.del {
+ background-color: orangered;
+ width: 90px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}

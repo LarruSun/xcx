@@ -1,0 +1,158 @@
+<!--sureOrder.wxml-->
+<view hidden='{{!youhui}}' class="container">
+  <view class="nameAddr">
+    <image src='../../images/img/addrbg.png' class="addrbg"></image>
+    <view class="nameAddr_box2" bindtap="toaddr">
+      <view class="nameAddr_L" hidden='{{address}}'>
+        暂无收货地址
+      </view>
+      <view class="nameAddr_L" hidden='{{!address}}'>
+        <image src="../../images/img/posiblue.png"></image>
+        <view class="nameAddr_C">
+          <view class="bname" wx:if='{{userInfo.gender == "1"}}'>
+            {{address.name}} 先生 {{address.phone}}
+          </view>
+          <view class="bname" wx:if='{{userInfo.gender == "2"}}'>
+            {{address.name}} 女士 {{address.phone}}
+          </view>
+          <!-- <view class="bname">{{userInf.name}}  先生  15695583500</view> -->
+          <view class="baddr">{{address.province}} {{address.address}}</view>
+        </view>
+      </view>
+
+      <view class="nameAddr_R">
+        <image src="../../images/img/r.png"></image>
+      </view>
+    </view>
+    <!-- <view style='clear:both'></view> -->
+  </view>
+  <view class="arrivetime">
+    <view class="arrivetime_L">
+      <image src="../../images/img/timepic.png"></image>
+      <text>预计送达时间</text>
+    </view>
+    <view class="">{{time}}</view>
+  </view>
+  <view class="payAndQuan">
+    <view class="payMethod" bindtap='choosePayMethod'>
+      <view class="">支付方式</view>
+      <view class="alic">
+        <text>{{payMethod}}</text>
+        <image src="../../images/img/r.png"></image>
+      </view>
+    </view>
+    <view class="quan" bindtap='clipCoupons'>
+      <view class="">优惠券</view>
+      <view class="alic">
+        <text>{{yhq}}</text>
+        <image src="../../images/img/r.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="ordBox">
+    <view class="zbusbtn">
+      <view class="zbusbtn_L">
+        <image src="{{shopInf.shopLogo}}"></image>
+        <text>{{shopInf.shopName}}</text>
+      </view>
+      <view class="zbusbtn_R" bindtap="isEditdish">
+        <view wx:if='{{edit}}'>
+          完成
+        </view>
+        <view wx:if='{{!edit}}'>
+          编辑
+        </view>
+      </view>
+    </view>
+    <view class="listBox">
+      <block wx:for="{{orderList.cartdata}}" wx:for-index="idx" wx:for-item="item">
+        <view class="list-item">
+          <view class="list-item-ok" hidden="{{edit}}">
+            <view class="list-item-t">
+              <text class="list-item-text">{{item.foodsName}}</text>
+              <text class="gary">x{{item.foodsnum}}</text>
+              <text class="gary">￥{{item.foodsPrice}}</text>
+            </view>
+            <!-- <view class="list-item-b">
+              <text class="red">{{item.dishSize}}</text>
+            </view> -->
+          </view>
+          <view class="list-item-edit" hidden="{{!edit}}">
+            <view class="list-item-edit-L">
+              <view class="list-item-edit-LT">
+                <text>{{item.foodsName}}</text>
+              </view>
+              <!-- <view class="list-item-edit-LB">
+                <text class="on">大份</text>
+                <text>小份</text>
+              </view> -->
+            </view>
+            <view class="list-item-edit-C">
+              <view class="sub" data-idx="{{idx}}" bindtap="subcrtDataByfoodId" data-foodsid='{{item.foodsId}}'>-</view>
+              <view class="num">{{item.foodsnum}}</view>
+              <view class="add" data-idx="{{idx}}" bindtap="addcrtDataByfoodId" data-foodsid='{{item.foodsId}}'>+</view>
+            </view>
+            <view class="list-item-edit-R" data-idx="{{idx}}">
+              <text data-foodsid='{{item.foodsId}}' bindtap="delcrtDataByfoodId">删除</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="fei">
+      <view wx:if='{{takeOutAmount != null && takeOutAmount > 0}}' class="ffei">
+        <text class="gary">配送费</text>
+        <text>￥{{takeOutAmount}}</text>
+      </view>
+      <view wx:if='{{freightFree != null && freightFree != "" && takeOutAmount > 0}}' class="yfei">
+        <text class="gary">会员免配送</text>
+        <text>-￥{{takeOutAmount}}</text>
+      </view>
+      <view wx:if='{{couponId != null && couponId != ""}}' class="yfei">
+        <text class="gary">优惠券</text>
+        <text>-￥{{couponAmount}}</text>
+      </view>
+      <view wx:if='{{discount != 10 && discount != null && discount != "" && (couponId == null || couponId == "")}}' class="yfei">
+        <text class="gary">会员卡折扣</text>
+        <text>{{discount}}折</text>
+      </view>
+      <view class="sfei">
+        <text class="gary">实付</text>
+        <text class="red">￥{{orderList.totprice}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="otherInfo">
+    <!-- <view class="yc">
+              <view class="">用餐人数</view>
+              <view class="eatnum gary">
+                    <view class="sub" bindtap="subuseDishNum">-</view>
+                    <view class="num">{{useDishNum}}</view>
+                    <view class="add" bindtap="adduseDishNum">+</view>
+              </view>
+         </view>  -->
+    <view class="bz" bindtap="tobeizhuInfo">
+      <view class="">订单备注</view>
+      <view class="acen">
+        <text class="gary">{{peopleShow}} {{beizhuValue}}</text>
+        <image src="../../images/img/r.png"></image>
+      </view>
+    </view>
+    <view class="fp" bindtap="tofpInfo">
+      <view class="">发票抬头</view>
+      <view class="acen">
+        <text class="gary">{{receiptTitle}}</text>
+        <image src="../../images/img/r.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bot">
+    <view class="botL">
+      <text wx:if='{{youhui > 0}}' class="lef">优惠:￥{{youhui}}</text>
+      <text class="red">合计:￥{{orderList.totprice}}</text>
+    </view>
+    <view class="botR" bindtap="topay">
+      确认付款
+    </view>
+  </view>
+</view>

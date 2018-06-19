@@ -1,0 +1,26 @@
+<!--pages/mine/register/register.wxml-->
+<view class="container_register">
+  <!-- <view class="register_index">
+    <image src='../../../images/mine/cardbg.png' class="register_bg"></image>
+    <view class="register_user">
+      <image src='{{userInfo.avatarUrl}}' class='register_logo'></image>
+      <view class="register_name">{{userInfo.nickName}}</view>
+    </view>
+  </view> -->
+  <view class="register_message">
+      <view class="activate_main_two" style="">
+        <view class="activate_phone">
+          <input id='phone' type="number" maxlength="11" bindinput='phoneInputEvent' placeholder='请输入手机号码' focus='true' />
+        </view>
+        <view class="activate_YZ">
+          <input name="verifyCode" type="number" maxlength="4" focus='true' bindinput="codeInputEvent" placeholder='请输入验证码' />
+           <text class='errorTip' wx:if='{{vliCodeTrue}}'>验证码不正确</text>
+          <button class="button_YZ {{getCodeClass}}" bindtap="verifyCodeEvent" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+        </view>
+      </view>
+  </view>
+  <view class='tip'><text class='textred'>温馨提示：</text>{{attention}}</view>
+  <view  class="activate_true">
+    <button bindtap="bindMemberPhone" disabled="{{submitDisable}}">登录</button>
+  </view>
+</view>

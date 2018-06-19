@@ -1,0 +1,106 @@
+/* pages/mine/indent/cancellationOrder/cancellationOrder.wxss */
+.container_cancellationOrder{
+  background: #eee;
+}
+.cancellationOrder_img{
+  width: 40px;
+  height: 40px;
+  margin-right:6px;
+}
+.img_icon{
+  vertical-align: middle;
+  width: 45px;
+  height: 45px;
+  margin-top:22px;
+}
+.describe_img_img{
+  width: 90px;
+  height:90px
+}
+.cancellationOrder_title{
+  display: flex;
+  padding:7px 8px;
+  background:#fff;
+}
+.cancellationOrder_name{
+  font-size: 17px
+}
+.cancellationOrder_small{
+  font-size: 15px;
+  color: #999;
+}
+.cancellationOrder_Tmassage{
+  padding: 8px 8px;
+  font-size:16px;
+  color:#999;
+}
+.cancellationOrder_TK{
+
+  
+}
+.cancellationOrder_XQ{
+  padding: 13px 8px;
+  background:#fff;
+  font-size:16px;
+}
+.cancellationOrder_YY{
+  font-size:16px;
+margin-top:12px;
+display:flex;
+background:#fff;
+padding:11px 8px;
+border-bottom:1px solid #ddd;
+}
+.cancellationOrder_Refundcause{
+  margin-top:-2px;
+}
+.describe{
+  background:#fff;
+  margin-top:0px;
+  padding:12px 8px;
+}
+.describe_title{
+  font-size: 16px;
+  margin-bottom: 8px
+}
+.describe_img{
+  display: flex;
+  justify-content: flex-start
+}
+.top_img{
+  width:89px;
+  height:89px;
+  text-align: center;
+  border:1px solid #ddd
+}
+.AddPhotos{
+  font-size: 15px;
+  color:#999;
+  line-height: 80px;
+}
+.present{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right:0;
+  border-radius: 0!important;
+  background: #f53737;
+  color:#fff;
+}
+@media screen and (max-width: 320px) {
+  .cancellationOrder_name{
+    font-size: 14px
+  }
+  .cancellationOrder_small{
+    font-size: 11px 
+  }
+  .cancellationOrder_Tmassage {
+    font-size:14px;
+  }
+  .cancellationOrder_XQ_body{
+    font-size:14px;
+  }
+  .cancellationOrder_YY_body{
+    font-size:14px;
+  }
+}

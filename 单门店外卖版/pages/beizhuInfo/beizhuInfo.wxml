@@ -1,0 +1,39 @@
+<!--beizhuInfo.wxml-->
+
+<view class='num' wx:if="{{ id == 1 }}">
+  <view class="tableware_heit">餐具数量</view>
+  <view class="number_tableware">
+      <view class="offenUse2">
+        <block wx:for="{{offenuse2}}" wx:for-item="item">
+          <text class="{{item.onclass}}"  data-amount="{{index}}" bindtap='otherMoney'>{{item.offenusename}}</text>  
+        </block>  
+      </view>
+  </view>
+  <view class="writeOk">
+       <view class="writeOkBtn" bindtap="tosureOrder">确认</view>
+   </view>
+</view>
+  
+
+<view class='order_info' wx:if="{{ id == 2 }}">
+  <view class="tableware_heit">订单备注</view>
+  <view class="offenUseLabelBox">
+    <view class="offenUse">
+        <block wx:for="{{offenuse}}" wx:for-item="item">
+          <text bindtap="setThisValue" data-val="{{item}}">{{item}}</text>           
+        </block>
+    </view>
+   </view>
+   <view class="canWrite">
+     <textarea  class="userWrite" placeholder="给餐厅留言,可以输入口味，时间等要求...."  value="{{beizhuValue}}" bindinput="bindme" />
+   </view>
+   
+   <view class="writeOk">
+       <view class="writeOkBtn" bindtap="tosureOrder">确认</view>
+   </view>
+</view>
+
+  
+
+
+

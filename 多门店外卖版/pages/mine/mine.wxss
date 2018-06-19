@@ -1,0 +1,216 @@
+/* pages/mine/mine.wxss */
+.container_mine{
+  background:#f2f7fa;
+  min-height:554px;
+}
+.mine_top{
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px;
+}
+.mine_logo{
+  display: flex;
+  align-items: center;
+}
+.logo_img{
+  width:48px;
+  height:48px;
+  float:left;
+  border-radius: 50%;
+}
+.logo_message{
+  float:left;
+  font-size:15px;
+  margin-top:4px;
+  margin-left:5px;
+}
+.logo_phone{
+  color:#999;
+}
+.mine_vipMessage{
+  color:#999;
+  font-size:14px;
+}
+.vip_message{
+  float:left;
+  margin-top:6px;
+  margin-right:10px;
+  padding:8rpx 10rpx 8rpx 8rpx;
+  border:2px solid #F5BD35;
+  color:#CFAA00;
+  border-radius: 6rpx;
+}
+.vip_img{
+  width:30px;
+  height:30px;
+  float:left;
+}
+.user_Message{
+  margin-top:13px;
+  background:#fff;
+  padding:9px;
+  margin-bottom:12px;
+}
+.textred{
+  font-size:24rpx;
+  color:#FE5064;
+}
+.disf{
+  display:flex;
+  text-align:center;
+  justify-content:space-around;
+  align-items: center;
+  padding:9px;
+  margin-bottom:12px;
+}
+.disf image{
+   width:60rpx;
+   height:46rpx;
+}
+.balance_money_num{
+  color:#999;
+  margin-bottom:10rpx;
+  font-size: 14px;
+}
+.balance_money{
+  font-size:16px;
+  color:#555;
+}
+.mine_list_img{
+  width: 16px;
+  height: 22px;
+}
+.mine_list_RightImg{
+  width: 8px;
+  height: 12px
+}
+.listBox{
+   width:100%;
+   box-sizing: border-box;
+   padding:0px 20rpx;
+   background:#fff;
+}
+.mine_list{
+  background: #fff;
+  padding:6rpx 24rpx;
+  border-top:1px solid #ddd;
+  box-sizing: border-box;
+  padding-left:0px;
+}
+.mine_list_img1{
+   width:16px;
+   height:16px;
+}
+.mine_list_img2{
+   width:16px;
+   height:20px;
+}
+.mine_list_img3{
+   width:16px;
+   height:20px;
+}
+.listBox .mine_list:nth-of-type(1){
+  border:none;
+}
+.yelColor{
+  font-size:22rpx;
+  color:#FED643;
+}
+.mine_list_message{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  padding:11px;
+
+}
+.mine_list_message_left{
+  display:flex;
+
+}
+.mine_list_name{
+  margin-left:8px;
+  font-size:15px;
+  color:#666;
+
+}
+.mine_list_message_right{
+  display:flex;
+
+}
+.mine_list_num{
+  margin-right:8px;
+  font-size:14px;
+  color:#999;
+
+}
+.mine_list_RightImg{
+  margin-top:4px;
+
+}
+.mine_list3>.mine_list_message{
+   border-bottom:0;
+} 
+
+.mine_list4{
+  padding-bottom:0;
+}
+.mine_list4>.mine_list_message{
+  border-bottom:0;
+}
+.container_linkError{
+  min-height:555px;
+  background:#f5f5f5;
+  text-align:center;
+}
+.linkerror{
+  width:180px;
+  height:180px;
+  margin-top:30%;
+}
+.system_text{
+  font-weight:500;
+  color: #666
+}
+.system_bottom{
+  margin-top:13px;
+  width:31%;
+  font-size:15px;
+  background:#8794d6;
+  color:#fff;
+}
+.register{
+  display: flex;
+  justify-content: space-between;
+  padding:18rpx 22rpx;
+  background:#fffbdf;
+  color: #666
+}
+.register_img{
+  width:38rpx;
+  height:28rpx;
+}
+.register_body{
+  font-size:32rpx;
+}
+.register_href{
+  background:#ff7e28;
+  font-size:30rpx;
+  color:#fff;
+  padding:4rpx 16rpx;
+  border-radius:4rpx; 
+}
+.splic{
+   border-right: 1px solid #CFCFCF;
+   height:50rpx; 
+}
+.lowo{
+   display: flex;
+   align-items: center
+}
+.lowo image{
+    width: 80rpx;
+    height:80rpx;
+    margin-right: 16rpx;
+}

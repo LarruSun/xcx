@@ -1,0 +1,88 @@
+<!--pay.wxml-->
+
+<view class="pay" hidden='{{!timeTemp}}'>
+  <view class="lastTime">
+    支付剩余时间: {{timeTemp}}
+  </view>
+  <view class="payBox">
+    <view class="payname">
+      <text>订单名称</text>
+      <text>{{pageData.orderName}}</text>
+    </view>
+    <view class="payInf">
+      <text class="payInftxt_text1">订单详情</text>
+      <view class="payInftxt_body">
+        <block wx:for="{{pageData.order.sonOrder.cyOrderProdes}}" wx:for-index="idx" wx:for-item="item">
+        <view class="payInftxt {{txton}}">
+          <text class="payInftxt_text">{{item.commodityName}}</text><text>x{{item.prodNum}}</text>
+        </view>
+        </block>
+      </view>
+      
+      
+      <!-- <view class="" bindtap="isshowAll">
+        <image class="{{rote}}" src="../../images/img/r.png"></image>
+      </view> -->
+    </view>
+    <view class="paymuch">
+      <text>订单金额</text>
+      <text class="red" style='min-width:90rpx;color:red;'>￥ {{pageData.payTotal}}</text>
+    </view>
+  </view>
+  <view class="bot" bindtap="selectPayMethod">
+    确认支付
+  </view>
+  <view class="bg" hidden="{{!showSelectPayMethod}}"></view>
+  <view class="payMethod" hidden="{{!showSelectPayMethod}}">
+    <view class="payT">
+      <text class="payTL">支付方式</text>
+      <text bindtap="hideSelectPayMethod" class="payTR">x</text>
+    </view>
+    <view class="paybox">
+      <block wx:if='{{pageData.order.payTotal / 100 > pageData.bAmount}}'>
+        <view class="payhy {{timeDisabled}}">
+          <view class="payhyL opac">
+            <view class="">
+              <image src="../../img/vip.png"></image>
+            </view>
+            <view class="">
+              <view class="">会员支付</view>
+              <view class="">余额:￥{{pageData.bAmount}}</view>
+            </view>
+          </view>
+          <!-- <view class="payhyR">
+                    <view class=""><text>抵扣</text> <image src="../../img/yes.png"></image></view>
+                    <view class="colorB">还需支付￥82.12</view>
+                </view> -->
+        </view>
+      </block>
+      <block wx:if='{{pageData.order.payTotal / 100 <= pageData.bAmount}}'>
+        <view class="payhy {{timeDisabled}}" bindtap="toequalpay">
+          <view class="payhyL">
+            <view class="">
+              <image src="../../images/img/vip.png"></image>
+            </view>
+            <view class="">
+              <view class="">会员支付</view>
+              <view class="">余额:￥{{pageData.bAmount}}</view>
+            </view>
+          </view>
+          <!-- <view class="payhyR">
+                    <view class=""><text>抵扣</text> <image src="../../img/yes.png"></image></view>
+                    <view class="colorB">还需支付￥82.12</view>
+                </view> -->
+        </view>
+      </block>
+      <view class="paywx {{disabled}}" bindtap="towxpay" >
+        <view class="paywxL {{timeDisabled}}">
+          <view class="" bindtap="isshowAll">
+            <image src="../../images/img/wx.png"></image>
+          </view>
+          <view class="">
+            <view class="colorBd">微信支付</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

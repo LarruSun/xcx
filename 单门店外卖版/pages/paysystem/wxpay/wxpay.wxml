@@ -1,0 +1,26 @@
+<!--wxpay.wxml-->
+
+ <view class="">
+   <view class="wxpaytop">
+       <view class="">实付金额</view>
+       <view class="">￥{{pageData.order.payTotal}}</view>
+   </view>
+   <view class="just">
+      <text class="gary">门店名称</text><text>{{pageData.branchShop.branch_name}}（{{pageData.branchShop.business_name}}）</text>
+   </view>
+   <view class="martop30">
+        <view class="just">
+            <text class="gary">订单金额</text><text>￥{{pageData.order.soTotal}}</text>
+        </view>
+        <view wx:if='{{youhui > 0}}' class="just">
+            <text class="gary">优惠金额</text><text>-￥{{youhui}}</text>
+        </view>
+        <view class="just">
+            <text class="gary">实付金额</text><text>￥{{pageData.order.payTotal}}</text>
+        </view>
+   </view>
+   <view class="martop100">
+        <button type="primary" size="80%" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> 支付 </button>
+    </view>
+</view> 

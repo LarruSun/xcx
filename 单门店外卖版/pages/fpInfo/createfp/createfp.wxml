@@ -1,0 +1,10 @@
+<!--createfp.wxml-->
+<view class="ceratefp">
+     <input type="text" placeholder="发票抬头" bindinput='titleInputEvent' />
+</view>
+<view class="ceratefp">
+     <input type="text" placeholder="纳税人识别号" bindinput='taxNumInputEvent' />
+</view>
+<view class="createOk" bindtap="addReceipt">
+确认
+</view>

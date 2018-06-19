@@ -1,0 +1,103 @@
+<view class="container_mine" hidden='{{pageTF}}'>
+  <block wx:if='{{mine_top.mine_one_card == "暂未绑定会员卡"}}'>
+    <view class='mine_top' bindtap='register'>
+      <view class='mine_logo'>
+        <image src='{{mine_top.mine_one_img}}' class='logo_img'></image>
+        <view class="logo_message">
+          <view class='logo_name'>立即登录</view>
+        </view>
+      </view>
+      <view class="mine_vipMessage">
+        <image class='mine_list_RightImg' src='/images/mine/right.png'></image>
+      </view>
+    </view>
+     
+    <block wx:for="{{mine_user_Message}}" wx:key="this">
+      <view class='user_Message'>
+        <view class='textred'>登陆后享受更多特权</view>
+        <view class='disf'>
+          <view class='user_Message_coupon'>
+            <view class='balance_money_num'><image src='../../images/mine/yhq.png'></image></view>
+            <view class='balance_money'>优惠券</view>
+          </view>
+          <view class='user_Message_balance'>
+            <view class='balance_money_num'><image src='../../images/mine/qb.png'></image></view>
+            <view class='balance_money'>钱包</view>
+          </view>
+          <view class='user_Message_coupon'>
+            <view class='balance_money_num'><image src='../../images/mine/zk.png'></image></view>
+            <view class='balance_money'>会员折扣</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>
+
+  <block wx:else>
+    <view class='mine_top'>
+      <view class='mine_logo'>
+        <image src='{{mine_top.mine_one_img}}' class='logo_img'></image>
+        <view class="logo_message">
+          <view class='logo_name'>{{mine_top.mine_one_messageson}} <text class="yelColor"></text></view>
+          <view class='logo_phone'>{{mine_top.mine_one_phone}}</view>
+          <view class='logo_integral' bindtap='jumpIntegral'>积分: {{ mine_top.min_one_integral }}></view>
+        </view>
+      </view>
+      <view class="mine_vipMessage" bindtap='memberCard'>
+        <view class="vip_message" >会员权益</view>
+        <!-- <image bindtap='getQRCode' hidden='{{!mine_top.mine_one_cardNum}}' src='../../images/ewm.png' class="vip_img"></image> -->
+      </view>
+
+    </view>
+    
+      <block wx:for="{{mine_user_Message}}" wx:key="this" >
+    <view class='user_Message'>
+      <view class='disf'>
+        <view class='user_Message_balance' bindtap='balance_href'>
+          <view class='balance_money_num lowo'>
+              <image src='../../images/mine/lowo1.png'></image>
+              <view>
+                  <view>余额</view>
+                  <view>￥{{item.mine_balance}}</view>
+              </view>
+          </view>
+        </view>
+        <view class='splic'></view>
+        <view class='user_Message_coupon' bindtap='balance_coupon'>
+          <view class='balance_money_num lowo'>
+              <image src='../../images/mine/lowo2.png'></image>
+              <view>
+                  <view>优惠券</view>
+                  <view>{{item.mine_coupon}}</view>
+              </view>
+          </view>
+        </view>
+      </view>
+    </view>
+   </block>
+  </block>
+
+
+  <view class='listBox'>
+  <block wx:for="{{mine_list_message}}" wx:key="this">
+    <view class='mine_list mine_list{{index}}' data-ind="{{index}}" bindtap='mine_href'>
+      <view class='mine_list_message'>
+        <view class='mine_list_message_left'>
+          <image src='{{item.mine_list_img}}' class='mine_list_img'></image>
+          <view class='mine_list_name'>{{item.mine_list_name}}</view>
+        </view>
+        <view class='mine_list_message_right'>
+          <view class='mine_list_num'>{{item.mine_list_num}}</view>
+          <image src='{{item.mine_list_RightImg}}' class='mine_list_RightImg'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  </view>
+
+</view>
+<view class="container_linkError" hidden='{{pageTF_other}}'>
+  <image src="/images/linkerror.png" class="linkerror" />
+  <view class="system_text">网络出错啦,请点击按钮重新加载</view>
+  <button class='system_bottom' bindtap='reload'>重新加载</button>
+</view>

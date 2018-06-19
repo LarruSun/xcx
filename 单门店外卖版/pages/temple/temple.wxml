@@ -1,0 +1,330 @@
+<!-- 掌柜推荐图片 -->
+<template name="testtest">
+  <view wx:for="{{recommend_Manager}}" wx:key="this">
+    <view class="recommend_show">
+      <image src="{{item.cuisineUrl}}" class="show_img" />
+      <view class="show_name">{{item.cuisineName}}</view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 门店图片 -->
+<template name="testtest2">
+  <view wx:for="{{store_Photos}}" wx:key="this">
+    <view class="recommend_show">
+      <image src="{{item}}" class="show_Photos" />
+    </view>
+  </view>
+</template>
+<!-- 优惠券数据 -->
+<!--未使用首页  -->
+<template name="testtest3">
+  <block wx:for="{{discount_Coupon.coupon}}" wx:key="this">
+    <view class="discount_Coupon_list">
+      <view id="{{item.id}}" bindtap="checkUserPhone" data-index="{{item.logo_name}}">
+        <view class="Coupon_list_left">
+          <image src="{{discount_Coupon.small_bg}}" class="Coupon_list_Limg"></image>
+          <view class="money">
+            <view class="money_fuH">￥</view>
+
+            <text class="money_fuM">{{item.full_available_money}}</text>
+            <view class="money_main">满{{item.full_available}}元可用</view>
+          </view>
+        </view>
+        <view class="Coupon_list_right">
+          <view class="coupon_logo">
+            <image src="{{item.coupon_logo}}" class="logo_stort"></image>
+            <view class="logo_stort_title">{{item.logo_name}}</view>
+          </view>
+          <view class="coupon_introduce">{{item.full_available_money}}元代金券</view>
+          <view class="coupon_date">
+            <view class="coupon_date_one">
+              <view class="coupon_date_start">{{item.coupon_startDate}}</view>
+              <view class="coupon_date_start">-</view>
+              <view class="coupon_date_start">{{item.coupon_endDate}}</view>
+            </view>
+            <view class="coupon_date_two">
+              <view class="coupon_week">{{item.coupon_week}}</view>
+              <view class="coupon_time">{{item.coupon_time}}</view>
+            </view>
+          </view>
+        </view>
+        <view style="clear:both"></view>
+      </view>
+    </view>
+  </block>
+</template>
+<!--未使用首页 e -->
+<!--未使用优惠券页面 s -->
+<template name="testtest4">
+  <!--新优惠券模板s  -->
+  <block wx:for="{{discount_Coupon2.coupon}}" wx:key="this">
+    <view class='yhq-item' data-id='{{item.id}}'>
+    <!-- <view class='yhq-item' bindtap='Coupon_href' data-id='{{item.id}}'> -->
+      <view class='yhq-itemL'>
+        <view class='red'>
+          <block wx:if='{{ item.couponsType == 1 }}'>
+            <text class='fon30r'>{{ item.vouchers * 0.01 }}元</text>
+          </block>
+          <block wx:else>
+            <text class='fon30r'>{{ item.discount }}折</text>
+          </block>
+        </view>
+          <!--<text class='fon30r'>￥</text>{{item.full_available_money}}</view> -->
+        <view>
+          <view class='extra' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+          <view class='extra' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+        <!--
+          <view wx:if='{{item.full_available != 0}}' class='fon30r color33'>满{{item.full_available}}可用</view>
+          <view wx:if='{{item.full_available == 0}}' class='fon30r color33'>无限制</view>
+        -->  
+          <view class='fon20'>{{item.endDate}}到期</view>
+        </view>
+      </view>
+      <!-- <block wx:if='{{item.redio == "checked"}}'>
+      <view bindtap='chooseCoupon' data-id='{{item.id}}' class='yhq-itemR'>
+        已选中
+      </view>
+    </block> -->
+      <image class='noused' src='../../images/mine/noused.png'></image>
+      <!--<view class='yhq-itemR'>立即使用</view>-->
+    </view>
+  </block>
+  <!--新优惠券模板e  -->
+
+</template>
+<!--未使用优惠券页面 e -->
+
+<!--使用过优惠券页面 s  -->
+<template name="testtest5">
+  <!-- <view wx:for="{{discount_Couponed.coupon}}" wx:key="this">
+    <view class="discount_Coupon_list">
+      <view class="Coupon_list_left">
+        <image src="/images/been_bg.png" class="Coupon_list_Limg"></image>
+        <view class="money">
+          <view class="money_fuH">￥</view>
+          <text class="money_fuM">{{item.full_available_money}}</text>
+          <view wx:if='{{item.full_available != 0}}' class="money_main">满{{item.full_available}}可用</view>
+          <view wx:if='{{item.full_available == 0}}' class="money_main">无限制</view>
+        </view>
+      </view>
+      <view class="Coupon_list_right" style="background:#eee;">
+        <view class="coupon_logo">
+          <image src="{{item.coupon_logo}}" class="logo_stort"></image>
+          <view class="logo_stort_title" style="font-size:14px">{{item.logo_name}}</view>
+        </view>
+        <view class="coupon_introduce" style="width:129px;font-size:16px">{{item.hotpot_messageCoupon}}</view>
+        <view class="coupon_date coupon_date—youhui" style="margin-bottom:51px;">
+          <view class="coupon_date_one" style="margin-top:0">
+            <view class="coupon_date_start">{{item.coupon_startDate}}</view>
+            <view class="coupon_date_start">-</view>
+            <view class="coupon_date_start">{{item.coupon_endDate}}</view>
+          </view>
+          <view class="" style="margin-top:2px;float:left;position:relative">
+            <view class="coupon_week" style="float:left;margin-right:7px;border:0;padding:0;border-radius:0;color:#999">周一</view>
+            <view class="coupon_time" style="float:left;">18：00-22：00</view>
+            <image src="/images/been_ued.png" class="bend_img" style="width:65px;height:65px;top:-80px;position:absolute;right:-113px;"></image>
+          </view>
+        </view>
+      </view>
+      <view style="clear:both"></view>
+    </view>
+  </view> -->
+
+  <!--新优惠券模板s  -->
+  <block wx:for="{{discount_Couponed.coupon}}" wx:key="this">
+    <view class='yhq-item gray'>
+      <view class='yhq-itemL'>
+        <view class='red'>
+
+          <block wx:if='{{ item.couponsType == 1 }}'>
+            <text class='fon30r'>{{ item.vouchers * 0.01 }}元</text>
+          </block>
+          <block wx:else>
+            <text class='fon30r'>{{ item.discount }}折</text>
+          </block>
+
+        </view>
+          <!--<text class='fon30r'>￥</text>{{item.full_available_money}}</view> -->
+        <view>
+          <view class='extra' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+          <view class='extra' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+        <!--
+          <view wx:if='{{item.full_available != 0}}' class='fon30r color33'>满{{item.full_available}}可用</view>
+          <view wx:if='{{item.full_available == 0}}' class='fon30r color33'>无限制</view>
+        -->  
+          <view class='fon20'>{{item.endDate}}到期</view>
+        </view>
+
+      </view>
+      <!-- <block wx:if='{{item.redio == "checked"}}'>
+      <view bindtap='chooseCoupon' data-id='{{item.id}}' class='yhq-itemR'>
+        已选中
+      </view>
+    </block> -->
+      <!-- <view wx:if="true" class='yhq-itemR yhqUsed' data-couponsid='' >
+      已经领取
+    </view> -->
+      <image class='usedImg' src='../../images/been_ued.png'></image>
+    </view>
+  </block>
+  <!--新优惠券模板e  -->
+
+
+</template>
+<!--使用过优惠券页面 e  -->
+<!--过期优惠券页面 s  -->
+<template name="testtest6">
+  <!--新优惠券模板s  -->
+  <block wx:for="{{stale_DatedCouponed.coupon}}" wx:key="this">
+    <view class='yhq-item gray'>
+      <view class='yhq-itemL'>
+        
+        <view class='red'>
+
+          <block wx:if='{{ item.couponsType == 1 }}'>
+            <text class='fon30r'>{{ item.vouchers * 0.01 }}元</text>
+          </block>
+          <block wx:else>
+            <text class='fon30r'>{{ item.discount }}折</text>
+          </block>
+
+        </view>
+          <!--<text class='fon30r'>￥</text>{{item.full_available_money}}</view> -->
+        <view>
+          <view class='extra' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+          <view class='extra' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+        <!--
+          <view wx:if='{{item.full_available != 0}}' class='fon30r color33'>满{{item.full_available}}可用</view>
+          <view wx:if='{{item.full_available == 0}}' class='fon30r color33'>无限制</view>
+        -->  
+          <view class='fon20'>{{item.endDate}}到期</view>
+        </view>
+      </view>
+      <!-- <block wx:if='{{item.redio == "checked"}}'>
+      <view bindtap='chooseCoupon' data-id='{{item.id}}' class='yhq-itemR'>
+        已选中
+      </view>
+    </block> -->
+      <view class='yhq-itemR'>已过期</view>
+    </view>
+  </block>
+  <!--新优惠券模板e  -->
+
+
+</template>
+<!--过期优惠券页面 e  -->
+<!-- 掌柜推荐模板 -->
+<template name="slide">
+  <view class="manager">
+    <view class="manager_title">掌柜推荐</view>
+    <view class="recommend_list">
+      <view class="nav-scroll">
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+          <view class="recommend_box">
+            <template is="testtest" data="{{recommend_Manager}}" />
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 门店照片模板 -->
+<template name="store_Photo">
+  <view class="store_Photos_main">
+    <view class="classname1">
+      <block>———————
+        <text class="classname2"> 门店照片 </text>———————</block>
+    </view>
+    <view class="phones_list">
+      <view class="nav-scroll">
+        <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+          <view class="phones_box">
+            <template is="testtest2" data="{{store_Photos}}" />
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+<!--优惠券模板  -->
+<!--首页 s -->
+<template name="coupon">
+  <view class="discount_Coupon_main">
+    <!-- <view class="classname1">
+      ————————
+      <text class="classname2"> 优惠券 </text>———————
+    </view> -->
+    <template is="testtest3" data="{{discount_Coupon}}" />
+  </view>
+</template>
+<!--首页 e -->
+<!--商家优惠券-->
+<template name="coupon_shop">
+  <view class="discount_Coupon_main">
+    <view wx:for="{{address.coupons}}" wx:key="this">
+      <view class="discount_Coupon_list">
+        <view class="Coupon_list_left">
+          <image src="../../../images/small_redBg.png" class="Coupon_list_Limg"></image>
+          <view class="money">
+            <view class="money_a">
+              <view class="money_fuH">￥</view>
+              <view class="money_fuM">{{item.vouchers}}</view>
+            </view>
+            <view class="money_b">
+              <view wx:if='{{item.lowestConsume != 0}}' class="money_main">满{{item.lowestConsume * 0.01}}可用</view>
+              <view wx:if='{{item.lowestConsume == 0}}' class="money_main">无限制</view>
+            </view>
+          </view>
+        </view>
+        <view class="Coupon_list_right">
+          <view class="coupon_logo">
+            <image src="{{address.business_logo}}" class="logo_stort"></image>
+            <view class="logo_stort_title">{{address.branch_name}}</view>
+          </view>
+          <view class="coupon_introduce">{{item.couponsName}}</view>
+          <view class="coupon_date">
+            <view class="coupon_date_one">
+              <view class="coupon_date_start">{{item.startDate}}</view>
+              <view class="coupon_date_start">-</view>
+              <view class="coupon_date_start">{{item.endDate}}</view>
+            </view>
+            <view wx:if='{{item.periodTime != null}}' class="coupon_date_one">
+              <view class="coupon_date_start">{{item.periodTime}}</view>
+            </view>
+            <view class="coupon_date_two">
+              <view data-id='{{item.id}}' class="coupon_week" bindtap='bindCoupon'>立即领取</view>
+            </view>
+          </view>
+        </view>
+        <view style="clear:both"></view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!--优惠券 未使用过 s  -->
+<template name="coupon_red">
+  <view class="discount_Coupon_main">
+    <template is="testtest4" data="{{discount_Coupon2}}" />
+  </view>
+</template>
+<!--优惠券 未使用过 e  -->
+<!--优惠券 使用过 s  -->
+<template name="coupon_used">
+  <view class="discount_Coupon_main">
+    <template is="testtest5" data="{{discount_Couponed}}" />
+  </view>
+</template>
+<!--优惠券 使用过 e  -->stale_DatedCouponed
+<!--优惠券 过期 s  -->
+<template name="stale_DatedCouponed">
+  <view class="discount_Coupon_main">
+    <template is="testtest6" data="{{stale_DatedCouponed}}" />
+  </view>
+</template>
+<!--优惠券 过期 e  -->

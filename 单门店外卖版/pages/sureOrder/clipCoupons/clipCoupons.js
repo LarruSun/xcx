@@ -1,0 +1,233 @@
+// pages/sureOrder/clipCoupons/clipCoupons.js
+var app = getApp();
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    useness:'checked'
+  },
+  /** 
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      shopId: options.shopId,
+      couponId: options.couponId,
+      yuanjia:options.yuanjia
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.pageTab()
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: wx.getStorageSync('storage_bg'),
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+  radioHref: function () {
+    console.log("使用优惠券")
+  },
+  Nocoupons: function () {
+    console.log("不使用优惠券")
+  },
+  radioChange: function (e) {
+    //console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
+  //页面标签切换及数据加载基础
+  pageTab: function (params) {
+    var that = this
+    var userInfo = wx.getStorageSync('userInfo_')
+    that.setData({
+      userInfo: userInfo
+    })
+    if (userInfo != null && userInfo.openId != null) {
+      this.getMyCouponsByShop()
+    } else {
+      app.getUserInfo(function (userInfo) {
+        //更新数据
+        that.setData({
+          userInfo: userInfo
+        })
+      })
+    }
+  },
+  //根据门店获取用户领取的优惠券
+  getMyCouponsByShop: function (e) {
+    var that = this
+    wx.request({
+      url: getApp().data.pathApi +'/utils/getMyCouponsByShop.do',//自己的服务接口地址
+      method: 'post',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      },
+      data: {
+        openId: that.data.userInfo.openId,
+        shopId: that.data.shopId,
+        orderPrice:that.data.yuanjia
+      },
+      success: function (data) {
+        var pageData = data.data.data; 
+        var useness = that.data.useness
+        console.log(pageData)
+        if (null != that.data.couponId && '' != that.data.couponId) {
+          for (var i = 0; i < pageData.length; i++) {
+            if (pageData[i].id == that.data.couponId){
+              pageData[i].redio = 'checked'
+              useness = ''
+              break
+            }
+          }
+        }
+        that.setData({
+          pageData: pageData,
+          useness: useness
+        })
+      },
+      fail: function () {
+
+      }
+    })
+  },
+  //选择优惠券
+  chooseCoupon: function (e) {
+    
+    var that = this
+    var id = e.currentTarget.dataset.id
+    var data_ = that.data.pageData
+    var pages = getCurrentPages();             //  获取页面栈
+    var currPage = pages[pages.length - 1];    // 当前页面
+    var prevPage = pages[pages.length - 2];    // 上一个页面
+    for(var i = 0; i < data_.length; i++) {
+      data_[i].redio = 'uncheck'
+      if(data_[i].id == id) {
+        data_[i].redio = 'checked'
+        var couponsName = data_[i].couponsName
+        var couponId = data_[i].id
+        if (data_[i].vouchers == null) {
+          var couponDiscount = data_[i].discount
+          var couponAmount = null
+        } else {
+          var couponDiscount = null
+          var couponAmount = data_[i].vouchers.toFixed(2) * 0.01
+        }
+        var lowestConsume = data_[i].lowestConsume * 0.01
+        var couponName = data_[i].couponsName
+        var couponType = 0
+        if (data_[i].couponsType != null) {
+          couponType = data_[i].couponsType
+        }
+        wx.request({
+          url: getApp().data.pathApi +'/utils/chooseCoupon.do',//自己的服务接口地址
+          method: 'post',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+          },
+          data: {
+            couponId: data_[i].couponsId,
+          },
+          success: function (data) { 
+            app.youhuiquan = data_[i];
+            console.log(app)  
+            var pageData = data.data
+            if (pageData.type == "success") {
+              prevPage.setData({
+                yhq: couponsName,
+                couponId: couponId,
+                couponDiscount: couponDiscount,
+                couponAmount: couponAmount,
+                couponName: couponsName,
+                lowestConsume: lowestConsume,
+                couponType: couponType
+              })
+              wx.navigateBack({
+                delta: 1
+              })
+            }else {
+              wx.showModal({
+                title: '提示',
+                content: pageData.message,
+                success: function (res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定')
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            }
+          },
+          fail: function () {
+
+          }
+        })
+        break;
+      }
+    }
+    that.setData({
+      pageData:data_
+    })
+  },
+  //不使用优惠券
+  noCoupon:function(e) {
+    var pages = getCurrentPages();             //  获取页面栈
+    var currPage = pages[pages.length - 1];    // 当前页面
+    var prevPage = pages[pages.length - 2]; 
+    prevPage.setData({
+      yhq: '',
+      couponId: '',
+      couponAmount: '',
+      lowestConsume: '',
+      couponType: ''
+    })
+    wx.navigateBack({
+      delta: 1
+    })
+  }
+})

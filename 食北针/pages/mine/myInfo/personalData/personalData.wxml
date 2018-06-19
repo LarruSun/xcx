@@ -1,0 +1,68 @@
+<!--pages/mine/myInfo/personalData/personalData.wxml-->
+<view class='container_personalData'>
+  <view class='balance_header'>
+    <image src='../../../../images/mine/cardbg.png' class='balance_header_bg'></image>
+    <view class='balance_yue'>
+      <image src='{{userInfo.avatarUrl}}' class='balance_header_moneyImg'></image>
+      <view class='balance_header_money'>{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view class='content_set'>
+    <view class="section">
+      <text class='section_set'style='margin-right:11px;'><text class='dian'>*</text>会员姓名:</text>
+      <input focus='false' class='section_set_input' value='{{name}}' type='text' bindinput="nameInputEvent" />
+    </view>
+    <view class="section">
+
+      <text class='section_set' style=''><text class='dian'>*</text>性别:</text>
+      <picker range="{{page_gender}}" value="{{gender_index}}" bindchange="genderPickerChange">
+        <input disabled='true' class='section_set_input' value='{{gender}}' type='text' placeholder="" />
+      </picker>
+
+    </view>
+    <view class="section">
+
+      <text class='section_set' style='margin-left:9px;'>生日:</text>
+      <picker mode="date" value="{{birthday}}" start="1900-01-01" end="{{endDate}}" bindchange="datePickerBindchange">
+        <input class='section_set_input' value='{{birthday}}' disabled='false' type='idcard' placeholder="" />
+      </picker>
+
+    </view>
+     <!-- <view class="section">
+      <text class='section_set' style="margin-left:9px;margin-right:11px;">所属地区:</text>
+      <input focus='true' value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" class='section_set_input' type='text' />
+    </view>  -->
+
+    <view class="section">
+      <text class='section_set' style="margin-left:9px;margin-right:11px;">所属地区:</text>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" style='margin-left:109px;' >
+        <view class="picker section_set_input">
+          {{region[0]}}-{{region[1]}}-{{region[2]}}
+        </view>
+      </picker>
+    </view>
+
+
+
+    <view class='start'>带*必填项</view>
+    <button type="primary" bindtap="primary">确定</button>
+  </view>
+
+  <view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="open" class="city-cancel">取消</view>
+      <view bindtap="open" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+</view>

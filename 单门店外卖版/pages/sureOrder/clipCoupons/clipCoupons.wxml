@@ -1,0 +1,63 @@
+<!--pages/sureOrder/clipCoupons/clipCoupons.wxml-->
+<view class="container_clipCoupons">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view bindtap='noCoupon' class="isNeedfp">
+      <view class="">不使用优惠券</view>
+      <label class="radio" bindtap='Nocoupons'>
+        <radio checked="checked" />
+      </label>
+      <!-- <view class="isNeedfpimg" bindtap="isselectThis" data-idx="-1">
+      <icon hidden="{{isneedfp}}" type="success" size="20" color="red" />
+    </view> -->
+    </view>
+    <view class="coupon_CardData">
+      <view class="discount_Coupon_main">
+        <block wx:for="{{pageData}}" wx:key="item">
+          <view class='yhq-item' wx:if='{{yuanjia > item.lowestConsume * 0.01}}'>
+            <view class='yhq-itemL'>
+              <view class='red'>
+                <block wx:if='{{ item.couponsType == 1 }}'>
+                  <text class='fon30r'>{{ item.vouchers * 0.01 }}元</text>
+                </block>
+                <block wx:else>
+                  <text class='fon30r'>{{ item.discount }}折</text>
+                </block>
+                </view>
+              <view>
+                <view class='fon30r color33' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+                <view class='fon30r color33' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+
+                <view class='fon20'>{{item.endDate}}到期</view>
+              </view>
+            </view>
+            <block wx:if='{{item.redio == "checked"}}'>
+              <view bindtap='chooseCoupon' data-id='{{item.id}}' class='yhq-itemR'>已选中</view>
+            </block>
+            <block wx:else>
+              <view bindtap='chooseCoupon' data-id='{{item.id}}' class='yhq-itemR'>立即使用</view>
+            </block>
+          </view>
+          <!-- 条件不满足 -->
+          <view class='yhq-item-disabled' wx:else>
+            <view class='yhq-itemL'>
+              <view class='red'>
+                <block wx:if='{{ item.couponsType == 1 }}'>
+                  <text class='fon30r'>{{ item.vouchers * 0.01 }}元</text>
+                </block>
+                <block wx:else>
+                  <text class='fon30r'>{{ item.discount }}折</text>
+                </block>
+                </view>
+              <view>
+                <view class='fon30r color33' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+                <view class='fon30r color33' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+                <view class='fon20'>{{item.endDate}}到期</view>
+              </view>
+            </view>
+              <view data-id='{{item.id}}' class='yhq-itemR'>无法使用</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </radio-group>
+</view>

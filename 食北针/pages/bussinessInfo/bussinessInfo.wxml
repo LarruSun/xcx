@@ -1,0 +1,78 @@
+<!--bussinessInfo.wxml-->
+<import src="../temple/temple.wxml" />
+<view class="container">
+  <view class="topBox">
+    <view class="bussShow">
+      <view class="bussShowL">
+        <view class="bussLogo">
+          <image src="{{address.business_logo}}"></image>
+        </view>
+        <view class="bussNC">
+          <view class="bussN">
+            {{address.business_name}}（{{address.branch_name}}）
+          </view>
+          <view class="bussC">
+            分类:{{address.shop_type}}
+          </view>
+        </view>
+      </view>
+      <view class="bussTel">
+        <image src="../../../../../images/img/telphone.png"></image>
+      </view>
+    </view>
+    <view class="addr_">
+      <image src="../../../../../images/img/posi.png"></image>
+      {{address.address}}
+      <text class="red">{{address.distinces}}米</text>
+    </view>
+  </view>
+  <view wx:if='{{address.coupons.length > 0}}' class="coupon">
+    <view class="mdzptop">
+      <image src="../../../../../images/img/bussImgLogo.png"></image>优惠券
+    </view>
+    <view class="coupon_CardData">
+      <template is="coupon_shop" data="{{address}}"></template>
+    </view>
+  </view>
+  <view class="mdzp">
+    <view class="mdzptop">
+      <image src="../../../../../images/img/bussImgLogo.png"></image>门店照片
+    </view>
+    <scroll-view class="scroll-view_H " scroll-x>
+      <view class="mdzpBox">
+        <block wx:for='{{address.image}}'>
+          <view class="">
+            <image src="{{item.img}}"></image>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="mdxx">
+    <view class="mdzptop">
+      <image src="../../../../../images/img/wmInf.png"></image>门店消息
+    </view>
+    <view class="mdxxBox">
+      <view class="mdxx-item">
+        <view class="txt">￥{{address.startingPrice}}</view>
+        <view class="">起送价</view>
+      </view>
+      <view class="mdxx-item">
+        <view class="txt">￥{{address.takeOutAmount}}</view>
+        <view class="">商家配送</view>
+      </view>
+      <view class="mdxx-item">
+        <view class="txt">{{address.takeOutTime}}分钟</view>
+        <view class="">配送时间</view>
+      </view>
+    </view>
+  </view>
+  <view class="sjhd">
+    <view class="sjhdtop">
+      <image src="../../../../../images/img/huodong.png"></image>商家活动
+    </view>
+    <view class="">
+      <image src="../../../../../images/img/r.png"></image>
+    </view>
+  </view>
+</view>

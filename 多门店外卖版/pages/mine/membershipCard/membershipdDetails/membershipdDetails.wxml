@@ -1,0 +1,82 @@
+<!--pages/mine/membershipCard/membershipdDetails/membershipdDetails.wxml-->
+<view class='container_membershipdDetails'>
+  <view class='membershipdDetails_top'>
+    <view class='content_card' style='background:{{detial.backgroundColor}}'>
+      <view class='content_card_title'>
+        <view class='content_card_left'>
+          <image src='{{detial.logo}}' class='content_card_img'></image>
+          <view class='content_card_name'>{{detial.name}}
+            <view class='member'>{{detial.cardName}}</view>
+          </view>
+          
+        </view>
+        <view class='content_card_right' bindtap='goToQRCode'> 
+          <image src="../../../../images/mine/ewm.png"></image>
+        </view>
+      </view>
+      <view class='content_card_XQ'>
+        <view class='content_card_XQ_left'>
+          <view class='content_card_vip'>{{detial.cardNo}}</view>
+          <!-- <view class="content_card_time">有效期：{{detial.time}}</view> -->
+        </view>
+        <view class='content_card_XQ_right'>
+          <view class='content_card_user'>{{detial.status}}</view>
+          <view wx:if='{{detial.default == 1}}' class='content_card_user'>默认卡</view>
+        </view>
+      </view>
+    </view>
+    <view class='content_set'>
+      <view wx:if='{{detial.default != 1}}' class='content_set_dele' bindtap='deleCard'>删除</view>
+      <view wx:if='{{detial.default != 1}}' class='content_set_default' bindtap='toBeDefault'>作为默认卡</view>
+    </view>
+  </view>
+
+  <!--
+  <view class='userInfo'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view class='userInfo_message'>
+      <view class='userInfo_message_neme'>{{userInfo.nickName}}</view>
+      <view class="userInfo_message_ID">No.{{detial.cardNo}}</view>
+    </view>
+  </view>
+  -->
+
+  <view class='VipInter'>
+    <view class='interest_top'>
+      <image src='../../../../images/mine/inter.png'></image>
+      <text class='interest'>会员权益</text>
+    </view>
+    <view class='interest_bottom'>
+      <view wx:if='{{detial.valueCard == 1}}' class='equity'>
+        <image src='../../../../images/mine/lowo1.png' style='width:32px;height:32px'></image>
+        <view class='equity_text'>储值</view>
+      </view>
+      <view wx:if='{{detial.discount != null && detial.discount != 10}}' class='equity'>
+        <image src='../../../../images/mine/VcardZhe.png' style='width:53px;height:32px'></image>
+        <view class='equity_text'>{{detial.discount}}折</view>
+      </view>
+      <view wx:if='{{detial.freightFree == true}}' class='equity'>
+        <image src='../../../../images/mine/baoyou.png' style='width:32px;height:32px'></image>
+        <view class='equity_text'>免配送</view>
+      </view>
+      <view wx:if='{{detial.integral == 1}}' class='equity'>
+        <image src='../../../../images/mine/songjifen.png' style='width:32px;height:32px'></image>
+        <view class='equity_text'>送积分</view>
+      </view>
+    </view>
+  </view>
+  <view class='uesrKnow'>
+    <view class='uesrKnow_text'>
+      <image src='../../../../images/mine/useList.png'></image>
+      <text class='interest'>使用须知</text>
+    </view>
+    <view class='dsj'>
+      <image class='{{rote}}' src='../../../../images/mine/dsj.png' bindtap='showhidden'></image>
+    </view>
+    <view class='' hidden='{{showMust}}'>
+      <block wx:for="{{detial.remark}}" wx:key="this">
+        <view class='uesrKnow_hide_text'>{{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>

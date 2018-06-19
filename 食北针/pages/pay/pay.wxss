@@ -1,0 +1,166 @@
+/* pay.wxss */
+page{
+  background: #eee;
+}
+.lastTime{
+  width:100%;
+  text-align: center;
+  font-size:24rpx;
+  box-sizing: border-box;
+  padding:10rpx 0rpx;
+}
+.payBox{
+  width:100%;
+  font-size:26rpx;
+}
+.payname,.payInf,.paymuch{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding:0 20rpx;
+  background: #fff;
+  min-height: 80rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.payname{
+  justify-content: start;
+
+}
+.payname text:nth-child(2){
+  margin-left: -27rpx
+}
+.payInf{
+  justify-content: start;
+}
+.payInftxt_body{
+  width: 100%
+}
+.payname text:nth-child(1),.payInf text:nth-child(1),.paymuch text:nth-child(1){
+  width:154rpx;
+}
+.payInf image{
+   width:22rpx;
+   height:30rpx;
+   transform: rotateZ(90deg);
+}
+.payInf .rote{
+   transform: rotateZ(270deg);
+}
+.payInftxt{
+  display: flex;
+  justify-content: space-between;
+   align-items: center;  
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
+   word-break: break-all;
+}
+.txton{
+   white-space: normal;
+   padding:6rpx 0rpx;
+}
+.bot{
+   position: fixed;
+   bottom: 0;
+   left:0;
+   right:0;
+   height:80rpx;
+   background: red;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color:#fff;
+   font-size:36rpx
+}
+.payMethod{
+   position: fixed;
+   bottom:0;
+   left:0;
+   right:0;
+   background: #fff;
+   z-index: 4;
+}
+.payT{
+   background: #f4f5f9;
+   display: flex;
+   justify-content: space-between;
+   text-align: center;
+   padding:6rpx 0rpx;
+}
+.payTL{
+   width:90%;
+   font-size:24rpx;
+   font-weight: 600;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.payTR{
+   width:10%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.paybox{
+   font-size:24rpx;
+   box-sizing: border-box;
+   padding:20rpx;
+}
+.payhy,.payhyL{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.payhy{
+   margin-bottom: 20rpx;
+}
+.payhyL{
+   font-size:24rpx;
+}
+.payhyR{
+   text-align: center;
+}
+.payhyR view{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.payhyR view text{
+   font-weight: 600;
+   margin-right: 10rpx;
+}
+.payhyL image,.paywxL image{
+   width:80rpx;
+   height:80rpx;
+   margin-right:20rpx;
+}
+.payhyR image{
+   width:30rpx;
+   height:30rpx;
+}
+.paywxL{
+   display: flex;
+   align-items: center;
+}
+.opac{
+   opacity: 0.4;
+   filter: alpha(opacity=40);
+}
+
+
+.disabled{
+  pointer-events:none;
+  cursor:not-allowed;
+  opacity:.35;
+  filter:alpha(opacity=65);
+  box-shadow:none;
+}
+.payInftxt_text{
+  width:50%!important;
+}
+.payInftxt_text1{
+  width:154rpx!important
+}
+

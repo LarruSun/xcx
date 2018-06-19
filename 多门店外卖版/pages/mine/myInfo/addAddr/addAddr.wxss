@@ -1,0 +1,86 @@
+/* addAddr.wxss */
+page{
+  background: #eee;
+}
+.wid120{
+  width:120rpx;
+}
+.wid180{
+  width:260px;
+}
+.wid300{
+  width:300px;
+}
+.userInfo,.userAddr{
+   box-sizing: border-box;
+   padding:0 30rpx;
+   background: #fff;
+}
+.userAddr{
+   margin-top:30rpx;
+}
+.user-name,.user-sex,.user-tel,.addr-t,.addr-b{
+   display: flex;
+   font-size:26rpx;
+   align-items: center;
+   box-sizing: border-box;
+   padding:20rpx 0rpx;
+   border-bottom: 1rpx solid #e5e5e5;
+}
+.user-tel,.addr-b{
+   border:none;
+}
+.addr-t image{
+   width:20rpx;
+   height:30rpx;
+}
+.addr-t{
+   justify-content: space-between;
+}
+.addr-tL{
+   display: flex;
+   align-items: center;
+}
+.user-sexR{
+   display: flex;
+}
+.usexRitem{
+   display: flex;
+   align-items: center;
+   margin-right: 20rpx;
+}
+.usex{
+   border-radius: 50%;
+   width:30rpx;
+   height:30rpx;
+   border:1rpx solid #969290;
+   margin:0 10rpx;
+}
+.sexon{ 
+   background: url(../../../img/yes.png);
+   background-size: cover;
+   border-color: #fff;
+}
+.sureBox{
+   display: flex;
+   justify-content: center;
+   width:100%;
+   margin-top:20%;
+}
+.sureBtn{
+   background: red;
+   border-radius: 30rpx;
+   box-sizing: border-box;
+   padding:16rpx;
+   width:80%;
+   color:#fff;
+   font-size:30rpx;
+   text-align: center;
+}
+.in-map{
+  width: 70px;
+  height: 30px;
+  display:flex;
+align-items:center;
+
+}

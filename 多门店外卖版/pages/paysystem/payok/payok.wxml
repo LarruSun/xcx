@@ -1,0 +1,18 @@
+<!--payok.wxml-->
+<view class="">
+    <view class="lotop">
+        <view class="tlogo"><image src="../../../img/logo.png"></image><text>美宜多烟酒专柜深圳科苑花园店</text></view>
+        <view class="blogo">￥123.00</view>
+        <view class="red">支付成功</view>
+    </view>
+     <view class="detail">
+             <view><text class="gary">交易金额</text><text>￥123.00</text></view>
+             <view><text class="gary">会员卡支付</text><text>￥23.00</text></view>
+             <view><text class="gary">微信实付</text><text>￥100.00</text></view>
+             <view class="borb"><text class="gary">券抵用</text><text>￥0.00</text></view>
+             <view><text class="gary">交易时间</text><text>2017.02.07  16:37</text></view>
+     </view>
+     <view class="over">
+          <view class="">完成</view>
+     </view>
+</view>

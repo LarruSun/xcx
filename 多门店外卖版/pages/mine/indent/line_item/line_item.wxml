@@ -1,0 +1,223 @@
+<!--pages/mine/indent/line_item/line_item.wxml-->
+<wxs src="../../../../utils/common.wxs" module="common" />
+<view hidden='{{!pageData}}' class="container_lineItem">
+  <view class="order-no">
+    <text>订单编号 : {{orderNo}}</text>
+    <text class="font-pink">{{ common.orderStatus(pageData.status) }}</text>
+  </view>
+  <!-- <view class="order_status">订单状态</view>
+  <view class="line">
+    <image src='../../../../images/img/line.png' class="line_img"></image>
+  </view> -->
+  <!-- 正常点餐 start -->
+  <!-- <block wx:if='{{pageData.SummaryOrderAfterSale.afterSaleStatus == null || pageData.SummaryOrderAfterSale.afterSaleStatus == "cancelSalStatus"}}'>
+    <view class="order_main">
+      <view class="order_line">
+        <view class="order_submit">
+          订单已提交
+          <image wx:if='{{pageData.status != "HASCLOSED"}}' src='../../../../images/img/s1.png' class="order_spot"></image>
+
+          <image wx:if='{{pageData.status == "HASCLOSED" }}' src='../../../../images/img/s2.png' class="order_spot"></image>
+        </view>
+      </view>
+      <view class="order_submit">
+        <block wx:if='{{pageData.status == "HASCLOSED" || pageData.status == "NONPAYMENT"}}'>
+          <image src='../../../../images/img/s2.png' class="order_spot"></image>
+        </block>
+        <block wx:else>
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </block>
+        支付成功
+        <block wx:if='{{pageData.status == "NONRECEIVEORDER" || pageData.status == "HASCLOSED" || pageData.status == "NONPAYMENT"}}'>
+          <image src='../../../../images/img/s2.png' class="order_spot"></image>
+        </block>
+        <block wx:else>
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </block>
+      </view>
+      <view class="order_submit">
+        <block wx:if='{{pageData.status == "NONRECEIVEORDER" || pageData.status == "NONPAYMENT" || pageData.status == "SENDGOODS" || pageData.status == "NONSENDGOODS" || pageData.status == "HASCLOSED"}}'>
+          <image src='../../../../images/img/s2.png' class="order_spot"></image>
+        </block>
+        <block wx:else>
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </block>
+        确认送达
+      </view>
+    </view>
+  </block> -->
+  <!-- 正常点餐 end -->
+  <!-- 售后 start -->
+  <!-- <block wx:if='{{pageData.SummaryOrderAfterSale != null && pageData.SummaryOrderAfterSale.afterSaleStatus != "cancelSalStatus"}}'>
+    <view class="order_main">
+      <view class="order_line">
+        <view class="order_submit">
+          申请售后
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </view>
+      </view>
+      <view class="order_submit">
+        <block wx:if='{{pageData.SummaryOrderAfterSale.afterSaleStatus == "applyStatus"}}'>
+          <image src='../../../../images/img/s2.png' class="order_spot"></image>
+        </block>
+        <block wx:else>
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </block>
+        审核时间
+        <block wx:if='{{pageData.SummaryOrderAfterSale.afterSaleStatus == "applyStatus"}}'>
+          <image src='../../../../images/img/s2.png' class="order_spot"></image>
+        </block>
+        <block wx:else>
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </block>
+      </view>
+      <view class="order_submit">
+        <block wx:if='{{pageData.SummaryOrderAfterSale.afterSaleStatus == "applyStatus" || pageData.SummaryOrderAfterSale.afterSaleStatus == "unrefundStatus"}}'>
+          <image src='../../../../images/img/s2.png' class="order_spot"></image>
+        </block>
+        <block wx:else>
+          <image src='../../../../images/img/s1.png' class="order_spot"></image>
+        </block>
+        退款时间
+      </view>
+    </view>
+  </block> -->
+  <!-- 售后 end -->
+  <!-- <block wx:if='{{pageData.SummaryOrderAfterSale.afterSaleStatus == "applyStatus" || pageData.status == "NONRECEIVEORDER"}}'>
+    <view class="order_hint">请耐心等待商家确认</view>
+  </block>
+  <block wx:if='{{(pageData.status == "NONSENDGOODS" && pageData.SummaryOrderAfterSale == null) || (pageData.status == "NONSENDGOODS" && pageData.SummaryOrderAfterSale.afterSaleStatus == "cancelSalStatus")}}'>
+    <view class="order_hint">商家已接单，请耐心等待</view>
+  </block>
+  <block wx:if='{{(pageData.status == "SENDGOODS" && pageData.SummaryOrderAfterSale == null) || (pageData.status == "SENDGOODS" && pageData.SummaryOrderAfterSale.afterSaleStatus == "cancelSalStatus")}}'>
+    <view class="order_hint">订单派送中，请耐心等待</view>
+  </block>
+  <block wx:if='{{pageData.status == "HASDONE" && pageData.SummaryOrderAfterSale == null}}'>
+    <view class="order_hint">订单已完成</view>
+  </block>
+  <block wx:if='{{pageData.status == "HASCLOSED" && pageData.SummaryOrderAfterSale.afterSaleStatus == "unrefundStatus"}}'>
+    <view class="order_hint">退款失败</view>
+  </block> -->
+  <!-- <view class="order_line_time">
+    <view class="order_line_spot">{{pageData.createTime}}</view>
+    <view class="order_line_spot">12:27:25</view>
+    <view class="order_line_spot">12:27:25</view>
+  </view> -->
+  <!-- <view class="arrival_time" wx:if='{{pageData.status == "NONSENDGOODS" || pageData.status == "SENDGOODS"}}'>
+    <image src='../../../../images/img/time.png' class='arrival_time_img'></image>
+    <view>预计送达时间：
+      <text>{{pageData.yjtime}}</text> </view>
+  </view>
+  <view class="arrival_time" wx:if='{{(pageData.SummaryOrderAfterSale.afterSaleStatus == "applyStatus" && pageData.status == "HASCLOSED") || pageData.status == "NONRECEIVEORDER"}}'>
+    <view>请耐心等待商家确认</view>
+  </view>
+  <view class="arrival_time" wx:if='{{pageData.SummaryOrderAfterSale.afterSaleStatus == "refundOrder" && pageData.status == "HASCLOSED"}}'>
+    <view>已退款</view>
+  </view>
+  <view class="arrival_time" wx:if='{{(pageData.status == "HASCLOSED" && pageData.SummaryOrderAfterSale == null) || (pageData.status == "HASCLOSED" && pageData.SummaryOrderAfterSale.afterSaleStatus == "refundStatus")}}'>
+    <view>订单已关闭</view>
+  </view>
+  <view class="arrival_time" wx:if='{{pageData.status == "HASCLOSED" && pageData.SummaryOrderAfterSale.afterSaleStatus == "unrefundStatus"}}'>
+    <view>请联系商家</view>
+  </view>
+  <view class="arrival_time" wx:if='{{pageData.status == "HASDONE"}}'>
+    <view>订单已完成</view>
+  </view> 
+  <view class="order_status">订单详情</view>-->
+  <view class="order_list">
+    <view class="information" bindtap='goToTakeOut'>
+      <image src='{{pageData.shop.imgUrl}}' class="information_left_img"></image>
+      <view class="information_name">
+          {{pageData.shop.business_name}}(<text>{{pageData.shop.branch_name}}</text>)
+      </view>
+    </view>
+    <block wx:for="{{pageData.prods}}" wx:key="this" wx:item="item">
+      <view class="dishes">
+        <view class="dishes_top">
+          <view class="black_font">{{item.commodityName}}</view>
+          <view class="gray_main">
+            <view class='gray '>x{{item.prodNum}}</view>
+            <view class='gray gray_one'>￥{{ common.toFix(item.prodAllPrice * 0.01) }}</view>
+          </view>
+        </view>
+        <view class="dishes_top font-pink" style="font-size: 24rpx" wx:if="{{ item.tech }}">{{ item.tech }}</view>
+      </view>
+    </block>
+  </view>
+  <view class="discount-list">
+    <view wx:if="{{type == 'WMCATERING'}}">
+      <view wx:if='{{pageData.CyOrder.deliveryFee != 0}}' class="service_message">
+        <view class="service_charge">配送费</view>
+        <view class="service_charge_money">￥{{ common.toFix(pageData.CyOrder.deliveryFee * 0.01) }}</view>
+      </view>
+      <view wx:if='{{pageData.CyOrder.mealsFee != 0}}' class="service_message">
+        <view class="service_charge">餐盒费</view>
+        <view class="service_charge_money">￥{{ common.toFix(pageData.CyOrder.mealsFee * 0.01) }}</view>
+      </view>
+      <view wx:if='{{pageData.CyOrder.takeFee == true}}' class="service_message">
+        <view class="service_charge">会员免配送</view>
+        <view class="service_charge_money">-￥{{ common.toFix(pageData.CyOrder.deliveryFee * 0.01) }}</view>
+      </view>
+      <block wx:for="{{pageData.SummaryOrderDiscount}}" wx:key="this" wx:item="item">
+        <view wx:if='{{item.discountType == "DISCOUNT"}}' class="service_message">
+          <view class="service_charge">优惠券</view>
+          <view class="service_charge_money">-￥{{ common.toFix(item.discountmoney * 0.01) }}</view>
+        </view>
+        <view wx:if='{{item.discountType == "MEMBERCARD"}}' class="service_message">
+          <view class="service_charge">会员卡折扣</view>
+          <view class="service_charge_money">{{item.discountLimit}}折</view>
+        </view>
+      </block>
+      <view class="service_message" wx:for="{{pageData.order.summaryOrderDiscounts}}">
+        <view class="service_charge">{{ item.detial }}</view>
+        <view class="service_charge_money">-￥{{ common.toFix(item.discountmoney * 0.01) }}</view>
+      </view>
+    </view>
+    <view wx:if="{{type == 'TSCATERING'}}">
+      <view class="service_message" wx:for="{{eatInremark}}">
+        <view class="service_charge">{{ item.surchargeName }}</view>
+        <view class="service_charge_money">￥{{ common.toFix(item.total * 0.01) }}</view>
+      </view>
+      <view class="service_message" wx:for="{{pageData.order.summaryOrderDiscounts}}" wx:if="{{pageData.order.summaryOrderDiscounts.length != 0}}">
+        <view class="service_charge">{{ item.detial }}</view>
+        <view class="service_charge_money">-￥{{ common.toFix(item.discountmoney * 0.01) }}</view>
+      </view>
+    </view>
+  </view>
+  <view class="order_info">
+    <view class="order_info_item">
+      <text>订单时间 : </text>
+      <text>{{ pageData.createTime }}</text>
+    </view>
+    <view class="order_info_item">
+      <text>支付方式 : </text>
+      <text>在线支付</text>
+    </view>
+    <view wx:if="{{type == 'WMCATERING' && pageData.order.summaryOrderTakeOut}}">
+      <view class="order_info_item" wx:if="{{ pageData.takeOutType }}">
+        <text>配送公司 : </text>
+        <text>{{ pageData.takeOutType }}</text>
+      </view>
+      <view class="order_info_item"  wx:if="{{ pageData.order.summaryOrderTakeOut.carrier_driver_name }}">
+        <text>配送员 : </text>
+        <text>{{ pageData.order.summaryOrderTakeOut.carrier_driver_name }}</text>
+        <text class="driver-phone" bindtap="call" data-phone="{{pageData.order.summaryOrderTakeOut.carrier_driver_phone}}">{{ pageData.order.summaryOrderTakeOut.carrier_driver_phone }}</text>
+      </view>
+      <!-- <view class="order_info_item">
+        <text>期望时间 : </text>
+        <text>{{ common.formartTime(pageData.order.summaryOrderTakeOut.push_time) }}</text>
+      </view> -->
+      <view class="order_info_item">
+        <text>配送地址 : </text>
+        <text>{{ pageData.order.address }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="service_all">
+    <text wx:if="{{discountmoney}}">优惠 : ￥{{ common.toFix(discountmoney * 0.01) }}</text>
+    <text>合计 : <text class="font-pink">￥{{ common.toFix(pageData.payTotal * 0.01) }}</text></text>
+  </view>
+  <!-- <view class="single_again">
+    <button class="single_bottom" bindtap='takeAgain'>再来一单</button>
+  </view> -->
+</view>

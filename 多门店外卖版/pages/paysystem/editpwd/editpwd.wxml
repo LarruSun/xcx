@@ -1,0 +1,14 @@
+<!--editpwd.wxml-->
+<view class="">
+   <view class="Box">
+       <view class="flexitem just pad"><view class="flexitem"><text>手机号:</text><input type="number" placeholder="请输入手机号" placeholder-style="color:rgb(153, 153, 153);" /></view> <view class="getma">获取验证码</view></view>
+       <view class="flexitem pad"><text>验证码:</text><input type="text" placeholder="请输入验证码" placeholder-style="color:rgb(153, 153, 153);" /></view>
+   </view>
+   <view class="Box">
+       <view class="flexitem pad"><text>请输入新密码:</text><input type="password" placeholder="输入六位数字支付密码" placeholder-style="color:rgb(153, 153, 153);" /></view>
+       <view class="flexitem pad"><text>再次输入新密码:</text><input type="password" placeholder="确认支付密码" placeholder-style="color:rgb(153, 153, 153);" /></view>
+   </view>
+   <view class="sureBtn">
+         <view class="">确认</view>
+   </view>
+</view>

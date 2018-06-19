@@ -1,0 +1,18 @@
+<!--pages/coupon/coupon_href/coupon_href.wxml-->
+<view hidden='{{!pageData.couponsColor}}' class="couponHref_padding" style='background:{{pageData.couponsColor}}'>
+  <view class="container_couponHref">
+    <view class="couponHref_body">
+      <view class="couponHref_uesr">{{pageData.couponsName}}</view>
+      <view class="couponHref_JS">{{pageData.vouchers}}元代金券</view>
+    </view>
+    <view class="hr"></view>
+    <view class="couponHref_main">
+      <view class="couponHref_JIES">使用时向服务员出示此券</view>
+      <view class="barcode">
+        <view class="barnum">{{code}}</view>
+        <canvas canvas-id="barcode" class="canvas" />
+      </view>
+      <view class="couponHref_Barcode">{{pageData.receiveCode}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,71 @@
+<view class='content'>
+
+<block wx:for='{{ score }}'>
+  <view class='ticket'>
+    <view class='left_cont'>
+      <view class='title'>{{ item.couponsName }}</view>
+      <block wx:if='{{ item.couponsType == 1 }}'>
+        <view class='money'>{{ item.vouchers * 0.01 }}元</view>
+      </block>
+      <block wx:else>
+        <view class='money'>{{ item.discount }}折</view>
+        
+      </block>
+      <view class='extra' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+      <view class='extra' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+      <block wx:if='{{ item.foodRange == 0 }}'>
+        <view class='intro'>全场菜品通用</view>
+      </block>
+      <view class='time'>有效期：{{ item.startDate }} ~ {{ item.endDate }}</view>
+    </view>
+    <view class='right_cont'>
+      <view>兑换积分</view>
+      <view class='score'>{{ item.integer }}积分</view>
+      <view bindtap='change' data-id='{{ index }}' class='btn'>立即兑换</view>
+    </view>
+  </view>
+</block>
+
+</view>
+<view class='window' style='display:{{ hidden }};'>
+  <view class='close'>
+    <image src="../../../../images/mine/close.png" bindtap='close'></image>
+  </view>
+  <view class='ticket_box'>
+    <view class='title'>{{ data.couponsName }}</view>
+
+
+    <block wx:if='{{ data.couponsType == 1 }}'>
+        <view class='money'>{{ data.vouchers * 0.01 }}元</view>
+    </block>
+    <block wx:else>
+      <view class='money'>{{ data.discount }}折</view>
+    </block>
+    <view class='extra' wx:if='{{ data.lowestConsume == 0 }}'>无限制</view>
+    <view class='extra' wx:else>满{{ data.lowestConsume * 0.01 }}可用</view>
+    <block wx:if='{{ data.adaptShop == 0 }}'>
+        <view>适用门店: 全部门店</view>
+    </block>
+    <block wx:if='{{ data.foodRange == 0 }}'>
+        <view>适用菜品: 全场菜品</view>
+    </block>
+    <view>有效期：{{ data.startDate }} ~ {{ data.endDate }}</view>
+  </view>
+
+  <view class='btn_box'>
+    <view class='btn' data-id='{{ data.integerExchangeId }}' bindtap='changeIntegral'>花费{{ data.integer }}积分兑换</view>
+  </view>
+  
+</view>
+
+<view class='shadow' bindtap='close' style='display:{{ hidden }};'></view>
+
+<view class='dialog' style='display:{{ dialog }};'>
+  <block wx:if='{{ logData.type == "fail" }}'>
+    <image src='../../../../images/mine/fail.png'></image>
+  </block>
+  <block wx:else>
+    <image src='../../../../images/mine/success.png'></image>
+  </block>
+  {{ logData.message }}
+</view>

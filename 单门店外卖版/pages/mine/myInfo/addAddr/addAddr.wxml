@@ -1,0 +1,40 @@
+<!--addAddr.wxml-->
+<view class="addAddr">
+     <view class="userInfo">
+          <view class="user-name">
+              <view class="wid120">收货人</view><input value='{{name}}' bindinput='inputName' placeholder="请输入收货人姓名" />
+          </view>
+          <view class="user-sex">
+               <view class="wid120"></view>
+               <view class="user-sexR">
+                   <view class="usexRitem" bindtap="setsex" data-sex="0"> <view class="usex"><icon hidden="{{sex}}" type="success" size="16" color="red"/></view> 先生</view>
+                   <view class="usexRitem" bindtap="setsex" data-sex="1"> <view class="usex"><icon hidden="{{!sex}}" type="success" size="16" color="red"/></view>  女士</view>
+               </view>              
+          </view>
+          <view class="user-tel">
+               <view  class="wid120">手机号</view>
+               <input value='{{phone}}' bindinput='inputPhone' placeholder="请输入收货人手机号码" />
+          </view>
+     </view>
+     <view class="userAddr">
+          <view class="addr-t">
+              <view class="addr-tL"  bindtap="chooseLocation" >
+                   <view class="wid120">地址</view>
+                   <input class="wid180" value='{{address}}' placeholder="小区/写字楼/学校等" />
+              </view>
+              <view class='in-map'>
+              <image  src="../../../../images/img/r.png"></image>
+              </view>
+              
+          </view>
+          <view class="addr-b">
+              <view class="wid120">详细地址</view>
+              <input class="wid300" value='{{detialed}}' bindinput='detailLocat' placeholder="" />
+          </view>
+     </view>
+     <view class="sureBox">
+          <view class="sureBtn" bindtap="toselectAddr">确定</view>
+     </view>
+</view>
+
+

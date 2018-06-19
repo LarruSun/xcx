@@ -1,0 +1,36 @@
+<!--fpInfo.wxml-->
+<view class="fpInfo">
+  <view bindtap='noReceipt' class="isNeedfp">
+    <view class="">不需要发票</view>
+    <view class="isNeedfpimg" bindtap="isselectThis" data-idx="-1">
+      <icon hidden="{{isneedfp}}" type="success" size="20" color="red" />
+    </view>
+  </view>
+  <view class="fpList">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" bindtap='chooseFp' data-fpid='{{item.id}}' data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="">
+      <view class="content list-item">
+        <view class="">{{item.receiptTitle}}</view>
+        <view>{{item.taxNum}}</view>
+        <view class="isNeedfpimg" data-idx="{{index}}" bindtap="isselectThis">
+          <icon hidden="{{item.ishidden}}" type="success" size="20" color="red" />
+        </view>
+      </view>
+      <view class="del" catchtap="del" data-fpid='{{item.id}}' data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <view class="addfpbtn" bindtap="tocreatefp">
+    <view class="">新增发票抬头</view>
+    <image src="../../img/r.png"></image>
+  </view>
+  <view class="none-show" hidden="{{isnonShow}}">
+    <view class="">
+      <view class="">
+        <image src="../../img/fp.png"></image>
+      </view>
+      <view class="">
+        没有发票抬头
+      </view>
+    </view>
+  </view>
+
+</view>

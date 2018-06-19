@@ -1,0 +1,24 @@
+<!--pages/mine/onlineTopup/WeChat_pays/WeChat_pays.wxml-->
+<view class='container_weChat_pays'>
+    <view class='weChat_pays_top'>
+      <view class='weChat_pays_top_title'>实付金额</view>
+      <view class='weChat_pays_top_money'>￥{{rechargeData.sumMoney}}</view>
+    </view>
+    <view class='weChat_pays_shop'>
+      <view class='weChat_pays_shop_name'>{{rechargeData.payType}}</view>
+      <view class='weChat_pays_shop_address'>会员卡（{{rechargeData.cardName}}）</view>
+    </view>
+    <view class='weChat_pays_figure'>
+      <view class="weChat_indent1">
+        <view class='weChat_pays_indent'>订单金额</view>
+        <view class='weChat_pays_indent2'>￥{{rechargeData.sumMoney + rechargeData.giftMoney}}</view>
+      </view>
+      <view class='weChat_indent2'>
+        <view class='weChat_pays_paid'>实付金额</view>
+        <view class='weChat_pays_paid2'>￥{{rechargeData.sumMoney}}</view>
+      </view>
+    </view>
+  <view class='button_top'>
+    <button style='width:80%;background-color:#69adf4!important;color:#fff' bindtap='wxPay'>支付</button>
+  </view>
+</view>

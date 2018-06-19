@@ -1,0 +1,30 @@
+<!--pages/mine/integral/integral_ctivities/Change_Settings/Change_Settings.wxml-->
+<view class='container_settings'>
+    <view class='settings_    title_bgImg'>
+      <image src='../../../images/mine/cardbg.png' style='height:9.666rem;width:100%'></image>
+      <view class='settings_title'>
+        <view class='settings_title_top'>
+          <view class='settings_title_user'>
+            <image src='{{pageData.business.businessLogo}}' class='settings_title_user_img'></image>
+            <text class='settings_title_user_text'>{{pageData.business.nickName}}</text>
+          </view>
+          <view class='settings_title_user2'>
+            <image src='{{userInfo.avatarUrl}}' class='settings_title_user2_img'></image>
+            <text class='settings_title_user2_text'>{{userInfo.nickName}}</text>
+          </view>
+        </view>
+        <view class='my_integral'>我的积分：{{pageData.integral}}</view>
+        <view class='my_number'>NO.{{pageData.customerMemberCard.cardNO}}</view>
+      </view>
+    </view>
+    <view class='settings_bottom'>
+      <view class="section">
+        <text class='section_set'>请输入要兑换的积分:</text>
+        <input bindinput='jifenNum' class='section_set_input' type='number'  placeholder="{{aData.minIntegral}}~{{aData.maxIntegral}}" />
+      </view>
+      <view class='storage'>对应储值：￥{{jifen}}</view>
+    </view>
+    <view class='true_primary'>
+      <button type="primary" bindtap="primary">确定兑换</button>
+    </view>
+</view>

@@ -1,0 +1,93 @@
+page{
+  background: #f4f3f3;
+}
+.search_btn{
+  width:16px;
+  height:16px;
+  float: left;
+  margin: 27rpx 25rpx;
+}
+.search{
+  text-indent: 5rpx;
+  width: 95%;
+  height: 80rpx;
+  border: 1px solid #dee3eb;
+  font-size: 30rpx;
+  border-radius: 42rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  line-height: 80rpx;
+  background: white;
+}
+.search input{
+  width: 80%;
+  float: left;
+  height: 80rpx;
+}
+.listBox{
+   width:94%;
+   box-sizing: border-box;
+   padding:0px 20rpx;
+   background:#fff;
+   display: inline-block;
+   border-top: 1px solid #dee3eb;
+   padding-top: 15rpx;
+   border-radius: 20rpx;
+   margin: 10rpx 3%;
+}
+.mine_list{
+  background: #fff;
+  box-sizing: border-box;
+  padding-left:0px;
+  width: 80%;
+  float: left;
+  height: 300rpx;
+}
+.right_arrow{
+  width: 7%;
+  float: right;
+  height: 300rpx;
+  text-align: center;
+  font-size: 25rpx;
+  color:#666;
+  line-height: 30rpx;
+}
+.right_arrow image{
+  width:16px;
+  height:24px;
+}
+.mine_list_img{
+  width: 19px;
+  height: 19px;
+}
+.mine_list_message{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  padding:11rpx;
+
+}
+.mine_list_message_left{
+  display:flex;
+  font-size:15px;
+}
+.mine_list_name{
+  margin-left:8px;
+  color:#666;
+}
+.store{
+  font-size: 38rpx;
+}
+.distance{
+  font-size: 15px;
+  color:#666;
+}
+.lost{
+  margin-top: 70rpx;
+}
+.rest{
+  margin-top: 120rpx;
+}
+.current image{
+  margin-top: 130rpx;
+}

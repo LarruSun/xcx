@@ -1,0 +1,41 @@
+page{
+  background:#BCBCBC;
+}
+.score{
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 100%;
+  display: inline-block;
+  background: #d7d7d7;
+  margin-bottom: -8rpx;
+}
+.record{
+  float: left;
+  margin-left: 20rpx;
+} 
+.rule{
+  float: right;
+  margin-right: 20rpx;
+}
+.score_data{
+  background: #f2f2f2;
+  display: inline-block;
+  width: 100%;
+}
+.time{
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+.totle{
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  margin: 15rpx 0 15rpx 20rpx;
+  display: inline-block;
+}
+.add_score{
+  display: inline-block;
+  font-size: 26rpx;
+  float: right;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,61 @@
+<!--equalpay.wxml-->
+<view hidden='{{!pageData.order.payTotal}}' class="">
+  <view class="lotop">
+    <view class="tlogo">
+      <image src="../../../img/logo.png"></image>
+      <text>{{pageData.order.orderName}}</text>
+    </view>
+    <view class="blogo">￥{{pageData.order.payTotal}}</view>
+  </view>
+  <view class="">
+    <view class="detail">
+      <view>
+        <text class="gary">交易金额</text>
+        <text>￥{{pageData.order.soTotal}}</text>
+      </view>
+      <view class="borb">
+        <text class="gary">优惠金额</text>
+        <text>￥{{youhui}}</text>
+      </view>
+      <view>
+        <text class="gary">实付</text>
+        <text>￥{{pageData.order.payTotal}}</text>
+      </view>
+    </view>
+    <view class="vippaymm">
+      <input class="flef" type="password" disabled="true" value="{{vipPayPwd[0]}}" />
+      <input type="password" disabled="true" value="{{vipPayPwd[1]}}" />
+      <input type="password" disabled="true" value="{{vipPayPwd[2]}}" />
+      <input type="password" disabled="true" value="{{vipPayPwd[3]}}" />
+      <input type="password" disabled="true" value="{{vipPayPwd[4]}}" />
+      <input type="password" disabled="true" value="{{vipPayPwd[5]}}" />
+    </view>
+    <view class="forgetpwd">
+      <text bindtap="toeditpwd" open-type="switchTab" hover-class="other-navigator-hover">忘记密码</text>
+    </view>
+    <view class="VRkeyboard">
+      <view class="">
+        <button data-val="1" bindtap="getthisPwd">1</button>
+        <button data-val="2" bindtap="getthisPwd">2</button>
+        <button data-val="3" bindtap="getthisPwd">3</button>
+      </view>
+      <view class="">
+        <button data-val="4" bindtap="getthisPwd">4</button>
+        <button data-val="5" bindtap="getthisPwd">5</button>
+        <button data-val="6" bindtap="getthisPwd">6</button>
+      </view>
+      <view class="">
+        <button data-val="7" bindtap="getthisPwd">7</button>
+        <button data-val="8" bindtap="getthisPwd">8</button>
+        <button data-val="9" bindtap="getthisPwd">9</button>
+      </view>
+      <view class="">
+        <button data-val="." bindtap="getthisPwd">.</button>
+        <button data-val="0" bindtap="getthisPwd">0</button>
+        <button data-val="-1" bindtap="getthisPwd">
+          <image src="../../../images/img/del.png"></image>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "navigationBarTitleText": "我的余额",
+    "onReachBottomDistance": 200,
+    "enablePullDownRefresh": true
+}

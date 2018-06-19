@@ -1,0 +1,74 @@
+<!--selectAddr.wxml-->
+<view class="selectAddr">
+  <block wx:for="{{hasAddr}}" wx:for-item="item" wx:if="{{item.default}}">
+    <view class="useItem">
+      <view class="useItem-t">
+        <view class="" style="max-width:88%;">
+          <view class="name">{{item.name}} {{item.phone}}</view>
+          <view class="adr">{{item.province}}</view>
+          <view class="adr">{{item.address}}</view>
+        </view>
+        <view wx:if='{{fromWhere == "order"}}' class='used' bindtap="isUseThis" data-pid="{{item.id}}">使用</view>
+      </view>
+      <view class="set">
+        <view class="setDefault" bindtap="issetThisDefault" data-pid="{{item.id}}">
+          <view class='{{item.isdefault?"on":""}}'>
+            <view class="addressTrue" >
+              <image src='../../../../images/img/yes.png' class="addressTrue_img"></image>
+            </view>
+          </view>
+          <text>默认地址</text>
+        </view>
+        <view class="editAndDel">
+          <view class="edit" bindtap="toeditAddr" data-pid="{{item.id}}">
+            <image src="../../../../images/img/editbg.png"></image>
+            <text>编辑</text>
+          </view>
+          <view class="del">
+            <view bindtap="delAddress" data-id='{{item.pid}}' data-pid="{{item.id}}">
+              <image src="../../../../images/img/delbg.png"></image>
+              <text>删除</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="offenBox">
+    <block wx:for="{{hasAddr}}" wx:for-item="item" wx:if="{{!item.default}}">
+      <view class="useItem">
+        <view class="useItem-t">
+          <view class="">
+            <view class="name">{{item.name}} {{item.phone}}</view>
+            <view class="adr">{{item.province}}</view>
+            <view class="adr">{{item.address}}</view>
+          </view>
+          <view wx:if='{{fromWhere != "myInfo"}}' class='{{item.default?"useThis":"used"}}' bindtap="isUseThis" data-pid="{{item.id}}">{{item.default?"":"使用"}}</view>
+        </view>
+        <view class="set">
+          <view class="setDefault" bindtap="issetThisDefault" data-pid="{{item.id}}">
+            <view class='{{item.default?"on":""}}'></view>
+            <text>默认地址</text>
+          </view>
+          <view class="editAndDel">
+            <view class="edit" bindtap="toeditAddr" data-pid="{{item.id}}">
+              <image src="../../../../images/img/editbg.png"></image>
+              <text>编辑</text>
+            </view>
+            <view class="del">
+              <view bindtap="delAddress" data-id='{{item.pid}}' data-pid="{{item.id}}">
+                <image src="../../../../images/img/delbg.png"></image>
+                <text>删除</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="setAddr">
+    <view bindtap='addAddress' class="">+手动添加地址</view>
+    <!-- <view class="">
+      <image src="../../../../images/img/chat.png"></image>使用微信地址</view> -->
+  </view>
+</view>

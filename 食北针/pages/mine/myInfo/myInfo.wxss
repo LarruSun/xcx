@@ -1,0 +1,82 @@
+/* pages/mine/myInfo/myInfo.wxss */
+.container_myInfo{
+  background: #eee;
+  min-height: 669px;
+}
+.top_up{
+  margin-top:8px;
+}
+.top_preferential{
+  background:#fff;
+  display:flex;
+  justify-content:space-between;
+  margin-top:-4px;
+  padding:10px;
+  color:#555;
+  margin-bottom:10px;
+}
+
+.top_doing_img{
+  width:35px;
+  height:35px;
+  margin-left:5px;
+}
+.user_href{
+  width: 11px;
+  height: 12px;
+}
+.myInfo_middle{
+  background:#fff;
+}
+.myInfo_name{
+  display:flex;
+justify-content:space-between;
+margin-top:-4px;
+padding:10px;
+color:#555;
+margin-bottom:10px;
+border-bottom:1px solid #ddd;
+
+
+}
+.myInfo_name_name,.myInfo_address_name{
+  font-weight:500;
+
+}
+.myInfo_user_name{
+  font-size:0.86667rem;
+text-shadow:none;
+color:#878787;
+height:80%;
+font-weight:600;
+}
+.myInfo_fotter{
+  background:#fff;
+}
+.myInfo_down{
+  display:flex;
+justify-content:space-between;
+margin-top:-4px;
+padding:10px;
+color:#555;
+margin-bottom:10px;
+border-bottom:1px solid #ddd;
+
+}
+.user_address{
+  display:inline-block;
+width:10rem;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+margin-right:0.33333rem;
+font-size:0.86667rem;
+color:#555;
+
+}
+.user_href{
+  margin-top:3px;
+display:block;
+float:right;
+
+}

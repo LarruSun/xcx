@@ -1,0 +1,61 @@
+/* pages/mine/onlineTopup/WeChat_pays/WeChat_pays.wxss */
+
+.container_weChat_pays {
+  background: #eee;
+  min-height: 559px;
+}
+
+.weChat_pays_top_title {
+  text-align: center;
+  font-size: 1.33333rem;
+  margin-bottom: 2%;
+  padding-top: 4%;
+}
+
+.weChat_pays_top_money {
+  text-align: center;
+  font-size: 1.33333rem;
+  padding-bottom: 9%;
+}
+
+.weChat_pays_shop {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  font-size: 0.93333rem;
+  height: 2.66667rem;
+  line-height: 2.66667rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.weChat_pays_shop_name, .weChat_pays_paid, .weChat_pays_indent {
+  color: #999;
+}
+
+.weChat_pays_figure {
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  margin-top: 4%;
+  font-size: 0.8rem;
+}
+
+.weChat_indent1, .weChat_indent2 {
+  display: flex;
+  justify-content: space-between;
+  height: 2.66667rem;
+  line-height: 2.66667rem;
+  font-size: 0.93333rem;
+}
+
+.button_top {
+  text-align: center;
+  margin-top: 12%;
+}
+
+.button_top>button {
+  width: 80%;
+  background-color: #69adf4 !important;
+  color: #fff;
+}

@@ -1,0 +1,36 @@
+<!--pages/mine/onlineTopup/onlineTopup.wxml-->
+<view hidden='{{keyBord.length == 0}}' class='container_onlineTopup'>
+  <view class='balance_header'>
+    <image src='../../../images/mine/cardbg.png' class='balance_header_bg'></image>
+    <view class='balance_yue'>
+      <image src='../../../images/mine/cash.png' class='balance_header_moneyImg'></image>
+      <view class='balance_header_money'>￥{{balance_header.balance_header_money}}</view>
+    </view>
+  </view>
+  <view class="keyBord">
+    <view class="keyBord_box">
+      <block wx:for='{{keyBord}}' wx:key='this'>
+        <view class='recharge_Amount  recharge_Amount{{index}}  {{item.onclass}}' data-id='{{item.id}}' data-amount="{{index}}" data-sumMoney='{{item.sumMoney}}' data-giftMoney='{{item.giftMoney}}' bindtap='recharge_Online'>
+          <view class='recharge_money'>{{item.sumMoney}}元</view>
+          <view wx:if="{{item.giftMoney > 0}}" class='recharge_Givenamount '>赠送{{item.giftMoney}}元</view>
+          <image src='../../../images/mine/czchose.png' class='recharge_active'></image>
+        </view>
+      </block>
+      <!-- <view class='recharge_Amount on_active' style='line-height:39px;' bindtap='otherMoney'>
+        <view class='recharge_money'>其他金额</view>
+        <image src='../../../images/mine/czchose.png' class='recharge_active' style='display:block'></image>
+      </view> -->
+    </view>
+    <view class='checkbox_group'>
+      <checkbox-group>
+        <label class="checkbox" wx:for="{{items}}">
+          <checkbox  bindchange="checkboxChange" value="{{item.name}}" checked="{{item.checked}}" />
+            <text bindtap='switchPage'>{{item.value}}</text>
+        </label>
+      </checkbox-group>
+    </view>
+    <view class='button_top'>
+      <button class='btn-recharge' bindtap='recharge'>充值</button>
+    </view>
+  </view>
+</view>

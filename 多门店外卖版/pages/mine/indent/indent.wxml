@@ -1,0 +1,116 @@
+<!--pages/mine/indent/indent.wxml-->
+<wxs module="filters" src="../../../utils/common.wxs"></wxs>
+<view class='container_indent' hidden='{{pageTF}}'>
+  <!-- <view class="top_preferential" bindtap='discounta_ctivities'>
+    <view class='top_up'>全部订单</view>
+    <view class='top_uping'>
+      <view class='top_doing'>查看全部订单</view>
+      <image src='../../../images/mine/right.png' class='top_doing_img'></image>
+    </view>
+  </view> -->
+  <!-- 横向导航 s-->
+  <view class="nav-scroll">
+    <view wx:for="{{section}}" wx:key="id" id="{{item.id}}" catchtap="handleTap" class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}">
+      <!-- <image class='active_img' src='{{item.active}}'></image> ({{item.num}}) -->
+      <view class='active_text'>{{item.name}}</view>
+    </view>
+    <view style="clear:both"></view>
+  </view>
+  <!-- 横向导航 e-->
+  <block wx:for="{{orderList}}" wx:key="this" wx:item="item">
+    <block wx:if='{{item.orderId}}'>
+      <view class='indent_content'>
+        <view class="indent_date">{{filters.toDate(item.createDate,'Y年M月D日 h:m:s')}}</view>
+        <view class="indent_message">
+          <view class="message_name_NO">订单编号：{{item.orderNO}}</view>
+          <view class="indent_message_top">
+            <image src='{{logo}}' class="message_logo"></image>
+            <view class="message_name">
+              <!-- <view class="message_name_top">{{item.business_name}}({{item.branch_name}}) -->
+              <view class="message_name_top">{{item.orderName}}
+                <!-- <image src='../../../images/img/r.png' class="message_name_icon"></image> -->
+              </view>
+              <view wx:if='{{item.orderType == "WMCATERING"}}' class="message_name_bottom">外卖配送</view>
+              <view wx:if='{{item.orderType == "TSCATERING"}}' class="message_name_bottom">堂食自助</view>
+            </view>
+            <view class="message_right">{{ filters.orderStatus(item.status) }}</view>
+          </view>
+          <view class="indent_data_box {{item.isShowAll}}">
+            <block wx:for="{{item.prod}}" wx:key="this" wx:for-item="i">
+              <view class="indent_data">
+                <view class="indent_data_left">{{i.commodityName}}</view>
+                <view class="indent_data_right">x{{i.prodNum}}</view>
+              </view>
+            </block>
+          </view>
+          <!-- <block wx:if='{{item.prod.length>3}}'>
+            <view class="xiangqing {{item.isShowAll==''?'':'rotX'}}" catchtap='message_data_checked' data-ind="{{index}}">详情
+              <image src='../../../images/img/t.png' style='width:16px;height:10px' />
+            </view>
+          </block> -->
+          <view class="max_data">实付￥
+            <text>{{filters.toFix(item.payTotal*0.01)}}</text>
+          </view>
+        </view>
+        <view class='content_fotter'>
+          <block wx:if='{{item.status == "NONPAYMENT" && item.afterSaleStatus == null}}'>
+            <text data-id='{{item.orderId}}' bindtap='toPay' class='content_fotter_more'>去支付</text>
+          </block>
+          <block wx:if='{{item.status == "NONRECEIVEORDER" && item.afterSaleStatus == null}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' data-shopId='{{item.shopId}}' bindtap='refundOrder'>取消订单</text>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='reminder'>催单</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "NONRECEIVEORDER" && item.afterSaleStatus == "cancelSalStatus"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='reminder'>催单</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "NONSENDGOODS" && item.afterSaleStatus == null}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='cancelOrder'>申请售后</text>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='reminder'>催单</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "NONSENDGOODS" && item.afterSaleStatus == "cancelSalStatus"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='reminder'>催单</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{(item.status == "SENDGOODS" && item.afterSaleStatus == null)}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='cancelOrder'>申请售后</text>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='reminder'>催单</text>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='confirmCompleteOrder'>确认收货</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "SENDGOODS" && item.afterSaleStatus == "cancelSalStatus"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='reminder'>催单</text>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='confirmCompleteOrder'>确认收货</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "HASDONE"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='deleteOrder'>删除订单</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "HASCLOSED"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='deleteOrder'>删除订单</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.afterSaleStatus == "applyStatus"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='cancelAfterSale'>取消售后</text>
+            <!-- <text class='content_fotter_more' data-shop='{{item.shopId}}' data-id='{{item.orderId}}' bindtap='takeAgain'>再来一单</text> -->
+          </block>
+          <block wx:if='{{item.status == "CANCEL" && item.afterSaleStatus == "unrefundStatus"}}'>
+            <text class='content_fotter_more' data-id='{{item.orderId}}' data-shopId='{{item.shopId}}' bindtap='refundOrder'>取消订单</text>
+          </block>
+          <block wx:if='{{item.status == "HASCLOSED" && item.afterSaleStatus == "unrefundStatus"}}'>
+            <text class='content_fotter_more' data-phone='{{item.phone}}' bindtap='contactShop'>联系商家</text>
+          </block>
+          <text class='content_fotter_more' data-id='{{item.orderId}}' bindtap='orderInfo' data-no='{{item.orderNO}}'>订单详情</text>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>
+<view class="container_linkError" hidden='{{pageTF_other}}'>
+  <image src="/images/linkerror.png" class="linkerror" />
+  <view class="system_text">网络出错啦,请点击按钮重新加载</view>
+  <button class='system_bottom' bindtap='reload'>重新加载</button>
+</view>

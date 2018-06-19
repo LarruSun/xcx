@@ -1,0 +1,156 @@
+/* pages/mine/mine.wxss */
+.container_mine{
+  background:#f2f7fa;
+  min-height:554px;
+}
+.mine_top{
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px;
+}
+.logo_img{
+  width:48px;
+  height:48px;
+  float:left;
+}
+.logo_message{
+  float:left;
+  font-size:15px;
+  margin-top:4px;
+  margin-left:5px;
+}
+.logo_phone{
+  color:#999;
+}
+.mine_vipMessage{
+  color:#999;
+  font-size:14px;
+}
+.vip_message{
+  float:left;
+  margin-top:6px;
+  margin-right:10px;
+}
+.vip_img{
+  width:30px;
+  height:30px;
+  float:left;
+}
+.user_Message{
+  margin-top:13px;
+  background:#fff;
+  display:flex;
+  text-align:center;
+  justify-content:space-between;
+  padding:9px;
+  margin-bottom:12px;
+}
+.balance_money_num{
+  color:#999;
+  margin-bottom:10px;
+  font-size: 14px;
+}
+.balance_money{
+  font-size:16px;
+  color:#555;
+}
+.mine_list_img{
+  width: 24px;
+  height: 21px;
+}
+.mine_list_RightImg{
+  width: 12px;
+  height: 12px
+}
+.mine_list{
+  background: #fff;
+  padding:13px;
+  padding-bottom:8px;
+}
+.mine_list_message{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  border-bottom:1px solid #ddd;
+  padding-bottom:11px;
+
+}
+.mine_list_message_left{
+  display:flex;
+
+}
+.mine_list_name{
+  margin-left:8px;
+  font-size:15px;
+  color:#666;
+
+}
+.mine_list_message_right{
+  display:flex;
+
+}
+.mine_list_num{
+  margin-right:8px;
+  font-size:14px;
+  color:#999;
+
+}
+.mine_list_RightImg{
+  margin-top:4px;
+
+}
+.mine_list3>.mine_list_message{
+   border-bottom:0;
+} 
+
+.mine_list4{
+  margin-top:18px;
+  padding-bottom:0;
+}
+.mine_list4>.mine_list_message{
+  border-bottom:0;
+}
+.container_linkError{
+  min-height:555px;
+  background:#f5f5f5;
+  text-align:center;
+}
+.linkerror{
+  width:180px;
+  height:180px;
+  margin-top:30%;
+}
+.system_text{
+  font-weight:500;
+  color: #666
+}
+.system_bottom{
+  margin-top:13px;
+  width:31%;
+  font-size:15px;
+  background:#8794d6;
+  color:#fff;
+}
+.register{
+  display: flex;
+  justify-content: space-between;
+  padding:18rpx 22rpx;
+  background:#fffbdf;
+  color: #666
+}
+.register_img{
+  width:38rpx;
+  height:28rpx;
+}
+.register_body{
+  font-size:32rpx;
+}
+.register_href{
+  background:#ff7e28;
+  font-size:30rpx;
+  color:#fff;
+  padding:4rpx 16rpx;
+  border-radius:4rpx; 
+}

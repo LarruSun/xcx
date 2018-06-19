@@ -1,0 +1,43 @@
+<!--pages/coupon/coupon.wxml-->
+<import src="../temple/temple.wxml" />
+<view class="container_coupon">
+  <!-- 横向导航 s-->
+  <view class="nav-scroll">
+    <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <block wx:for="{{handleTapData}}">
+        <text data-index="{{ item.id }}" id='{{ item.id }}' catchtap="handleTap" class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}">{{ item.name }}({{ item.num }})</text>
+        </block>
+    </scroll-view>
+    <!-- <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+      <text wx:for="{{section}}" wx:key="id" id="{{item.id}}" data-index="{{item.id}}" catchtap="handleTap" class="nav-name {{item.id == currentId ? 'nav-hover' : ''}}">{{item.name}}({{item.num}})</text>
+    </scroll-view> -->
+  </view>
+
+  <!-- 横向导航 e-->
+  <!--数据 s-->
+  <view class="coupon_CardData">
+    <block wx:if="{{valuble==-1}}">
+      <!--未使用 s  -->
+      <template is="coupon_red" data=""></template>
+      <!--未使用 e  -->
+    </block>
+    <block wx:if="{{valuble==0 && currentId==0}}">
+      <!--未使用 s  -->
+      <template is="coupon_red" data="{{discount_Coupon2}}"></template>
+      <!--未使用 e  -->
+    </block>
+
+    <block wx:if="{{valuble==0 && currentId==1}}">
+      <!--已使用  s-->
+      <template is="coupon_used" data="{{discount_Couponed}}"></template>
+      <!-- 已使用 e-->
+    </block>
+
+    <block wx:if="{{valuble==0 && currentId==2}}">
+      <!--已过期  s-->
+      <template is="stale_DatedCouponed" data="{{stale_DatedCouponed}}"></template>
+      <!-- 已过期 e-->
+    </block>
+  </view>
+  <!--数据 e-->
+</view>

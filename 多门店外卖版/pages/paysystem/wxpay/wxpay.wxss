@@ -1,0 +1,25 @@
+/* wxpay.wxss */
+page{
+  background: #eee;
+}
+.wxpaytop{
+   box-sizing: border-box;
+   padding:30rpx;
+   width:100%;
+   margin:0 auto;
+   text-align: center;
+}
+.just{
+   background: #fff;
+   box-sizing: border-box;
+   padding:20rpx 30rpx;
+   display: flex;
+   justify-content: space-between;
+   font-size:30rpx;
+}
+.martop30{
+  margin-top:30rpx;
+}
+.martop100{
+   margin-top:100rpx;
+}

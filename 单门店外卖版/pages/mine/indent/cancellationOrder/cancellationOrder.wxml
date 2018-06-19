@@ -1,0 +1,49 @@
+<!--pages/mine/indent/cancellationOrder/cancellationOrder.wxml-->
+<view class="container_cancellationOrder">
+  <view class="cancellationOrder_title">
+    <view class="cancellationOrder_logo">
+      <image src='{{logo}}' class="cancellationOrder_img"></image>
+    </view>
+    <view class="cancellationOrder_right">
+      <view class="cancellationOrder_name">
+          {{order.orderName}}
+      </view>
+      <view class="cancellationOrder_small">共{{order.prod.length}}个商品，消费共计￥{{order.payTotal / 100}}元</view>
+    </view>
+  </view>
+  <view class="cancellationOrder_TK">
+    <view class="cancellationOrder_Tmassage">退款方式</view>
+    <view class="cancellationOrder_XQ">
+      <view class="cancellationOrder_XQ_body">
+        退款至您的支付账户
+      </view>
+    </view>
+  </view>
+  <view class="cancellationOrder_TK">
+    <view class="cancellationOrder_Tmassage">选择退款类型</view>
+    <view class="cancellationOrder_XQ">
+      <view class="cancellationOrder_XQ_body">
+        申请全单退款
+      </view>
+    </view>
+  </view>
+  <view class="cancellationOrder_YY">
+    <view class="cancellationOrder_YY_body">
+      退款原因：
+    </view>
+    <input disabled='true' value='{{refundReason}}' bindtap='refundReason' class="cancellationOrder_Refundcause" placeholder='请选择退款原因'></input>
+  </view>
+  <view class="describe">
+    <view class="describe_title">
+      <input bindinput='refundResultInputEvent' class="cancellationOrder_Refundcause" placeholder='请描述退款原因'></input>
+    </view>
+    <view class="describe_img">
+      <view class="top_img" bindtap='top_img'>
+        <image hidden='{{!describe_img_img}}' src='{{describe_img_img}}' class='describe_img_img'></image>
+        <view hidden='{{describe_img_img}}' class="AddPhotos">添加照片</view>
+      </view>
+      
+    </view>
+  </view>
+  <button class='present' bindtap='commitCancel'>提交</button>
+</view>

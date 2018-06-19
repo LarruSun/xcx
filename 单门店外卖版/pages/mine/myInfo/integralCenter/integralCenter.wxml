@@ -1,0 +1,50 @@
+<view class='content'>
+  <block wx:for='{{ score }}'>
+    <view class='ticket'>
+      <view class='left_cont'>
+        <view class='title'>{{ item.couponsName }}</view>
+        <block wx:if='{{ item.couponsType == 1 }}'>
+          <view class='money'>{{ item.vouchers * 0.01 }}元</view>
+        </block>
+        <block wx:else>
+          <view class='money'>{{ item.discount }}折</view>
+        </block>
+        <view class='extra' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+        <view class='extra' wx:else>满{{ item.lowestConsume * 0.01 }}可用</view>
+        <block wx:if='{{ item.foodRange == 0 }}'>
+          <view class='intro'>全场菜品通用</view>
+        </block>
+        <view class='time'>有效期：{{ item.startDate }} ~ {{ item.endDate }}</view>
+      </view>
+      <view class='right_cont'>
+        <view bindtap='change' data-id='{{ index }}' class='btn'>立即领取</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='logWindow' style='display:{{ hidden }}'>
+  <view class='shadow' bindtap='close'></view>
+  <view class='box'>
+    <view class='top'>提示<image bindtap='close' src='../../../../images/mine/close2.png'></image></view>
+    <view class='content_log'>
+      <block wx:if='{{ log.type == "fail" }}'>
+          <image src='../../../../images/mine/get_fail.png'></image>
+      </block>
+      <block wx:else>
+          <image src='../../../../images/mine/get_success.png'></image>
+      </block>
+      {{ log.message }}
+    </view>
+    <view class='bottom'>
+      <block wx:if='{{ log.type == "fail" }}'>
+          <view class='confirm' bindtap='close'>确定</view>
+      </block>
+      <block wx:else>
+          <view class='use' bindtap='use'>立即使用</view>
+          <view class='look' bindtap='look'>查看优惠券</view>
+      </block>
+      
+    </view>
+  </view>
+</view>

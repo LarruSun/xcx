@@ -1,0 +1,102 @@
+/* pages/mine/integral/integral_ctivities/Change_Settings/Change_Settings.wxss */
+.settings_title_bgImg{
+  position:relative;
+}
+.settings_title{
+  position:absolute;
+top:10px;
+width:100%;
+
+}
+.settings_title_top{
+  display:flex;
+justify-content:space-between;
+padding:0 12px;
+
+}
+.settings_title_user{
+  display:flex;
+
+}
+.settings_title_user_img{
+  width:45px;
+height:45px;
+
+}
+.settings_title_user_text{
+  margin-top:14px;
+color:#fff;
+margin-left:7px;
+font-size:13px;
+
+}
+.settings_title_user2{
+  display:flex;
+
+}
+.settings_title_user2_img{
+  width:34px;
+height:34px;
+
+}
+.settings_title_user2_text{
+  margin-top:8px;
+color:#fff;
+margin-left:7px;
+font-size:13px;
+
+}
+.my_integral{
+  text-align:center;
+font-size:1.33333rem;
+color:#fff;
+line-height:3.66667rem;
+font-weight:700;
+text-shadow:none;
+
+}
+.my_number{
+  color:#fff;
+margin-left:4%;
+margin-top:6px;
+
+}
+.settings_bottom{
+padding:13px;
+
+}
+.section{
+  display:flex;
+
+}
+.section_set{
+  font-size:14px;
+display:inline-block;
+width:170px;
+margin-top:5px;
+color:#666;
+
+}
+.section_set_input{
+  border:1px solid #ddd;
+height:29px;
+padding-left:5px;
+display:inline-block;
+color:#555;
+
+}
+.storage{
+  text-shadow:none;
+font-size:1rem;
+color:#666;
+height:3.26667rem;
+line-height:3.26667rem;
+
+}
+.true_primary{
+  margin-top:16%;
+text-align:center;
+margin-left:23px;
+margin-right:22px;
+
+}

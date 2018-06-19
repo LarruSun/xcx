@@ -1,0 +1,139 @@
+/* pages/mine/memberActivity/memberActivity.wxss */
+.container_memberActivity{
+  background: #eee;
+  min-height: 669px
+}
+.nav-scroll{
+  background: #fff;
+}
+.nav-name{
+    display:inline-block;
+    margin:0 5px;
+    font-size:16px;
+    color: #2b2e33;
+    border-bottom: 2px solid transparent;
+    padding:10px;
+}
+
+.nav-hover{
+    color: #f06000;
+    border-bottom: 2px solid #f06000;
+}
+.scroll-view_H{
+    display: flex;
+    justify-content:space-around;
+    white-space:nowrap;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+.container_discounta_body{
+  padding: 0 0.66667rem;
+  /* display: inline-block */
+}
+.preferential_activitiesOne{
+  background:#fff;
+margin-bottom:1rem;
+display:flex;
+justify-content:space-between;
+padding:0.66667rem;
+
+}
+.Dxc_img{
+  float: left;
+    width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 0.06667rem solid #dcdcdd;
+  margin-right: 2%;
+}
+.activitie_left{
+      box-sizing: border-box;
+    padding-top: 1rem;
+    width: 38%;
+    border-right: 0.06667rem dashed #e5e5e5;
+}
+.conpun_tally{
+      color: #69adf4;
+    border: 0.06667rem solid #69adf4;
+    padding: 0.16667rem 0.33333rem;
+    font-size: 12px;
+    display:inline-block;
+    margin-right: 2px;
+}
+.conpun_tally2 {
+   color: #69adf4;
+    border: 0.06667rem solid #69adf4;
+    padding: 0.16667rem 0.33333rem;
+    font-size: 12px;
+    display:inline-block;
+    margin-right: 2px;
+  }
+.conpun_active{
+  font-size:13px;
+margin-top:8px;
+color:#666;
+}
+.activitie_right{
+  position:relative;
+width:61%;
+margin-left:3%;
+
+}
+.right_one_title{
+ margin-top:7px;
+float:left;
+font-weight:700;
+font-size:16px
+}
+.activitie_right_two{
+  margin-top:40px;
+  font-size: 10px;
+    text-shadow: none;
+    font-weight: 500;
+}
+.activitie_right_three{
+  font-size:0.7rem;
+text-shadow:none;
+font-weight:500;
+
+}
+.Yhzc_title{
+  float:left;
+  width:100%;
+}
+.view_details{
+  color:#f56974;
+float:right;
+font-size:13px;
+
+}
+.preferential_vice0{
+  margin-top: 12px;
+}
+
+.preferential_vice1 .conpun_tally{
+      color: rgb(236, 133, 88);
+    border-color: rgb(236, 133, 88);
+}
+.preferential_vice1 .conpun_tally2,.preferential_vice3 .conpun_tally2{
+  border:0;
+}
+.preferential_vice3 .conpun_tally{
+  color: rgb(78, 196, 200);
+    border-color: rgb(78, 196, 200);
+}
+
+@media screen and (max-width: 320px) {
+  .conpun_tally {
+   padding:0.12667rem 0.13333rem;
+  }
+  .conpun_tally2 {
+   padding:0.12667rem 0.13333rem;
+  }
+  .conpun_active{
+   font-size:12px;
+  }
+
+}

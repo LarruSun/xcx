@@ -1,0 +1,149 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="seaBox">
+    <form class="">
+      <input type="search" focus='true' placeholder="请输入菜名或者拼音助记码" bindinput='seachfood' bindtap='search_href'/>
+    </form>
+    <!-- <view class="mine">
+      <view class="">
+        <image src="../../../../images/img/me.png"></image>
+      </view>
+      <text>我的</text>
+    </view> -->
+  </view>
+  <view class="cont">
+    <view class="rightBox" hidden='{{!haveResult}}'>
+      <text class='gudingTit'>{{gudingTit}}</text>
+      <scroll-view scroll-y style="height:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toViewItem}}" scroll-top="{{scrollTop}}">
+        <view class="rigthBoxWin" bindtouchmove="move">
+          <block wx:for="{{pageData.rightList}}" wx:for-item="item" wx:for-index="idx">
+            <view class="rBoxItem scroll-view-item" id="rBoxItem{{idx}}">
+              <block wx:for="{{item.foodsData}}" wx:for-item="item" wx:for-index="indx">
+                <view class="Ritem" data-foodsId="{{item.foodsId}}">  
+                  <view class="Rbod">
+                    <view class="RbodL">
+                      <image src="{{item.foodsImg}}"></image>
+                      <view class="specif">
+                        <view class="Rtit">{{item.foodsName}}</view>
+                        <view class="sell">月售1263份</view>
+                        <block wx:if="{{!item.guige}}">
+                           <view class="red">￥{{item.foodsPrice}}</view>
+                        </block>
+                      </view>
+                    </view>
+                    <view class="RbodR">
+                      <block wx:if="{{item.guige}}">
+                        <view class="guige" data-foodsId="{{item.foodsId}}" bindtap='showSizeAlert'>规格</view>
+                      </block>
+                      <block wx:if="{{!item.guige}}">
+                        <block wx:if="{{true}}">
+                          <image class="sub" src="../../../../images/img/sub.png" bindtap='subcrtDataByfoodId' data-foodsid='{{item.foodsId}}'></image>
+                          <text>{{item.num}}</text>
+                        </block>
+                        <image class="add" src="../../../../images/img/add.png" bindtap='addcrtDataByfoodId' data-foodsid='{{item.foodsId}}'></image>
+                      </block>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="no-result" hidden='{{haveResult}}'>
+          <view><image class="noresImg" src='../../../../images/kong.png'></image></view>
+          <view>没有搜索结果</view>
+          <view>换个关键词试一试</view>
+    </view>
+  </view>
+  <view class="boot">
+    <view class="buyList" hidden="{{hidelistBox}}">
+      <view class="bootL-logo" bindtap="hideByList">
+        <image src="../../../../images/img/eq1.png"></image>
+        <text class="red">{{cartData.totnum}}</text>
+      </view>
+      <view class="buytit">
+        <view class="">购物车</view>
+        <view class="" bindtap='clearCartData'>清空购物车</view>
+      </view>
+      <swiper class="{{isShowDown}}">
+        <view class="ListBox">
+          <block wx:for="{{cartData.cartdata}}" wx:for-item="item" wx:for-index="idx">
+            <view class="list-item">
+              <view class="">{{item.foodsName}}</view>
+              <view class="red">￥{{item.foodsPrice}}</view>
+              <view class="RbodR">
+                <image class="sub" src="../../../../images/img/sub.png" data-foodsid='{{item.foodsId}}' bindtap='subcrtDataByfoodId'></image>
+                <text>{{item.foodsnum}}</text>
+                <image class="add" src="../../../../images/img/add.png" data-foodsid='{{item.foodsId}}' bindtap='addcrtDataByfoodId'></image>
+              </view>
+            </view>
+          </block>
+
+        </view>
+      </swiper>
+    </view>
+    <view class="bootL">
+      <block wx:if="{{cartData.totprice>0}}">
+        <view class="bootL-logo" hidden="{{!hidelistBox}}">
+          <view>
+            <image bindtap="showListBox" src="../../../../images/img/eq.png"></image>
+          </view>
+          <text class="red">{{cartData.totnum}}</text>
+        </view>
+        <view class="bootL-money">
+          共
+          <text class="red">￥{{cartData.totprice}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="bootL-logo" hidden="{{!hidelistBox}}">
+          <view>
+            <image src="../../../../images/img/yk.png"></image>
+          </view>
+        </view>
+        <view class="bootL-money">
+           购物车是空的
+        </view>
+      </block>
+    </view>
+    <block wx:if='{{cartData.totprice >= startingPrice}}'>
+      <view class="bootR" bindtap="tosureOrder">
+        <view class="">
+          去结算
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="bootN">
+        <view class="">
+          {{startingPrice}}元起送
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="bg" hidden="{{hidelistBox}}" bindtap="hideByList"></view>
+  <view class="guigeAlert" hidden='{{hideguigeAlert}}'>
+    <view class='guigeBox'>
+      <view class="ggview1">
+        <text>{{sizeData.foodsName}}</text>
+        <icon type="clear" size="20" bindtap='hideSizeAlert' />
+      </view>
+      <view class='ggyueshou'>月售1052份</view>
+      <view class='ggChose'>
+        <text>规格：</text>
+        <block wx:for="{{sizeData.guigeList}}" wx:for-item="item" wx:for-index="idx">
+          <text class='ggsize {{item.isClass}}' data-idx="{{idx}}" data-guigeid='{{item.guigeId}}' data-sizeprice="{{item.guigePrice}}" bindtap='sizeChoseThis'>{{item.guigeName}}</text>
+        </block>
+        <!-- <text class='ggsize ggsizeon'>中份</text>
+           <text class='ggsize'>小份</text> -->
+      </view>
+      <view class='ggbot'>
+        <text class='showPrice'>￥{{sizeData.thePrice}}</text>
+        <text class='addCartBtn' data-foodsid='{{sizeData.guigeId}}' bindtap='addcrtDataByfoodId'>加入购物车</text>
+      </view>
+    </view>
+  </view>
+</view>

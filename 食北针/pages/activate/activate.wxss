@@ -1,0 +1,24 @@
+/* pages/activate/activate.wxss */
+
+.header {
+  padding-left: 0;
+  padding-right: 0;
+  width: 110%;
+}
+
+.ui-content {
+  border-width: 0;
+  overflow: visible;
+}
+
+.ui-headportrait {
+  width: 100%;
+  text-align: center;
+  margin-top: 14%;
+}
+
+.ui-headportrait-img {
+  width: 4.66667rem;
+  height: 4.66667rem;
+  border-radius: 50%;
+}

@@ -1,0 +1,19 @@
+<view class='container-score'>
+  <view class='title'>‘<span>{{ name }}</span>’小程序积分规则</view>
+  <view class='content'>
+    <p>1、积分获取方式</p>
+    <view class='cont'>注册“<span>{{ name }}</span>”小程序并根据提示绑定手机号后，您使用小程序进行点餐，可在您点餐完毕并完成订单号后自动积分。</view>
+  </view>
+  <view class='content'>
+    <p>2、积分规则</p>
+    <view class='cont'>每<span>{{ amount*0.01 }}</span>元的消费可以获得1点积分。</view>
+  </view>
+  <view class='content'>
+    <p>3、积分有效期</p>
+    <view class='cont'>消费获取的积分无时间限制，可在任何时候使用。</view>
+  </view>
+  <view class='content'>
+    <p>4、积分的使用</p>
+    <view class='cont'>累计到特定数量的积分后，您可以在“<span>{{ name }}</span>”小程序内兑换各种优惠券或届时可以兑换的物品，详见具体活动的优惠券和其详细说明</view>
+  </view>
+</view>

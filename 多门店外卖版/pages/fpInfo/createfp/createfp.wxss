@@ -1,0 +1,28 @@
+/* createfp.wxss */
+page{
+   background: #eee;
+}
+.ceratefp{
+    background: #fff;
+    padding:12rpx 20rpx;
+}
+.ceratefp input{
+   box-sizing: border-box;
+   font-size:24rpx;
+   font-family: "Microsoft YaHei";
+}
+.createOk{
+   position: fixed;
+   bottom:0rpx;
+   left:0rpx;
+   right:0rpx;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color:#fff;
+   background: red;
+   padding:20rpx 0rpx;
+}
+
+

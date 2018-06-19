@@ -1,0 +1,510 @@
+/**index.wxss**/
+
+page {
+  height: 100%;
+  position: fixed;
+}
+
+.container {
+  padding: 0;
+}
+
+.bord {
+  width: 100%;
+  /* background: linear-gradient(to right, #6c88d9, #5f97d4); */
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+}
+
+.mer-shaow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx dashed #4b69b1;
+}
+
+.mer-shaow .mer-L {
+  display: flex;
+  align-items: center;
+  margin-top: -14px;
+}
+
+.mer_delivery {
+  margin-top: 27rpx;
+}
+
+.mer_delivery_two {
+  font-size: 22rpx;
+  color: #eee;
+}
+
+.mer_notice {
+  font-size: 22rpx;
+  color: #eee;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 532rpx;
+}
+
+.mer-shaow .mer-L image {
+  width: 120rpx;
+  height: 100rpx;
+  margin-right: 12rpx;
+}
+
+.mer-shaow .mer-r image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.news {
+}
+
+.new-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.new-item-box {
+}
+
+.new-item .itemL {
+}
+
+.new-item .itemR {
+  display: flex;
+  align-items: center;
+}
+
+.new-item .itemR image {
+  width: 20rpx;
+  height: 10rpx;
+  margin-left: 6rpx;
+}
+
+.new-item .itemL .xin, .jian {
+  background: #e56042;
+  padding: 4rpx;
+  margin-right: 4rpx;
+  border-radius: 6rpx;
+}
+
+.jian {
+  background: #1fdda0;
+}
+
+.seaBox {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.seaBox form {
+  width: 80%;
+}
+
+.seaBox input {
+  font-size: 24rpx;
+  background: #e5e5e5;
+  width: 76%;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.seaBox .mine {
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.seaBox .mine image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.cont {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 80rpx;
+}
+
+.cont .leftBan {
+  background: #f6f6f6;
+  font-size: 24rpx;
+  width: 20%;
+}
+
+.cont .leftBan .menu {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  border-bottom: 1rpx solid #e5e5e5;
+  border-left: 6rpx solid #f6f6f6;
+}
+
+.cont .leftBan .on {
+  border-left: 6rpx solid #e56042;
+  background: #fff;
+}
+
+.rightBox {
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.rigthBoxWin {
+}
+
+.rBoxItem {
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+
+.Ritem {
+  border-bottom: 1rpx dashed #e5e5e5;
+  margin-bottom: 6rpx;
+  box-sizing: border-box;
+  padding-right: 16rpx;
+}
+
+.Rtit {
+  font-size: 30rpx;
+  color: #000;
+}
+
+.sell {
+  font-size: 20rpx;
+  margin: 10px 0;
+}
+
+.red {
+  font-size: 30rpx;
+  color: red;
+}
+
+.Rbod {
+  box-sizing: border-box;
+  padding: 10rpx 0rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.RbodL {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #b0b0b0;
+}
+
+.RbodL image {
+  width: 250rpx;
+  height: 166rpx;
+  margin-right: 20rpx;
+}
+
+.RbodR {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.RbodR text {
+  padding: 0rpx 8rpx;
+}
+
+.sub, .add {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.boot {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  height: 80rpx;
+  background: #efefef;
+  display: flex;
+  z-index: 4;
+}
+
+.boot .bootL {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+
+.bootL-logo {
+  position: relative;
+}
+
+.bootL-logo text {
+  position: absolute;
+  left: 50rpx;
+  top: -10rpx;
+  color: #fff;
+  background: red;
+  font-size: 24rpx;
+  border-radius: 50%;
+  padding: 0rpx 10rpx;
+}
+
+.bootL-money {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  color: #666;
+}
+
+.bootL-logo image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.boot .bootR {
+  width: 30%;
+  background: red;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  z-index: 102;
+}
+
+.boot .bootN {
+  width: 30%;
+  background: gray;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.buyList {
+  position: absolute;
+  background: #fff;
+  bottom: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  max-height: 300rpx;
+  z-index: 100;
+}
+
+.buytit {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  height: 60rpx;
+  align-items: center;
+}
+
+.ListBox {
+  max-height: 200rpx;
+  overflow: auto;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  align-items: center;
+  height: 60rpx;
+  align-items: center;
+}
+
+.buyList .bootL-logo {
+  position: absolute;
+  top: -70rpx;
+  z-index: 6;
+}
+
+.buyList .bootL-logo::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -1rpx;
+  left: 16rpx;
+  width: 0rpx;
+  height: 0rpx;
+  border-left: 14rpx solid rgba(0, 0, 0, 0);
+  border-right: 14rpx solid rgba(0, 0, 0, 0);
+  border-bottom: 14rpx solid rgba(255, 255, 255, 1);
+  border-top: 14rpx solid rgba(0, 0, 0, 0);
+}
+
+.andown {
+  -webkit-animation: hid 1s ease-in-out 0s 1 alternate forwards;
+}
+
+.anup {
+  -webkit-animation: shw 1s ease-in-out 0s 1 alternate forwards;
+}
+
+.specif {
+  margin-top: -14px;
+}
+
+@keyframes hid {
+  0% {
+    height: 220rpx;
+  }
+
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes shw {
+  0% {
+    height: 0rpx;
+  }
+
+  100% {
+    height: 220px;
+  }
+}
+
+.togon {
+  transform: rotateZ(180deg);
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.guige {
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #fe5064;
+  border: 1rpx solid #e5e5e5;
+  position: relative;
+}
+
+.guige .guigetotNum {
+  position: absolute;
+  right: -10rpx;
+  top: -18rpx;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  min-width: 10rpx;
+}
+
+.guigeAlert {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.guigeBox {
+  background: #fff;
+  width: 80%;
+  height: 280rpx;
+  margin-top: 20%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.ggview1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ggview1 text {
+  font-size: 30rpx;
+}
+
+.ggyueshou {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.ggChose {
+  font-size: 30rpx;
+  margin-top: 30rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.ggChose .ggsize {
+  padding: 4rpx 12rpx;
+  border: 1rpx solid #999;
+  border-radius: 24rpx;
+  margin-right: 16rpx;
+}
+
+.ggChose .ggsizeon {
+  border-color: #fe5064;
+  color: #fe5064;
+}
+
+.ggbot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.ggbot .showPrice {
+  color: #fe5064;
+}
+
+.ggbot .addCartBtn {
+  background: #fe5064;
+  font-size: 0.8rem;
+  text-shadow: none;
+  color: #fff;
+  border-radius: 10rpx;
+  font-weight: 100;
+  padding: 6rpx 12rpx;
+}
+
+.banTit {
+  font-size: 30rpx;
+  position: relative;
+  top: -5px;
+}
+
+.gudingTit {
+  position: absolute;
+  z-index: 1;
+  background: #fff;
+  left: 18rpx;
+  right: 0rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,34 @@
+<!--pages/mine/membershipCard/membershipCard.wxml-->
+<view class='container_membershipCard'>
+  <view class='membershipCard_top'>
+    <view class='membershipCard_logo'>
+      <image src='{{membershipCard_top.mine_one_img}}' class='logo_img'></image>
+      <view class="logo_message">
+        <view class='logo_name'>{{membershipCard_top.logo_name}}</view>
+        <view class='logo_phone'>{{membershipCard_top.logo_phone}}</view>
+      </view>
+    </view>
+    <view class="membershipCard_vipMessage">
+      <view class="vip_message">{{membershipCard_top.vip_message}}</view>
+    </view>
+  </view>
+  <view class='membershipCard_content'>
+    <block wx:for='{{membershipCard_content}}' wx:key="this">
+      <view class='content_son' data-id='{{item.cardId}}' bindtap='membershipCard_href'>
+        <view class='content_son_F'>
+          <view class='content_son_title'>{{item.cardName}}</view>
+          <view class='content_son_position'>
+            <block wx:if="{{item.default == 1}}">
+              <image src='../../../images/mine/defCard.png' class='defCard' style='width:60px;height:31px'></image>
+              <text class='defCard_text'>默认卡</text>
+            </block>
+          </view>
+        </view>
+        <view class='content_son_bottom'>
+          <view class='discount'>{{item.discount}}折</view>
+          <view class='discount_user'>{{item.status}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,378 @@
+<!--index.wxml-->
+<!-- <view class="container" hidden='{{!pageTF_other}}'> -->
+<wxs module="filters" src="../../utils/common.wxs"></wxs>
+<view class="container">
+  <!-- <image src="{{pageData.user.businessLogo}}" id='ani' class='{{ani}}' style="left: {{bus_x}}px; top: {{bus_y}}px;"></image> -->
+  <!-- <view class="bord" style='background:{{topBackgroundColor}}'>
+    <view class="mer-shaow" bindtap="tobussInfo">
+      <view class="mer-L">
+        <image src="{{pageData.user.businessLogo}}"></image>
+        <view class="mer_delivery">
+          <view class="mer_delivery_one">{{pageData.shop.business_name}}（{{pageData.shop.branch_name}}）</view>
+          <view class="mer_notice">公告:为了一根好酸，一条鱼深入种植基地，黑黑黑黑黑黑黑黑黑黑黑黑黑黑~~~~</view>
+        </view>
+      </view>
+      <view class="mer-r">
+        <image src="../../images/img/wr.png"></image>
+      </view>
+    </view>
+    <view class="news">
+      <view class="new-item">
+        <view wx:if='{{pageData.customer != null}}' class="itemL">
+          <text class="xin">会</text>会员下单立享{{pageData.customer}}折
+        </view>
+        <view class="itemR" bindtap="toggleHideShow">
+          {{pageData.customer.length}}种优惠
+          <image class="{{togon}}" src="../../images/img/toptri.png"></image>
+        </view>
+      </view>
+      <view class="new-item new-item-box" hidden="{{toggleFlag}}">
+        <view class="itemL">
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class='new_cord'>
+     <view class='bor_radiu'>
+        <image src="{{pageData.user.businessLogo}}" bindtap='showMDInfo'></image>
+     </view>
+     <view class='fon30'>{{pageData.shop.business_name}} ({{pageData.shop.branch_name}})</view>
+     <view class='fon24'>起送价 ￥{{pageData.setting.startingPrice}} | 配送费 ￥{{pageData.setting.takeOutAmount}} | 商家配送 约{{pageData.setting.takeOutTime}}分钟</view>
+<<<<<<< .mine
+     <view class='lp'>
+         <image bindtap='showyhq' src='../../images/quan.png' wx:if="{{pageData.coupons.length>0}}"></image>
+         <image bindtap='' src='../../images/quan.png'></image>
+||||||| .r3349
+     <view class='lp' wx:if="{{pageData.coupons.length>0}}">
+         <image bindtap='showyhq' src='../../images/quan.png'></image>
+=======
+     <view class='lp' wx:if="{{pageData.coupons.total > 0}}">
+         <image bindtap='showyhq' src='../../images/quan.png'></image>
+>>>>>>> .r4165
+     </view>
+
+     <view class='sea'>
+        <image src='../../images/sea.png' bindtap='search_href'></image>
+     </view>
+  </view>
+  <!-- <view class="seaBox">
+    <form class="">
+      <input disabled='true' type="search" focus='false' placeholder="请输入菜名或者拼音助记码" bindtap='search_href' readonly="true" />
+    </form>
+  </view> -->
+  <view class="cont">
+    <scroll-view class="leftBan" scroll-y="true" bindscroll="">
+      <block wx:for="{{pageData.leftList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+        <view class="menu {{item.isclass}}" data-indx="{{idx}}" data-tit="{{item.typeName}}" bindtap='rBoxItemToView'>{{item.name}}</view>
+      </block>
+    </scroll-view>
+
+    <view class="rightBox">
+      <text class='gudingTit'>{{gudingTit}}</text>
+      <scroll-view scroll-y="{{hidelistBox}}" style="height:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toViewItem}}" scroll-top="{{scrollTop}}">
+        <view class="rigthBoxWin" bindtouchmove="move" bindscroll='move'>
+          <block wx:for="{{pageData.rightList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+            <view class="rBoxItem scroll-view-item" id="rBoxItem{{idx}}">
+              <text class='banTit'>{{item.typeName}}</text>
+              <block wx:for="{{item.foodsData}}" wx:for-item="item" wx:for-index="indx" wx:key="idx">
+                <view class="Ritem" data-foodsId="{{item.foodsId}}">
+                  <view class="Rbod">
+                    <view class="RbodL">
+                      <image src="{{item.foodsImg}}" mode='aspectFill' data-foodsId="{{item.foodsId}}" bindtap='showCInfo'></image>
+                      <view class="specif">
+                        <view class="Rtit">{{item.foodsName}}</view>
+                        <view class="sell">月售{{item.saleNum}}份</view>
+                        <block wx:if="{{!item.guige}}">
+                          <view class="red">￥{{filters.toFix(item.foodsPrice*0.01)}}</view>
+                        </block>
+                        <block wx:if="{{item.guige}}">
+                          <view class="red">￥{{filters.toFix(item.minPrice*0.01)}}起</view>
+                        </block>
+                      </view>
+                    </view>
+
+                    <view class="RbodR">
+                      <block wx:if="{{item.guige}}">
+                        <view class="guige" data-foodsId="{{item.foodsId}}" bindtap='showSizeAlert'>
+                          规格
+                          <block wx:if="{{item.num>0}}">
+                              <text class="guigetotNum">{{item.num}}</text> 
+                          </block>                         
+                        </view>
+                      </block>
+                      <block wx:if="{{!item.guige}}">
+                        <block wx:if="{{true}}">
+                          <image wx:if='{{item.num > 0}}' class="sub" src="../../images/img/sub.png" 
+                          bindtap='subcrtDataByfoodId' data-foodsid='{{item.foodsId}}'></image>
+                          <text wx:if='{{item.num > 0}}'>{{item.num}}</text>
+                        </block>
+                        <image class="add" src="../../images/img/add.png" bindtap='addcrtDataByfoodId' 
+                        data-foodsid='{{item.foodsId}}'></image>
+                      </block>
+                    </view>
+
+                  </view>
+                </view>
+              </block>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </view>
+
+  </view>
+  <view class="boot">
+    <view class="buyList" hidden="{{hidelistBox}}">
+      <view class="bootL-logo" bindtap="hideByList">
+        <image src="../../images/img/eq1.png"></image>
+        <text class="red">{{cartData.totnum}}</text>
+      </view>
+      <view class="buytit">
+        <view class="">购物车</view>
+        <view class="" bindtap='clearCartData'>清空购物车</view>
+      </view>
+      <view class="{{isShowDown}}">
+        <view class="ListBox">
+          <scroll-view scroll-y="true" style="height:100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+            <block wx:for="{{cartData.cartdata}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+              <view class="list-item">
+                <view class="">
+                    <view class='it-name'>{{item.foodsName}}</view>
+                    <view class='it-desc'><text class='red' wx:for="{{item.strArr}}" wx:for-item="item" wx:key="idx">{{item}}</text></view>
+                </view>
+                <view class="red">￥{{filters.toFix(item.foodsPrice*0.01)}}</view>
+                <view class="RbodR">
+                  <image wx:if='{{item.foodsnum > 0}}' class="sub" src="../../images/img/sub.png" data-foodsid='{{item.foodsId}}' bindtap='subcrtDataByfoodId'></image>
+                  <text wx:if='{{item.foodsnum > 0}}'>{{item.foodsnum}}</text>
+                  <image class="add" src="../../images/img/add.png" data-foodsid='{{item.foodsId}}' bindtap='addcrtDataByfoodId'></image>
+                </view>
+              </view>
+            </block>
+            <view class='list-item canhe-view'>
+               <view>餐盒</view>
+               <view>￥{{filters.toFix(cartData.totMealsPrice*0.01)}}</view>
+               <view></view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <view class="bootL">
+      <block wx:if="{{cartData.totprice>0}}">
+        <view class="bootL-logo" hidden="{{!hidelistBox}}">
+          <view>
+            <image bindtap="showListBox" src="../../images/img/eq.png"></image>
+          </view>
+          <text class="red">{{cartData.totnum}}</text>
+        </view>
+        <view class="bootL-money">
+          共
+          <text class="red">￥{{filters.toFix(cartData.totprice*0.01)}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="bootL-logo" hidden="{{!hidelistBox}}">
+          <view>
+            <image src="../../images/img/yk.png"></image>
+          </view>
+        </view>
+        <view class="bootL-money">
+          购物车是空的
+        </view>
+      </block>
+    </view>
+    <block wx:if='{{isKy == true && pageData.setting.takeOut == true}}'>
+      <block wx:if='{{cartData.totprice>0 && cartData.totprice >= pageData.setting.startingPrice * 100}}'>
+        <view class="bootR" bindtap="tosureOrder">
+          <view class="">
+            去结算
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="bootN">
+          <view class="">
+            {{pageData.setting.startingPrice}}元起送
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="bootN">
+          <view class="">
+            商家已打烊
+          </view>
+        </view>
+    </block>
+  </view>
+  <view class="bg" hidden="{{hidelistBox}}" bindtap="hideByList" bindtouchmove="return;"></view>
+  <view class="guigeAlert" hidden='{{hideguigeAlert}}'>
+    <view class='guigeBox'>
+      <view class="ggview1">
+        <text>{{sizeData.foodsName}}</text>
+        <icon type="clear" size="20" bindtap='hideSizeAlert' />
+      </view>
+      <view class='ggyueshou'>月售1052份</view>
+      <view class='ggChose'>
+        <view class='gg-item'>
+        <view class='wid20'>
+           <text>规格：</text>
+        </view>
+          <view class='wid80'>
+            <block wx:for="{{sizeData.guigeList}}" wx:for-item="item" wx:for-index="idx" wx:key="idx">
+              <text class='ggsize {{item.isClass}}' data-idx="{{idx}}" data-guigeid='{{item.guigeId}}' data-sizeprice="{{item.guigePrice}}" bindtap='sizeChoseThis_guige'>{{item.guigeName}}</text>
+            </block>
+          </view>
+
+        </view>
+
+        <view class='gg-item' wx:if="{{sizeData.ingredientsList.length>0}}">
+         <view class='wid20'>
+           <text>加料：</text>
+         </view>
+         <view class='wid80'>
+          <block wx:for="{{sizeData.ingredientsList}}" wx:for-item="item" wx:for-index="idx">
+            <text class='ggsize {{item.isClass}}' data-idx="{{idx}}" data-guigeid='{{item.proId}}' data-sizeprice="{{item.price}}" bindtap='sizeChoseThis_jialiao'>{{item.proName}}(+{{filters.toFix(item.price*0.01)}}元)</text>
+          </block>
+          </view>
+        </view>
+
+        <view class='gg-item' wx:if="{{sizeData.practiceList.length>0}}">
+          <view class='wid20'>
+           <text>做法：</text>
+         </view>
+          <view class='wid80'>
+            <block wx:for="{{sizeData.practiceList}}" wx:for-item="item" wx:for-index="idx">
+              <text class='ggsize {{item.isClass}}' data-idx="{{idx}}" data-guigeid='{{item.proId}}' data-sizeprice="{{item.price}}" bindtap='sizeChoseThis_zuofa'>{{item.proName}}(+{{filters.toFix(item.price*0.01)}}元)</text>
+            </block>
+          </view>
+        </view>
+
+         <view class='gg-item' wx:if="{{sizeData.remarkList.length>0}}">
+          <view class='wid20'>
+           <text>备注：</text>
+          </view>
+          <view class='wid80'>
+            <block wx:for="{{sizeData.remarkList}}" wx:for-item="item" wx:for-index="idx">
+              <text class='ggsize {{item.isClass}}' data-idx="{{idx}}" data-guigeid='{{item.proId}}' data-sizeprice="{{item.price}}" bindtap='sizeChoseThis_beizu'>{{item.proName}}</text>
+            </block>
+          </view>
+        </view>
+
+
+        <!-- <text class='ggsize ggsizeon'>中份</text>
+           <text class='ggsize'>小份</text> -->
+      </view>
+      <view class='ggbot'>
+        <text class='showPrice'>￥{{filters.toFix(sizeData.thePrice*0.01)}}</text>
+        <text class='addCartBtn' data-foodsid='{{sizeData.foodsId}}' bindtap='addcrtDataByfoodId'>加入购物车</text>
+      </view>
+    </view>
+  </view>
+</view>
+ <!-- <view class="container_linkError" hidden='{{pageTF_other}}'>
+  <image src="/images/linkerror.png" class="linkerror" />
+  <view class="system_text">网络出错啦,请点击按钮重新加载</view>
+  <button class='system_bottom' bindtap='reload'>重新加载</button>
+</view>  -->
+
+<!--商家信息展示  -->
+<view class='busInfo' hidden='{{mdFlag}}'>
+  <view class='b_box'>
+         <image class='b_Logo' src='{{pageData.user.businessLogo}}'></image>
+         <image class='b_phone' src='../../images/phone.png' data-phone='{{pageData.user.contactPhone}}'    bindtap='callPhone'></image>
+         <view class='dis_c fon30'>{{pageData.shop.business_name}} ({{pageData.shop.branch_name}})</view>
+         <view class='dis_c fon24 colora0'>分类:{{pageData.shop.categories}}</view>
+         <view class='dis_c fon24 colora0'>
+          营业时间:{{pageData.setting.startTime1}}-{{pageData.setting.endTime1}}
+                  {{pageData.setting.startTime2}}-{{pageData.setting.endTime2}}
+        </view>
+         <view class='dis_c fon30 addr_'><image src='../../images/zuobiao.png' class='icon_addr'></image>{{pageData.shop.province}}{{pageData.shop.district}}{{pageData.shop.address}}<text>{{distinces}}m</text></view>
+         <view class='gg hbor' hidden='true'><image src='../../images/gg.png'></image>公告</view>
+         <view class='colord0' hidden='true'>465444444444444444444444444444444444444444</view>
+         <view class='gg hbor'><image src='../../images/bussImgLogo.png'></image>门店照片</view>
+         <view class='imgList'>
+             <image wx:for="{{pageData.shop.imgUrl}}" wx:for-item="item" src="{{item}}" wx:key="idx"></image>
+         </view>
+         <image class='del' src='../../images/del.png' bindtap='hideMDInfo'></image>
+  </view>
+</view>
+
+<!--菜品信息展示  -->
+<view class='caiInfo' hidden='{{cFlag}}'>
+   <view class='c_box'>
+       <view class='topimg'>
+         <image src='{{showThisCInfo.foodsImg}}'></image> 
+       </view>
+       <view class='c_name'>
+           {{showThisCInfo.foodsName}} 
+           <!-- <text class='coloryel'>套餐</text> -->
+       </view>
+       <view class='c_price'>
+          <text class='red'>￥{{filters.toFix(showThisCInfo.foodsPrice*0.01)}}</text> 
+       </view>
+       <view class='c_desc'>
+           <view class='colora0'>详情</view>
+           <view>{{showThisCInfo.describt}}</view>
+       </view>
+       <image class='del' src='../../images/del.png' bindtap='hideCInfo'></image>
+   </view>
+</view>
+
+<!--优惠券  -->
+<view class='yhqbg' hidden='{{hideyhq}}'>
+  <view class='yuq-box'>
+    <view class='yhq-tit'>店铺优惠券<view class='hideyhq' bindtap='hideyhq'>X</view></view>
+    <view class='yhq-list'>
+<<<<<<< .mine
+          <view class='yhq-item' wx:for="{{pageData.coupons}}" wx:for-item="item" wx:for-index="idx" wx:if="{{!item.isOver}}" wx:key="idx"> 
+||||||| .r3349
+          <view class='yhq-item' wx:for="{{pageData.coupons}}" wx:for-item="item" wx:for-index="idx" wx:if="{{!item.isOver}}"> 
+=======
+          <view class='yhq-item' wx:for="{{pageData.coupons.list}}" wx:for-item="item" wx:for-index="idx" wx:if="{{!item.isOver}}"> 
+>>>>>>> .r4165
+              <view class='yhq-itemL'>
+                  <block wx:if='{{ item.couponsType == 1 }}'>
+                    <view class='red'><text class='fon30r'>￥</text>{{ item.vouchers * 0.01 }}</view>
+                  </block>
+                  <block wx:else>
+                    <view class='red'>{{ item.discount }}<text class='fon30r'>折</text></view>
+                  </block>
+                  <view>
+                      <view class='fon30r color33' wx:if='{{ item.lowestConsume == 0 }}'>无限制</view>
+                      <view class='fon30r color33' wx:else>满{{ item.lowestConsume * 0.01 }}元可用</view>
+                      <view class='fon20'>{{item.endDate}}到期</view>
+                  </view>
+              </view>
+              <block wx:if='{{ item.myReceiveNum < item.receiveLimit }}'>
+                <view class='yhq-itemR' data-putid='{{item.putId}}' data-couponsid='{{item.id}}' 
+                bindtap='getCoupons'>立即领取</view>
+              </block>
+              <block wx:else>
+                <view class='yhq-itemR yhqUsed' bindtap='getCoupons'>已经领取</view>
+              </block>
+              
+              <!-- 
+                <view wx:if="{{item.isReceive=='false'}}" class='yhq-itemR' data-couponsid='{{item.id}}' bindtap='getCoupons'>
+                  立即领取 
+                </view>
+                <view wx:if="{{item.isReceive=='true'}}" class='yhq-itemR yhqUsed' data-couponsid='{{item.id}}' >
+                已经领取
+              </view>
+              -->
+          </view>
+
+    </view>
+  </view>
+</view>
+
+<view class='dayang'  wx:if='{{isKy != true && pageData.setting.takeOut != true}}'>
+    <view class='mainBody'>
+         <view class='dayang_img'>
+            <image src='../../images/dayang.png'></image>
+         </view>
+         <view class='dayang_txt'>
+             店小二已经打烊,欢迎您下次光临!
+         </view>
+    </view>
+</view>

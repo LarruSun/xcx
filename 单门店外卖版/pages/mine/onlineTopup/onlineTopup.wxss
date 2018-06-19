@@ -1,0 +1,122 @@
+/* pages/mine/onlineTopup/onlineTopup.wxss */
+
+.container_onlineTopup {
+  background: #eee;
+}
+
+.balance_header {
+  background: #fff;
+  position: relative;
+}
+
+.balance_header_bg {
+  width: 100%;
+  height: 180px;
+}
+
+.balance_yue {
+  text-align: center;
+  position: absolute;
+  top: 2rem;
+  left: 41%;
+}
+
+.balance_header_moneyImg {
+  width: 3.66667rem;
+  height: 3.66667rem;
+}
+
+.balance_header_money {
+  font-size: 1.66667rem;
+  color: #fff;
+}
+
+.top_preferential {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -4px;
+  padding: 10px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.top_uping {
+  display: flex;
+}
+
+.top_doing_img {
+  width: 10px;
+  height: 12px;
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.keyBord {
+  background: #fff;
+  min-height: 253px;
+}
+
+.keyBord_box {
+  padding: 13px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.recharge_Amount {
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 7px 10px;
+  border-radius: 2px;
+  text-align: center;
+  position: relative;
+  margin-top: 3%;
+  width: 23%;
+}
+
+.recharge_Givenamount {
+  font-size: 13px;
+}
+
+.button_top {
+  padding-bottom: 19px;
+  margin-top: 1%;
+}
+
+.checkbox_group {
+  padding-top: 20%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.recharge_active {
+  position: absolute;
+  bottom: 0px;
+  width: 18px;
+  height: 18px;
+  right: 0px;
+  display: none;
+}
+
+.on_active {
+  border-color: #69adf4;
+  color: #69adf4;
+}
+
+.btn-recharge {
+  width: 80%;
+  background-color: #69adf4 !important;
+  color: #fff;
+}
+
+@media screen and (max-width: 320px) {
+  .balance_yue {
+    text-align: center;
+    position: absolute;
+    top: 3rem;
+    left: 30%;
+  }
+}

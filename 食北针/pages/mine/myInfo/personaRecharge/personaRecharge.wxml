@@ -1,0 +1,32 @@
+<!--pages/activate/activate.wxml-->
+<!-- <view class='ui-content activate_title'>
+  <image src="/images/cardbg.png" class=' activate_header ui-content' mode="widthFix">
+    <view class='ui-headportrait  activate_userinfo'>
+      <image src="{{userInfo.avatarUrl}}" class='ui-headportrait-img' style=' width:80px;height:80px;border-radius:50%;'></image>
+    </view>
+  </image>
+</view> -->
+<view class='ui-content activate_main'>
+  <view class="activate_main_two" style="">
+      <view class="activate_phone">
+          <input id='phone' disabled='true' type="number" value='{{myphone}}' maxlength="11" placeholder='请输入手机号码' focus='true' bindinput="mobileInputEvent" />
+        </view>
+        <view class="activate_YZ">
+          <input name="verifyCode" type="number" maxlength="4" focus='true' bindinput="codeInputEvent" placeholder='验证码' />
+          <button class="button_YZ" bindtap="verifyCodeEvent" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+      </view>
+  </view>
+  <view class="activate_main_one" style="">
+      <view class="activate_phone2">
+          <view class="passwords_text">支付密码：</view>
+          <input id='passwords' bindinput="pwdInputEvent" type="number" maxlength="6" password='true' placeholder='请输入六位密码' focus='true'  />
+        </view>
+        <view class="activate_YZ2">
+        <view class="passwords_text">确认密码：</view>
+          <input name="verifyCode" bindinput="pwdAgainInputEvent" type="number" maxlength="6" password='true' focus='true'  placeholder='请再次输入' />
+      </view>
+  </view>
+  <view  class="activate_true">
+    <button style="width:80%;background-color:#69adf4!important;color:#fff" bindtap="submitGet" disabled="{{submitDisable}}">确认</button>
+  </view>
+</view>

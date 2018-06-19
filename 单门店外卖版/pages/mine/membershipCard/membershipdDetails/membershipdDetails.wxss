@@ -1,0 +1,186 @@
+/* pages/mine/membershipCard/membershipdDetails/membershipdDetails.wxss */
+.container_membershipdDetails{
+  background:#f2f7fa;
+  min-height:669px;
+}
+.membershipdDetails_top{
+  box-sizing: border-box;
+  padding: 1rem;
+}
+.content_card{
+  background:#614e75;
+  width:100%;
+  box-sizing:border-box;
+  padding:1rem;
+  color:#fff;
+  text-shadow:none;
+  border-radius:0.66667rem;
+  box-shadow:0.1rem 0.1rem 0.2rem #999;
+}
+.content_card_title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.content_card_left{
+  display:flex;
+
+}
+.content_card_img{
+  width:42px;
+  height:42px;
+  border-radius:0.3rem;
+}
+.content_card_name{
+  margin-top:9px;
+  margin-left:8px;
+  font-size: 30rpx;
+}
+.member{
+  font-size: 20rpx;
+  text-align: center;
+  border: 1px solid #4e3d62;
+  border-radius: 10rpx;
+  padding: 5rpx 0;
+}
+.content_card_right>image{
+  width:24px;
+  height:24px;
+}
+.content_card_XQ{
+  margin-top:41px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.content_card_time,.content_card_user{
+  font-size:13px;
+}
+.content_set{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:0.66667rem;
+  font-size:14px;
+}
+.content_set_dele,.content_set_default{
+  border:0.06667rem solid #69adf4;
+  padding:0.33333rem 1rem;
+  border-radius:0.2rem;
+  margin-right:0.66667rem;
+  display:inline-block;
+}
+.userInfo{
+  background:#fff;
+width:100%;
+box-sizing:border-box;
+padding:0.66667rem 1rem;
+margin-bottom:13px;
+
+}
+.userInfo>image{
+  width:42px;
+height:42px;
+float:left;
+margin-right:6px;
+}
+.userInfo_message{
+  margin-top:3px;
+
+}
+.userInfo_message_neme{
+  font-size:14px;
+font-weight:700;
+
+}
+.userInfo_message_ID{
+  font-size:0.8rem;
+color:#999;
+
+}
+.VipInter{
+  background:#fff;
+box-sizing:border-box;
+padding:0.66667rem;
+margin-top:0.66667rem;
+margin-bottom:12px
+}
+.interest{
+  font-size: 16px;
+  margin-left: 8px;
+}
+.interest_top{
+  font-size:1rem;
+padding-bottom:0.53333rem;
+border-bottom:0.06667rem solid #e5e5e5;
+
+}
+.interest_top>image{
+  width:19px;
+height:19px;
+
+}
+.interest_bottom{
+  box-sizing:border-box;
+padding:0.66667rem;
+padding-bottom:0;
+display:flex;
+justify-content:flex-start;
+
+}
+.equity{
+  text-align:center;
+  margin-right:66rpx;
+}
+.uesrKnow{
+  background:#fff;
+box-sizing:border-box;
+padding:0.66667rem;
+margin-top:0.66667rem;
+
+}
+.uesrKnow_text{
+  font-size:16px;
+display:flex;
+align-items:center;
+
+}
+.uesrKnow_text>image{
+ width:19px;
+height:19px;
+
+}
+.dsj{
+  float:right;
+margin-top:-25px;
+
+}
+.dsj>image{
+width:16px;
+height:10px;
+
+}
+.uesrKnow_hide{
+  box-sizing:border-box;
+padding-left:2rem;
+padding-top:0.66667rem;
+height:0;
+overflow:hidden;
+
+}
+.uesrKnow_hide_text{
+  font-size:0.66667rem;
+line-height:1.2rem;
+color:#999;
+
+}
+
+.equity_text{
+   font-size:24rpx;
+}
+
+.rote180{
+    transform:rotateX(180deg);
+}
+.rote0{
+    transform:rotateX(0deg);
+}

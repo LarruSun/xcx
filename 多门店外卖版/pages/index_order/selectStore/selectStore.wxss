@@ -1,0 +1,76 @@
+page{
+  
+}
+.search{
+  width: 100%;
+  margin-top: 25rpx;
+  text-indent: 5rpx;
+}
+.search input{
+  width: 95%;
+  height: 30rpx;
+  border: 1px solid #dee3eb;
+  font-size: 30rpx;
+  border-radius: 5rpx;
+  margin: 0 auto;
+}
+
+
+
+.listBox{
+   width:100%;
+   box-sizing: border-box;
+   padding:0px 20rpx;
+   background:#fff;
+   display: inline-block;
+   border-top: 1px solid #dee3eb;
+   margin-top: 15rpx;
+   padding-top: 15rpx;
+}
+.mine_list{
+  background: #fff;
+  box-sizing: border-box;
+  padding-left:0px;
+  width: 80%;
+  float: left;
+  height: 300rpx;
+}
+.right_arrow{
+  width: 15%;
+  float: left;
+  height: 300rpx;
+  /* line-height: 300rpx; */
+  text-align: center;
+}
+.right_arrow image{
+  width:16px;
+  height:24px;
+}
+.mine_list_img{
+  width: 19px;
+  height: 22px;
+}
+.mine_list_message{
+  display:flex;
+  justify-content:space-between;
+  width:100%;
+  padding:11rpx;
+
+}
+.mine_list_message_left{
+  display:flex;
+  font-size:15px;
+}
+.mine_list_name{
+  margin-left:8px;
+  color:#666;
+}
+.store{
+  font-weight: bold;
+}
+.distance{
+  font-size: 15px;
+  font-weight: bold;
+  color:#666;
+}
+

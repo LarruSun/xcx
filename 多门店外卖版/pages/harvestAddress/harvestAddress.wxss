@@ -1,0 +1,136 @@
+/* pages/harvestAddress/harvestAddress.wxss */
+
+.harvestAddress_header {
+  padding: 18rpx 24rpx;
+  background: red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.address_img {
+  width: 15px;
+  height: 18px;
+  margin-top: 8rpx;
+  margin-right: 6rpx;
+}
+
+.address {
+  position: relative;
+  display: flex;
+  margin-top:11rpx;
+}
+
+.section2 {
+  background: #fff;
+  border: 1px solid #ddd;
+  width: 422rpx;
+  border-radius: 7rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:8rpx 12rpx;
+}
+
+.section {
+  margin-top: 8rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.section2 input {
+  margin-left: 18rpx;
+  padding-left: 6rpx;
+  font-size: 28rpx;
+  width: 240rpx !important;
+}
+
+.harvestAddress_DQ {
+  background: #efefef;
+  color: #999;
+  font-size: 30rpx;
+  padding: 20rpx 24rpx;
+}
+
+.harvestAddress_XQ {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 24rpx;
+  font-size: 30rpx;
+}
+
+.harvest_DW {
+  color: red;
+}
+
+.harvestAddress_bottom {
+  color: #666;
+  border-bottom: 1px solid #ddd;
+  font-size: 28rpx;
+  padding: 16rpx 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.harvestAddress_XQ_body {
+  width:572rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.region_city_f {
+  display: none;
+}
+
+.region_city {
+  border: 1px solid #ddd;
+  border-top: 0;
+  position: absolute;
+  top: 74rpx;
+  left: -24rpx;
+  background: #fff;
+  width: 200rpx;
+}
+
+.position_city {
+  width: 90%;
+  font-size: 30rpx;
+  padding: 18rpx 0 18rpx 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.uesr_message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.uesr_message_data {
+  margin-right: 24rpx;
+}
+
+.particular {
+  color: #999;
+}
+
+.addrTit {
+  color: #999;
+}
+
+.seachAddrBtn {
+  font-size: 30rpx;
+}
+
+@media screen and (max-width: 320px) {
+  .harvestAddress_XQ_body {
+    width: 446rpx;
+  }
+}
+
+.disflex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width:350rpx;
+}

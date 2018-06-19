@@ -1,0 +1,65 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.8",
+	"appid": "wxc8bc468c2aafe723",
+	"projectname": "%E9%A3%9F%E5%8C%97%E9%92%88%E5%A4%96%E5%8D%96---%E5%A4%9A%E9%97%A8%E5%BA%97",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "orind",
+					"pathName": "pages/mine/onlineTopup/onlineTopup",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "堂食菜单",
+					"pathName": "pages/indexEatIn/indexEatIn",
+					"query": "scene=08566141f48347bea8615fa37356ad06",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "堂食订单",
+					"pathName": "pages/mine/indent/indent",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 3,
+					"name": "订单详情",
+					"pathName": "pages/mine/indent/line_item/line_item",
+					"query": "orderId=568016225e7140c188150de46cd07684&type=WMCATERING&orderNo=E201804252034164",
+					"scene": "1011"
+				}
+			]
+		}
+	}
+}

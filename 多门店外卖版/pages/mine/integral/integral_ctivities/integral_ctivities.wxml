@@ -1,0 +1,29 @@
+<!--pages/mine/integral/integral_ctivities/integral_ctivities.wxml-->
+<view class='container_discounta'>
+    <view class='container_discounta_body'>
+      <block wx:for="{{container_discounta}}" wx:key='this'>
+        <view bindtap='toChange' data-id='{{item.id}}' class='preferential_activitiesOne preferential_vice{{index}}' >
+          <view class='activitie_left'>
+              <view class='conpun_tally'>积分兑换</view>
+              <view class='conpun_tally conpun_tally2'>转储值</view>
+              <view class='conpun_active'>{{item.maxIntegral}}积分转￥{{item.change}}</view>
+          </view>
+          <view class='activitie_right'>
+            <view class='activitie_right_one'>
+              <image src='{{logo}}' class='Dxc_img'></image>
+              <view class='right_one_title'>{{name}}</view>
+            </view>
+            <view class='activitie_right_two'>
+              <view class='Dxc_time'>有效期：{{item.startTime}}至{{item.endTime}}</view>
+            </view>
+            <view class='activitie_right_three'>
+              <view class='Yhzc_title'>积分范围：{{item.minIntegral}}-{{item.maxIntegral}}</view>
+              <view class='Yhzc_title'>转储系数：{{item.convertRate}}%</view>
+               <view style='clear:both'></view>
+            </view>
+          </view>
+          <view style='clear:both'></view>
+        </view>
+      </block>  
+    </view>
+</view>

@@ -1,0 +1,157 @@
+/* pages/sureOrder/clipCoupons/clipCoupons.wxss */
+.isNeedfp{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-sizing: border-box;
+   padding:20rpx;
+   font-size:26rpx;
+   background: #fff;
+}
+.isNeedfp image{
+   width:30rpx;
+   height:30rpx;
+}
+.isNeedfpimg{
+   display: flex;
+   align-items: center;
+   box-sizing: border-box;
+   border-radius: 50%;
+   border:1rpx solid #e5e5e5;
+   width:40rpx;
+   height:40rpx;
+}
+/*优惠券 start */
+.discount_Coupon{
+  margin-top:14px;
+
+}
+.discount_Coupon_list{
+  margin-bottom: 12px;
+  margin-top:12px;
+
+}
+.Coupon_list_left{
+  text-align: center;
+   height:108px;
+   float:left;
+   width:115px;
+   position: relative;
+}
+
+.Coupon_list_Limg{
+  height:108px;
+   float:left;
+   width:115px;
+}
+.money{
+  position:absolute;
+ margin-top:24px;
+ vertical-align:middle;
+ width:230rpx;
+}
+.money_fuH{
+color:#fff;
+margin-top:28rpx;
+}
+.money_fuM{
+font-size:67rpx;
+color:#fff;
+}
+.money_main{
+text-align: center;
+color:#fff;
+font-size:30rpx;
+}
+.money_a{
+  display: flex;
+  justify-content: center
+}
+.Coupon_list_right{
+  height: 216rpx;
+width:235px;
+float:left;
+background:#fff;
+border-radius:5px;
+border-top-left-radius:0;
+border-bottom-left-radius:0;
+}
+.coupon_logo{
+  clear:both;
+float:left;
+margin-top:5px;
+margin-left:5px;
+margin-bottom:-4px;
+position: relative
+}
+.logo_stort{
+ width:35px;
+height:35px;
+float:left;
+
+}
+.logo_stort_title{
+ width:179px;
+  float:left;
+margin-left:6px;
+margin-top:5px;
+color:#999;
+font-size:16px;
+
+}
+.coupon_introduce{
+margin-left:46px;
+font-size:26rpx;
+margin-right:19px;
+overflow:hidden;
+width:166px;
+text-overflow:ellipsis;
+white-space:nowrap;
+
+}
+.coupon_date_one{
+  margin-top:13px;
+}
+.coupon_date{
+  margin-left:5px;
+margin-top:5px;
+font-size:12px;
+color:#999;
+margin-bottom:48px;
+
+
+}
+.coupon_date_start,.coupon_time,.coupon_date_start{
+  float:left;
+}
+.coupon_date_two{
+  margin-top:-4px;
+  float:left;
+  margin-left:15px;
+
+}
+.coupon_week{
+  float:left;
+  margin-right:7px;
+  border:1px solid #3c99de;
+  padding:3px 6px;
+  border-radius:16px;
+  color:#3c99de;
+}
+.coupon_CardData{
+  background:#eee;
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px
+}
+.Coupon_list_right {
+  width:228px;
+}
+
+.radio_css{
+position: absolute;
+right: 0;
+top: 0;
+}

@@ -1,0 +1,21 @@
+<!--pages/activate/activate.wxml-->
+<view class='ui-content'>
+  <image src="/images/cardbg.png" class='header ui-content' mode="widthFix">
+    <view class='ui-headportrait'>
+      <image src="{{userInfo.avatarUrl}}" class='ui-headportrait-img'></image>
+    </view>
+  </image>
+</view>
+<view class='ui-content'>
+  <view>
+    <input id='phone' type="number" maxlength="11" placeholder='请输入手机号码' focus='false' bindinput="mobileInputEvent" />
+    <button bindtap="verifyCodeEvent" disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+  </view>
+  <view>
+    <input name="verifyCode" type="number" maxlength="4" focus='false' bindinput="codeInputEvent" placeholder='验证码' />
+  </view>
+
+  <view>
+    <button bindtap="submitGet" disabled="{{submitDisable}}">确认</button>
+  </view>
+</view>

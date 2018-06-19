@@ -1,0 +1,680 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.toIndex{
+  position: absolute;
+  right: 0rpx;
+  top: 0rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  background-color: #FFC824;
+  padding: 15rpx 10rpx 15rpx 20rpx;
+  border-radius: 30rpx 0rpx 0rpx 30rpx;
+}
+
+.toIndex>image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-left: 6rpx
+}
+
+.store-wrap{
+  flex-shrink: 0;
+  width: 100%;
+  height: 400rpx;
+  background: url(https://yun.eaqul.com/wxImg/card_bg.png) no-repeat center;
+  text-align: center;
+}
+
+.store-wrap>image{
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
+  margin-top: 30rpx;
+}
+
+.store-wrap .store-title{
+  font-size: 32rpx;
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.store-wrap .store-table{
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 20rpx;
+}
+
+.food-wrap{
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+}
+
+.food-species{
+  width: 144rpx;
+  /* height: 100%; */
+  padding-bottom: 100rpx;
+  overflow-y: auto;
+  background-color: #f3f2f2;
+  border-right: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.food-species-item{
+  display: block;
+  height: 118rpx;
+  line-height: 118rpx;
+  font-size: 28rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #e5e5e5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.food-species-active{
+  border-left: 4rpx solid #ffc824;
+  background-color: #fff;
+}
+
+.food-list{
+  flex: 1;
+  margin-left: 20rpx;
+  border-left: 2rpx solid #f3f2f2;
+  background-color: #fff;
+  padding-bottom: 100rpx;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.food-list .food-title{
+  display: flex;
+  align-items: center;
+  height: 46rpx;
+  background-color: #f3f2f2;
+  padding: 0 20rpx;
+}
+
+.food-list .food-title>text{
+  border-left: 5rpx solid #ffc824;
+  font-size: 26rpx;
+  padding-left: 10rpx;
+}
+
+.food-list .food-item{
+  display: flex;
+  height: 190rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+
+/* .food-list .food-item:last-child{
+  border-bottom: none;
+} */
+
+.food-list .food-item>image{
+  width: 150rpx;
+  height: 100%;
+  border-radius: 8rpx;
+}
+
+.food-list .food-item>view{
+  flex: 1;
+  margin-left: 20rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-item-title{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.food-item-sale{
+  color: #999999;
+  font-size: 22rpx;
+  flex: 1;
+  margin-top: 10rpx;
+}
+
+.food-item-price{
+  color: #fe5064;
+}
+
+.add-shopping{
+  display: flex;
+  align-items: center;
+}
+
+.species-btn{
+  padding: 14rpx 26rpx;
+  font-size: 28rpx;
+  background-color: #ffc824;
+  border-radius: 30rpx;
+}
+
+.species-num{
+  position:absolute;
+  display:inline-block;
+  width:36rpx;
+  height:36rpx;
+  line-height:36rpx;
+  text-align:center;
+  right:-8rpx;
+  bottom:46rpx;
+  background-color:#fe5064;
+  color:#fff;
+  border-radius:50%;
+  font-size:22rpx;
+}
+
+.food-item-btn{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.add-shopping>text{
+  width: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.add-shopping>image{
+  width: 62rpx;
+  height: 62rpx;
+}
+
+.store-shopping{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+}
+
+.store-shopping .shopping{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.store-shopping .shopping>image{
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 20rpx;
+}
+
+.store-shopping .shopping>view{
+  font-size: 32rpx;
+  margin-left: 40rpx;
+}
+
+.store-shopping .shopping-num{
+  position: absolute;
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  left: 72rpx;
+  bottom:56rpx;
+  background-color: #fe5064;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22rpx;
+}
+
+.store-shopping .add-order{
+  width: 250rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  text-align: center;
+  background-color: #cbcccc;
+}
+
+.account{
+  background-color: #ffc824 !important;
+}
+
+.food-shopping{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.food-shopping-header{
+  height: 80rpx;
+  background-color: #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28rpx;
+  font-size: 28rpx;
+}
+
+.food-shopping-header>view:last-child image{
+  width: 26rpx;
+  margin-right: 10rpx;
+}
+
+.food-shopping-list{
+  padding: 0 28rpx;
+  background-color: #fff;
+  max-height: 400rpx;
+  overflow-y: auto;
+}
+
+.food-shopping-item{
+  border-bottom: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 10rpx 0;
+}
+
+.food-shopping-item image{
+  width: 52rpx;
+  height: 52rpx;
+}
+
+.food-shopping-name{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.food-shopping-name>view{
+  display: flex;
+  color: #fe5064;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.food-shopping-name>view view{
+  margin-right: 10rpx;
+}
+
+.food-shopping-price{
+  color: #fe5064;
+  margin: 0 60rpx;
+}
+
+.store-shopping-modal{
+  position: static;
+}
+
+.modal{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.5;
+  z-index:2;
+}
+
+.food-size{
+  position: absolute;
+  width: 620rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 28rpx;
+  font-size: 28rpx;
+  background-color: #fff;
+  border-radius: 6rpx;
+  z-index: 3;
+}
+
+.food-size-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28rpx 0;
+}
+
+.food-size-title>image{
+  width: 30rpx;
+}
+
+.food-size-list{
+  display: flex;
+}
+
+.food-size-list>text{
+  margin-right:20rpx;
+  margin-bottom:20rpx;
+  padding:6rpx 20rpx 8rpx 0;
+  font-size:32rpx;
+}
+
+.food-size-item{
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.food-size-item view{
+  padding: 10rpx 20rpx;
+  border: 2rpx solid #cccccc;
+  border-radius: 30rpx;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+}
+
+.food-size-active{
+  background-color: #fce5a0;
+  border: 2rpx solid #fce5a0 !important;
+}
+
+.food-size-btn{
+  border-top: 2rpx solid #e5e5e5;
+  padding: 28rpx 0rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-size-btn>text{
+  font-size: 32rpx;
+  color: #fe5064;
+}
+
+.food-size-btn view{
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 10rpx;
+  background-color: #ffc824;
+}
+
+.font-pink{
+  color: #fe5064;
+}
+
+.food-detail{
+  position: absolute;
+  width: 620rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28rpx;
+  background-color: #fff;
+  z-index: 3;
+  border-radius: 6rpx;
+}
+
+.food-detail>image{
+  width: 100%;
+  height: 450rpx;
+  border-top-left-radius: 6rpx;
+  border-top-right-radius: 6rpx;
+}
+
+.food-detail-title{
+  padding: 28rpx;
+  font-size: 32rpx;
+}
+
+.food-detail-title>view:last-child{
+  color: #fe5064;
+  font-size: 36rpx;
+  margin-top: 10rpx;
+}
+
+.food-detail-content{
+  padding: 28rpx;
+  border-top: 2rpx solid #e5e5e5;
+}
+
+.food-detail-content>view:first-child{
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.food-detail-content>view:last-child{
+  margin-top: 10rpx;
+  color: #666666;
+}
+
+.food-detail>icon{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.store-detail{
+  position: absolute;
+  width: 620rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 80rpx 28rpx 0;
+  font-size: 28rpx;
+  background-color: #fff;
+  border-radius: 6rpx;
+  z-index: 3;
+}
+
+.store-detail>.logo{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 10rpx solid #fff;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -40%);
+}
+
+.store-detail>.phone{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.store-detail>.store-title{
+  color: #000;
+  font-size: 32rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.store-detail .store-info{
+  text-align: center;
+  color: #666;
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+}
+
+.store-detail>.store-address{
+  color: #000;
+  font-size: 28rpx;
+  text-align: center;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx dashed #e5e5e5;
+}
+
+.store-address>image{
+  width: 20rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+  transform: translateY(2rpx);
+}
+
+.store-image-title{
+  padding: 20rpx 0;
+  border-bottom: 2rpx dashed #e5e5e5;
+  margin-bottom: 20rpx
+}
+
+.store-image-title>image{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+  transform: translateY(2rpx);
+}
+
+.store-image-list>view{
+  width: 25%;
+  height: 155rpx;
+  box-sizing: border-box;
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.store-image-list image{
+  width: 100%;
+  height: 100%;
+}
+
+.empty-box{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-box image{
+  width: 90rpx;
+}
+
+.empty-box view{
+  font-size: 30rpx;
+  color: #666;
+}
+
+.lp{
+    display: flex;
+    justify-content: center;
+}
+.lp image{
+    width: 33%;
+    height:100rpx;
+    margin:10rpx 0rpx;
+}
+
+.yhqbg{
+   position: fixed;
+   left:0;
+   right:0;
+   top:0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 90000;
+}
+.yuq-box{
+   position: fixed;
+   bottom:0rpx;
+   left:0rpx;
+   right:0rpx;
+   background: #EEEEEE;
+   height:691rpx;
+   z-index: 9000;
+}
+.hideyhq{
+   position: absolute;
+   right:40rpx;
+   top:20rpx;
+   width:50rpx;
+   height:50rpx;
+   font-size:36rpx;
+   text-align: center;
+   line-height: 50rpx;
+   color:#666;
+}
+.yhq-tit{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 32rpx;
+   padding:20rpx 0rpx;
+   position: relative;
+}
+.yhq-list{
+   box-sizing: border-box;
+   padding-bottom: 200rpx;
+   overflow-y: auto;
+   height:800rpx;
+}
+.yhq-item{
+   width:711rpx;
+   height:181rpx;
+   margin:0 auto;
+   position: relative;
+   background: url(https://yun.eaqul.com/wxImg/quan_bg.png);
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   margin-bottom:20rpx;
+}
+.yhq-itemL{
+   display: flex;
+   align-items: center;
+   position: absolute;
+   left: 130rpx;
+}
+.yhq-itemL .red{
+   font-size: 80rpx;
+   display: block;
+   margin-left: 20rpx;
+}
+.fon30r{
+   font-size:30rpx;
+}
+.fon20{
+   font-size: 20rpx;
+   color:#666;
+}
+.color33{
+   color:#333;
+}
+.yhq-itemR{
+   font-size:26rpx;
+   color:#333;
+   background: #FFC824;
+   border-radius: 45rpx;
+   width:158rpx;
+   height:83rpx;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   position: absolute;
+   right:20rpx;
+   top:48rpx;
+}
+.yhqUsed{
+   background: rgba(0, 0, 0, 0);
+   border:1px solid #e5e5e5;
+}

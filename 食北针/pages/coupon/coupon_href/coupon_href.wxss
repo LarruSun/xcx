@@ -1,0 +1,128 @@
+/* pages/coupon/coupon_href/coupon_href.wxss */
+
+page {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.couponHref_padding {
+  padding-left: 48rpx;
+  padding-right: 48rpx;
+  /* margin-top: 95rpx; */
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 95rpx;
+  height: 100%;
+  width: 100%;
+  background: red; 
+}
+
+.couponHref_img {
+  height: 117px;
+  width: 542rpx;
+}
+
+.container_couponHref {
+  text-align: center;
+  background: #fff;
+  height: 726rpx;
+  padding: 10px 12px;
+}
+
+.couponHref_padding::before {
+  content: "";
+  color: inherit;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: inherit;
+  display: block;
+  position: absolute;
+  top: 31%;
+  left: 34rpx;
+}
+
+.couponHref_padding::after {
+  position: absolute;
+  content: "";
+  color: inherit;
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background: inherit;
+  display: block;
+  top: 31%;
+  right: 34rpx;
+}
+
+.couponHref_body {
+  margin-top: 56rpx;
+}
+
+.couponHref_uesr {
+  font-size: 28rpx;
+}
+
+.couponHref_JS {
+  font-size: 55rpx;
+  margin-top: 42rpx;
+}
+
+.couponHref_main {
+  margin-top: 102rpx;
+}
+
+.couponHref_JIES {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 64rpx
+}
+
+.hr {
+  border: 1px dashed #ddd;
+  width: 80%;
+  position: absolute;
+  top: 32%;
+}
+
+.couponHref_Barcode {
+  letter-spacing: 10rpx;
+  margin-top:-87rpx;
+}
+
+.canvas{
+  text-align: center;
+  margin-left: 50rpx;
+}
+
+@media screen and (max-width: 320px) {
+  .couponHref_img {
+    width: 442rpx;
+    height: 207rpx;
+  }
+
+  .barcode {
+    display: flex;
+    height: 320rpx;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .barnum {
+   
+  }
+
+  .barcode > canvas {
+    width: 680rpx;
+    height: 200rpx;
+  }
+  
+  .couponHref_body {
+    margin-top: 33rpx;
+  }
+  .couponHref_JIES{
+    margin-bottom: 0
+  }
+}

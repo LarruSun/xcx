@@ -1,0 +1,29 @@
+<!--pages/mine/myInfo/myInfo.wxml-->
+<view class='container_myInfo'>
+  <view class="top_preferential">
+      <view class='top_up'>头像</view>
+       <image src='{{avatarUrl}}' class='top_doing_img'></image>
+  </view>
+  <view class='myInfo_middle'>
+    <view class='myInfo_name'>
+      <view class='myInfo_name_name'>会员名称</view>
+      <view class='myInfo_user_name'>{{name}}</view>
+    </view>
+    <view class='myInfo_name'>
+      <view class='myInfo_name_name'>会员卡号</view>
+      <view class='myInfo_user_name'>NO.{{cardNum}}</view>
+    </view>
+    <view class='myInfo_name'>
+      <view class='myInfo_name_name'>手机号</view>
+      <view class='myInfo_user_name'>{{phone}}</view>
+    </view>
+  </view>
+  <view class='myInfo_fotter'>
+    <view class='myInfo_down'  bindtap='personalData'>
+      <view class='myInfo_address_name'>完善个人资料</view>
+      <view class='myInfo_user_address'>
+        <image src='../../../images/mine/right.png' class='user_href'></image>
+      </view>
+    </view>
+  </view>
+</view>

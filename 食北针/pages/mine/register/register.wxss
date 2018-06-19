@@ -1,0 +1,64 @@
+/* pages/mine/register/register.wxss */
+.container_register{
+  text-align:center;
+  background:#eee;
+  min-height:1110rpx;
+  font-family: Microsoft YaHei;
+}
+.register_bg{
+  width:100%;
+  height:352rpx;
+}
+.register_user{
+  text-align:center;
+  margin-top:-274rpx;
+}
+.register_logo{
+  border-radius:50%;
+  width:120rpx;
+  height:120rpx;
+}
+.register_name{
+  font-size:41rpx;
+  color:#fff;
+}
+.register_message{
+  margin-top:112rpx;
+}
+.activate_main_two{
+  position: relative
+}
+.activate_phone input{
+  height:2.5rem;
+  border:1px solid #ddd;
+  background:#fff;
+  text-align:left;
+  padding-left:8px;
+}
+.activate_YZ{
+  margin-top:-1px;
+}
+.activate_YZ input{
+  height:2.5rem;
+  border:1px solid #ddd;
+  background:#fff;
+  text-align:left;
+  padding-left:8px;
+}
+.button_YZ{
+  position:absolute;
+  right:4px;
+  top:8%;
+  z-index:999;
+  font-size:13px;
+  background-color:#69adf4!important;
+  color:#fff;
+}
+.activate_true{
+  margin-top:38px;
+}
+.activate_true button{
+  width:80%;
+  background-color:#69adf4!important;
+  color:#fff
+}

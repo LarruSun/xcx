@@ -1,0 +1,45 @@
+/* editpwd.wxss */
+page{
+   background: #eee;
+}
+.Box{
+   background: #fff;
+   margin-bottom: 30rpx;
+}
+.flexitem{
+   display: flex;
+   font-size:30rpx;
+   align-items: center;
+}
+.just{
+   justify-content: space-between;
+}
+.pad{
+   box-sizing: border-box;
+   padding:20rpx;
+   border-bottom: 1rpx solid #e5e5e5;
+}
+.pad input{
+   padding-left:8rpx;
+}
+.getma{
+   padding:6rpx 12rpx;
+   box-sizing: border-box;
+   background: #69adf4;
+   color:#fff;
+   border-radius:6rpx;
+}
+.sureBtn{
+   display: flex;
+   justify-content: center;
+   margin-top:100rpx;
+}
+.sureBtn view{
+   text-align: center;
+   width:80%;
+   background: #69adf4;
+   box-sizing: border-box;
+   padding:20rpx;
+   border-radius: 30rpx;
+   color:#fff;
+}

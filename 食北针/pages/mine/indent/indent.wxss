@@ -1,0 +1,164 @@
+/* pages/mine/indent/indent.wxss */
+.container_indent{
+  background: #eee;
+  min-height: 669px;
+}
+.nav-scroll{
+  background: #fff;
+  margin-bottom:6px;
+}
+.nav-name{
+   text-align:center;
+    display:inline-block;
+    font-size:13px;
+    color: #2b2e33;
+    border-bottom: 2px solid transparent;
+    padding:14px 0;
+    width:50%;
+    float:left;
+}
+
+.nav-hover{
+  text-align:center;
+    color: #f06000;
+    border-bottom: 2px solid #f06000;
+}
+.scroll-view_H{
+    border-bottom:1px solid #ddd;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.active_img{
+   width: 20px;
+   height:20px
+}
+.indent_content{
+  margin-bottom:0.66667rem;
+  background:#fff;
+  box-sizing:border-box;
+}
+.indent_date{
+  height:2.66667rem;
+  line-height:2.66667rem;
+  border-bottom:0.06667rem solid #e5e5e5;
+  font-size:1rem;
+  color:#000;
+  padding:0 1rem;
+}
+.indent_message{
+  justify-content:space-between;
+  padding:0.66667rem 1rem;
+}
+.indent_message_top{
+  display:flex;
+  justify-content:space-between;
+}
+.message_left{
+  display:flex;
+}
+.message_logo{
+  width:40px;
+  height:40px;
+  margin-right:0.66667rem;
+}
+.message_name_top{
+  display:inline-block;
+  padding-right:1.33333rem;
+  font-size: 0.8rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:409rpx;
+}
+.message_name_NO{
+    display:inline-block;
+  padding-right:1.33333rem;
+  font-size: 0.8rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.message_name_icon{
+  height:16px;
+  width:10px;
+}
+.message_name_bottom{
+  font-size:0.8rem;
+  color:#fe5064;
+}
+.message_right{
+  line-height:2.93333rem;
+  font-size:0.8rem;
+  color:#fe5064;
+}
+.indent_data_box{
+  max-height:120rpx;
+  overflow:hidden;
+  line-height:1.53333rem;
+}
+.showAll{
+  max-height:none;
+}
+.indent_data{
+  display:flex;
+  justify-content:space-between;
+}
+.indent_data_left{
+  font-size:16px;
+}
+.xiangqing{
+  margin-top:4px;
+  text-align:right;
+  font-size:16px;
+}
+.rotX image{
+   transform: rotateX(180deg)
+}
+.max_data{
+  text-align:right;
+  font-size:16px;
+}
+.content_fotter{
+  border-top:1px solid #ddd;
+  text-align:right;
+  font-size:0.8rem;
+  color:#878787;
+  background:#fff;
+  padding:1rem 0.66667rem;
+}
+.content_fotter_more{
+  border-radius: 5px;
+  display:inline-block;
+  padding:0.26667rem;
+  border:0.06667rem solid #878787;
+  margin-left:0.33333rem;
+  width:3.66667rem;
+  text-align:center;
+}
+.XQ_money{
+  color:#f06000;
+}
+.recharge_Amount0{
+  color:#fe5064;
+}
+.container_linkError{
+  min-height:555px;
+  background:#f5f5f5;
+  text-align:center;
+}
+.linkerror{
+  width:180px;
+  height:180px;
+  margin-top:30%;
+}
+.system_text{
+  font-weight:500;
+  color: #666
+}
+.system_bottom{
+  margin-top:13px;
+  width:31%;
+  font-size:15px;
+  background:#8794d6;
+  color:#fff;
+}

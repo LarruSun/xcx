@@ -1,0 +1,80 @@
+<!--pages/harvestAddress/harvestAddress.wxml-->
+<view class="container_harvestAddress">
+  <view class="harvestAddress_header" style='background:{{backgroundColor}}'>
+    <view class="address">
+      <image src="/images/dress.png" class="address_img" />
+      <view class="section" bindtap='choose_city'>{{region}}</view>
+      <view class="region_city {{region_c?'':'region_city_f'}}">
+        <block wx:for='{{region_city}}'>
+          <view class="position_city" bindtap='choose_none' data-text='{{item.region_city1}}'>{{item.region_city1}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="section2">
+      <view class="disflex">
+        <input placeholder="请输入地址" bindinput="getSeachVal" value='{{keyval}}' />
+        <icon type="clear" bindtap='delInputVal' hidden='{{del}}' size="16" />
+      </view>
+      <text class="seachAddrBtn" bindtap='getValtoSeach'>搜索</text>
+    </view>
+  </view>
+  <view class="" hidden='{{!seachflag}}'>
+    <view class="harvestAddress_Dz">
+      <view class="harvestAddress_DQ">当前地址</view>
+      <view class="harvestAddress_XQ">
+        <view bindtap='localAddress' class="harvestAddress_XQ_body">
+          {{currentPosi.curAddr}}
+        </view>
+        <view class="harvest_DW" bindtap='getGelc'>重新定位</view>
+      </view>
+    </view>
+    <view class="harvestAddress_Dz">
+      <view class="harvestAddress_DQ">收货地址</view>
+      <view class="harvestAddress_XQ">
+        <view class="harvestAddress_XQ_body2">
+          <view class="uesr_message">
+            暂无收货地址
+          </view>
+          <view class="particular" bindtap='toIndex' data-addrid='{{item.id}}'>{{item.province}} {{item.address}}</view>
+        </view>
+      </view>
+      <block wx:for="{{particular}}" wx:key="this">
+        <view class="harvestAddress_XQ">
+          <view class="harvestAddress_XQ_body2">
+            <view class="uesr_message">
+              <view class="uesr_message_data">{{item.name}}</view>
+              <view class="uesr_message_data">{{item.sex}}</view>
+              <view class="uesr_message_data">{{item.phone}}</view>
+            </view>
+            <view class="particular" bindtap='toIndex' data-addrid='{{item.id}}'>{{item.province}} {{item.address}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="harvestAddress_Dz">
+      <view class="harvestAddress_DQ">附近地址</view>
+      <view class="harvestAddress_bottom_box">
+        <block wx:for="{{pageData.pois}}" wx:key="this">
+          <view data-location='{{item.location}}' data-address='{{item.pname}}{{item.cityname}}{{item.adname}}{{item.name}}' bindtap='fujinToIndex' class="harvestAddress_bottom">
+            <view>{{item.pname}}{{item.cityname}}{{item.adname}}{{item.name}}</view>
+            <view class="addrTit">{{item.address}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!--如果有搜索结果显示该区域-->
+  <view class='' hidden='{{seachflag}}'>
+    <view class="harvestAddress_Dz">
+      <view class="harvestAddress_DQ">搜索结果</view>
+      <view class="harvestAddress_bottom_box">
+        <block wx:for="{{seachRes}}" wx:key="this">
+          <view data-id='{{item.id}}' bindtap='seachToIndex' class="harvestAddress_bottom">
+            <view>{{item.sAddr}}</view>
+            <view class="addrTit">{{item.sAddrtit}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

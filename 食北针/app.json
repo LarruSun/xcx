@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/coupon/coupon",
+    "pages/coupon/coupon_href/coupon_href",
+    "pages/map/map",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/mine/Change_Settings/Change_Settings",
+    "pages/mine/balance/balance",
+    "pages/mine/integral/integral",
+    "pages/mine/register/register",
+    "pages/mine/integral/integral_ctivities/integral_ctivities",
+    "pages/mine/number/number",
+    "pages/mine/membershipCard/membershipCard",
+    "pages/mine/membershipCard/membershipdDetails/membershipdDetails",
+    "pages/mine/memberActivity/memberActivity",
+    "pages/mine/indent/indent",
+    "pages/mine/indent/line_item/line_item",
+    "pages/mine/onlineTopup/WeChat_pays/WeChat_pays",
+    "pages/mine/onlineTopup/onlineTopup",
+    "pages/mine/myInfo/myInfo",
+    "pages/mine/myInfo/selectAddr/selectAddr",
+    "pages/mine/myInfo/addAddr/addAddr",
+    "pages/mine/myInfo/personaRecharge/personaRecharge",
+    "pages/mine/myInfo/personalData/personalData",
+    "pages/activate/activate",
+    "pages/index_order/index",
+    "pages/index_order/index/search/search",
+    "pages/bussinessInfo/bussinessInfo",
+    "pages/sureOrder/sureOrder",
+    "pages/sureOrder/clipCoupons/clipCoupons",
+    "pages/beizhuInfo/beizhuInfo",
+    "pages/fpInfo/fpInfo",
+    "pages/fpInfo/createfp/createfp",
+    "pages/pay/pay",
+    "pages/wxmap/wxmap",
+    "pages/paysystem/wxpay/wxpay",
+    "pages/paysystem/equalpay/equalpay",
+    "pages/paysystem/payok/payok",
+    "pages/paysystem/editpwd/editpwd",
+    "pages/harvestAddress/harvestAddress",
+    "pages/mine/indent/cancellationOrder/cancellationOrder",
+    "pages/mine/QRCode/QRCode"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "color": "red",
+        "selectedColor": "#000",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_click.png"
+      },
+      {
+        "pagePath": "pages/mine/indent/indent",
+        "text": "订单",
+        "color": "red",
+        "selectedColor": "#000",
+        "iconPath": "images/coupon.png",
+        "selectedIconPath": "images/coupon_click.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "color": "red",
+        "selectedColor": "#000",
+        "iconPath": "images/main.png",
+        "selectedIconPath": "images/main_click.png"
+      }
+    ]
+  }
+}
